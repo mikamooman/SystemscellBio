@@ -10,43 +10,26 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   1977347,      35101]
-NotebookOptionsPosition[   1969688,      34982]
-NotebookOutlinePosition[   1970061,      34998]
-CellTagsIndexPosition[   1970018,      34995]
+NotebookDataLength[   1978884,      35203]
+NotebookOptionsPosition[   1971517,      35088]
+NotebookOutlinePosition[   1971913,      35105]
+CellTagsIndexPosition[   1971870,      35102]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell["Emmanuel edit", "Text",
- CellChangeTimes->{{3.760902693707977*^9, 
-  3.7609026987686596`*^9}},ExpressionUUID->"6dc2228f-b90c-4983-b545-\
-6c6eee40990c"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"\[IndentingNewLine]", 
-  StyleBox[
-   RowBox[{
-    RowBox[{"Competing", " ", "cells", 
-     RowBox[{"(", 
-      RowBox[{"self", " ", "renewal", " ", "regulated"}], ")"}]}], " ", 
-    "\[IndentingNewLine]", 
-    RowBox[{"Differentiations", " ", "=", " ", "1"}]}], "Title"]}]], "Input",
- CellChangeTimes->{{3.760590676092965*^9, 3.7605907804046383`*^9}},
- CellLabel->"In[1]:=",ExpressionUUID->"40c1b10f-ef6f-41cb-8dbb-be85ef5f5676"],
-
-Cell[BoxData[
- RowBox[{"cells", " ", "Competing", " ", "regulated", " ", "renewal", " ", 
-  "self"}]], "Output",
- CellChangeTimes->{3.760895711435658*^9},
- CellLabel->"Out[1]=",ExpressionUUID->"634f1eb3-9d7c-40b9-a769-ed5fb238a692"],
-
-Cell[BoxData["1"], "Output",
- CellChangeTimes->{3.760895711435658*^9},
- CellLabel->"Out[2]=",ExpressionUUID->"77a78c9e-c5d0-4681-a6fe-8f54868b443a"]
-}, Open  ]],
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{"Competing", " ", "cells", 
+    RowBox[{"(", 
+     RowBox[{"self", " ", "renewal", " ", "regulated"}], ")"}]}], " "}], 
+  "Subsection"], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"Differentiations", " ", "=", " ", "1"}], "Subsection"]}], "Input",
+ CellChangeTimes->{{3.760590676092965*^9, 3.7605907804046383`*^9}, 
+   3.760902989799582*^9},ExpressionUUID->"40c1b10f-ef6f-41cb-8dbb-\
+be85ef5f5676"],
 
 Cell[CellGroupData[{
 
@@ -155,6 +138,7 @@ Cell[BoxData[
         RowBox[{"Y", "[", "t", "]"}], "/.", "solution1"}], ",", 
        RowBox[{
         RowBox[{"Z", "[", "t", "]"}], "/.", "solution1"}]}], " ", "}"}], ",", 
+     
      RowBox[{"{", 
       RowBox[{"t", ",", "0", ",", "200"}], "}"}], ",", 
      RowBox[{"PlotStyle", "\[Rule]", "Thick"}], ",", 
@@ -374,6 +358,7 @@ RfDtJJ/8+P8fwQcAU+ocAQ==
                     
                     LineBox[{{26.55083773506282, 29.24251110349573}, {
                     26.551608927409905`, 29.24251998446846}}], 
+                    
                     LineBox[{{33.61533824705296, 29.24251998446846}, {
                     33.62332010898972, 29.24251110349573}}], 
                     
@@ -506,7 +491,8 @@ IJRfbnauMQrCMX1vmigvCBtLzLwevw7CT9p0NunkGphkBnCo7sFIf7qVu0YZ
 DINywS6TT0Jw3t+15ve1IRBNLRuqKw2BPWVfEnUkBHNRI2/OU0Jxr1hUQEsL
 xRF3bsfnk6FgdK7Q7NglRkJqyv7gnjCwZ2+kNTxaiyU5Nok2b8I/uumjUVjI
 X+ZZ9Db6g1nbP3YJcs7klXdkx+PDl9iJfwBQyKL6
-        "], {Developer`PackedArrayForm, CompressedData["
+        "], {
+        Developer`PackedArrayForm, CompressedData["
 1:eJwl0gFHnAEAgOFvSZIkSZKknSRJkiRJkiQnyUmSnJwkSSVJkpwkSWYmmWRm
 ZiaZSSaZmZmVJJmZmSRJkswkk8z0ZC/PP3gfxoYigw+CINgO/pdAIkkkk0Iq
 aaSTQSZZZJNDLnnkE6KAQooopoRSyiingkqqqKaGWuqop4FGmgjTTAutRGij
@@ -637,6 +623,7 @@ skdpDi5QfvO9SWr2QekOrlB+aJvi8o5d6Q7uUH77T+6DM7Qz4HzXXTfYtaYi
                     
                     LineBox[{{19.24340275589843, 21.514968937988954`}, {
                     19.24347661408603, 21.51496299788853}}], 
+                    
                     LineBox[{{26.550868756536882`, 21.51496299788853}, {
                     26.55163991733758, 21.514968937988954`}}], 
                     
@@ -895,7 +882,8 @@ IJRfbnauMQrCMX1vmigvCBtLzLwevw7CT9p0NunkGphkBnCo7sFIf7qVu0YZ
 DINywS6TT0Jw3t+15ve1IRBNLRuqKw2BPWVfEnUkBHNRI2/OU0Jxr1hUQEsL
 xRF3bsfnk6FgdK7Q7NglRkJqyv7gnjCwZ2+kNTxaiyU5Nok2b8I/uumjUVjI
 X+ZZ9Db6g1nbP3YJcs7klXdkx+PDl9iJfwBQyKL6
-        "], {Developer`PackedArrayForm, CompressedData["
+        "], {
+        Developer`PackedArrayForm, CompressedData["
 1:eJwl0gFHnAEAgOFvSZIkSZKknSRJkiRJkiQnyUmSnJwkSSVJkpwkSWYmmWRm
 ZiaZSSaZmZmVJJmZmSRJkswkk8z0ZC/PP3gfxoYigw+CINgO/pdAIkkkk0Iq
 aaSTQSZZZJNDLnnkE6KAQooopoRSyiingkqqqKaGWuqop4FGmgjTTAutRGij
@@ -1143,7 +1131,6 @@ wGytr9NSHe5C+XH3Vwp2sKc5/IDyZX1mqc4pSHP4AuXbtDy7VPYIId98b5Ka
 fVC6w18oP7RNcXnHrnSH/1B++0/ugzO0M+B811032LWmZjgwQN1vJ/kEaBSC
 DwCVIEYq
                     "]], 
-                    
                     LineBox[{{13.187676961321344`, 39.99999592569769}, {
                     13.187678644542164`, 40.00000248019042}}], 
                     
@@ -1285,7 +1272,8 @@ IJRfbnauMQrCMX1vmigvCBtLzLwevw7CT9p0NunkGphkBnCo7sFIf7qVu0YZ
 DINywS6TT0Jw3t+15ve1IRBNLRuqKw2BPWVfEnUkBHNRI2/OU0Jxr1hUQEsL
 xRF3bsfnk6FgdK7Q7NglRkJqyv7gnjCwZ2+kNTxaiyU5Nok2b8I/uumjUVjI
 X+ZZ9Db6g1nbP3YJcs7klXdkx+PDl9iJfwBQyKL6
-        "], {Developer`PackedArrayForm, CompressedData["
+        "], {
+        Developer`PackedArrayForm, CompressedData["
 1:eJwl0gFHnAEAgOFvSZIkSZKknSRJkiRJkiQnyUmSnJwkSSVJkpwkSWYmmWRm
 ZiaZSSaZmZmVJJmZmSRJkswkk8z0ZC/PP3gfxoYigw+CINgO/pdAIkkkk0Iq
 aaSTQSZZZJNDLnnkE6KAQooopoRSyiingkqqqKaGWuqop4FGmgjTTAutRGij
@@ -1572,7 +1560,8 @@ vv5zb+K52aw9x6DrnxkXaHkbDx+Dnn+2Tel7pZh/DEb+uVCp7Gz22LH/v79n
 RXew+ef3+WHyxJPuYPfPI7Kjj0vL3cH+n1cq9ununXMHh38O1xgKsVHygEP/
 vFkdWHnhuAc4/XNBkGMEbbkHeo/9a1MlQ3L4ogcc+edtrbiek2qe4PzPrU6K
 Xj4n/2fcVqvSypr/uaTUf3lz83/+P9Q4hm0=
-          "]]}, Annotation[#, "Charting`Private`Tag$5519#1"]& ], 
+          "]]}, 
+        Annotation[#, "Charting`Private`Tag$5519#1"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -1760,7 +1749,8 @@ qcc2sPbPOdKFQRkzNv8/v0Nb/nSHmC2w/rOo9TP9bVdbEPpnqr7C4LwXtiD/
 z0PaFUX/zdmC6j/3rXG46UjZAeGfex5fPYH3tAP1f54Sny4pKLID4j9vFBuo
 8C/9zwHYCT8jaXsg/fNuuUfpjcv2oPHPT7wsAimL7EHzn3WlNUgBq//z3hZc
 v6e8w/+7xVLK0dnzf8bRnSkorfifXxa4re/u/s//BxJatX0=
-          "]]}, Annotation[#, "Charting`Private`Tag$5519#2"]& ], 
+          "]]}, 
+        Annotation[#, "Charting`Private`Tag$5519#2"]& ], 
        TagBox[{
          Directive[
           Opacity[1.], 
@@ -1957,7 +1947,8 @@ J93g5T/TfCyLKHrgBtP/PECuKT864wZ//vnjCo+fgZw7rPxz171QGcxpd1j6
 569Sk09Ky/+7/rvCVPvgovv/7w9THTtrIe8BG/+8XR1QefmUB2z9c36g3Xnq
 cg/Y/mdDeRIxbPk/72rR7Dut7Pl/t9jLeZ04/Z81dx4prazxBKp/+XxU6oc8
 J/7z/wDYyxGv
-          "]]}, Annotation[#, "Charting`Private`Tag$5519#3"]& ]}}, {}, {}}, {
+          "]]}, 
+        Annotation[#, "Charting`Private`Tag$5519#3"]& ]}}, {}, {}}, {
     DisplayFunction -> Identity, Ticks -> {Automatic, Automatic}, 
      AxesOrigin -> {0, 0}, FrameTicks -> {{Automatic, 
         Charting`ScaledFrameTicks[{Identity, Identity}]}, {Automatic, 
@@ -2130,8 +2121,9 @@ J/7z/wDYyxGv
                     0.4731986666666667], FrameTicks -> None, PlotRangePadding -> 
                     None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.368417`", ",", "0.506779`", ",", "0.709798`"}],
@@ -2178,8 +2170,9 @@ J/7z/wDYyxGv
                     0.587148, 0.40736066666666665`, 0.09470066666666668], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.880722`", ",", "0.611041`", ",", "0.142051`"}],
@@ -2226,8 +2219,9 @@ J/7z/wDYyxGv
                     0.37345400000000006`, 0.461046, 0.12992333333333334`], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.560181`", ",", "0.691569`", ",", "0.194885`"}],
@@ -2303,21 +2297,24 @@ J/7z/wDYyxGv
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
- RowBox[{"\[IndentingNewLine]", 
-  StyleBox[
-   RowBox[{
-    RowBox[{"Competing", " ", "cells", 
-     RowBox[{"(", 
-      RowBox[{"self", " ", "renewal", " ", "regulated"}], ")"}]}], " ", 
-    "\[IndentingNewLine]", 
-    RowBox[{"Differentiations", " ", "=", " ", "1"}], "\[IndentingNewLine]", 
-    RowBox[{"Perturbed", " ", "from", " ", "steady", " ", "state"}]}], 
-   "Title"]}]], "Input",
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{"Competing", " ", "cells", 
+    RowBox[{"(", 
+     RowBox[{"self", " ", "renewal", " ", "regulated"}], ")"}]}], " "}], 
+  "Section"], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"Differentiations", " ", "=", " ", "1"}], 
+  "Section"], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"Perturbed", " ", "from", " ", "steady", " ", "state"}], 
+  "Section"]}], "Input",
  CellChangeTimes->{{3.7605907516643705`*^9, 3.7605907568054986`*^9}, {
-  3.7605907902153053`*^9, 3.760590791581293*^9}, {3.760590854932575*^9, 
-  3.760590877024151*^9}},
- CellLabel->"In[9]:=",ExpressionUUID->"1f102572-1f9f-431e-b1dd-f36a7aebd007"],
+   3.7605907902153053`*^9, 3.760590791581293*^9}, {3.760590854932575*^9, 
+   3.760590877024151*^9}, 
+   3.760903025550207*^9},ExpressionUUID->"1f102572-1f9f-431e-b1dd-\
+f36a7aebd007"],
 
 Cell[BoxData[
  RowBox[{"cells", " ", "Competing", " ", "regulated", " ", "renewal", " ", 
@@ -2528,8 +2525,9 @@ Cell[BoxData[
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -2624,8 +2622,9 @@ CeEDAHcY0WY=
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -2681,8 +2680,9 @@ CeEDAHcY0WY=
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -2777,8 +2777,9 @@ CeEDAHcY0WY=
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -3413,8 +3414,9 @@ QQr5f31HUohR6Fa6wf8BaRDfEw==
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -3442,7 +3444,6 @@ QQr5f31HUohR6Fa6wf8BaRDfEw==
                      23.755175673941107`}, {74.5693842213934, 
                     23.739413516183546`}, {74.5961408664914, 
                     23.880481937808906`}}], 
-                    
                     LineBox[{{90.08290088264921, 23.880481937808906`}, {
                     91.40742126164533, 23.619572529298843`}, {
                     94.95369001990751, 23.728898638838178`}, {
@@ -3509,8 +3510,9 @@ x650h6J7n8D89p/cB2doZziwc0DkXXfdYNeamuGwnB3Ct5N88uP//wwHnTMQ
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -3566,8 +3568,9 @@ x650h6J7n8D89p/cB2doZziwc0DkXXfdYNeamuGwnB3Ct5N88uP//wwHnTMQ
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -3662,8 +3665,9 @@ x650h6J7n8D89p/cB2doZziwc0DkXXfdYNeamuGwnB3Ct5N88uP//wwHnTMQ
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -4297,8 +4301,9 @@ pVyt//2v73a4lQVnvddT6vj/julS//m7NETv/wCByzd3
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -4347,6 +4352,7 @@ T5MdRO9/+wtS/6ZxpWODX4pDZEguA0ieN01yz939KQ4zbmwE88NyXt7R0E91
 ULsoCeZrHZit9XVaqsOug+f/g/TH3V8p2MGe5nDFchuYL+szS3VOQZrDsdOX
 wHyblmeXyh6lOfh0fQPzm+9NUrMPSndYPfc3mB/apri8Y1e6w/qNf8H89p/c
 B2doZzg47/0P5rvuusGuNTXDYR0PA9h+O8knP/7/z3Dg+A2RBwA9o76T
+                    
                     "]], 
                     
                     LineBox[{{2.4195358573849632`, 39.29244874708416}, {
@@ -4372,8 +4378,8 @@ B2doZzg47/0P5rvuusGuNTXDYR0PA9h+O8knP/7/z3Dg+A2RBwA9o76T
                     
                     LineBox[{{107.661918320554, 40.48656976626767}, {
                     107.7648628178454, 39.29244874708416}}]}, 
-                    Annotation[#, 
-                    "Charting`Private`Tag$14442#1"]& ]}}, {}, {}}, {
+                    Annotation[#, "Charting`Private`Tag$14442#1"]& ]}}, {}, {}
+                   }, {
                   DisplayFunction -> Identity, 
                    Ticks -> {Automatic, Automatic}, 
                    AxesOrigin -> {0, 39.29244874708416}, 
@@ -4397,8 +4403,9 @@ B2doZzg47/0P5rvuusGuNTXDYR0PA9h+O8knP/7/z3Dg+A2RBwA9o76T
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -4454,8 +4461,9 @@ B2doZzg47/0P5rvuusGuNTXDYR0PA9h+O8knP/7/z3Dg+A2RBwA9o76T
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -4504,6 +4512,7 @@ T5MdRO9/+wtS/6ZxpWODX4pDZEguA0ieN01yz939KQ4zbmwE88NyXt7R0E91
 ULsoCeZrHZit9XVaqsOug+f/g/TH3V8p2MGe5nDFchuYL+szS3VOQZrDsdOX
 wHyblmeXyh6lOfh0fQPzm+9NUrMPSndYPfc3mB/apri8Y1e6w/qNf8H89p/c
 B2doZzg47/0P5rvuusGuNTXDYR0PA9h+O8knP/7/z3Dg+A2RBwA9o76T
+                    
                     "]], 
                     
                     LineBox[{{2.4195358573849632`, 39.29244874708416}, {
@@ -4554,8 +4563,9 @@ B2doZzg47/0P5rvuusGuNTXDYR0PA9h+O8knP/7/z3Dg+A2RBwA9o76T
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -7112,8 +7122,9 @@ Cell[BoxData[
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -7204,8 +7215,9 @@ H2wh/PdCq3/931/kIGsJ4QMA5xwwnQ==
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -7261,8 +7273,9 @@ H2wh/PdCq3/931/kIGsJ4QMA5xwwnQ==
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -7313,9 +7326,9 @@ H2wh/PdCq3/931/kIGsJ4QMA5xwwnQ==
                     
                     LineBox[{{49.01445816882923, 14.656733908514472`}, {
                     49.036818598075754`, 14.655071853492306`}}], 
+                    
                     LineBox[{{55.10389647919882, 14.655071853492306`}, {
                     55.154692086424575`, 14.656733908514472`}}], 
-                    
                     LineBox[{{63.39480810474329, 14.656733908514472`}, {
                     63.53183525595778, 14.655071853492306`}}], 
                     
@@ -7352,8 +7365,9 @@ H2wh/PdCq3/931/kIGsJ4QMA5xwwnQ==
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -7514,6 +7528,7 @@ BZdccc1v/nDDLXfc88AjTzzzwitvvPPBJ18E/K1/AgkimBBCCSOcCCKJIpoY
 YokjngQSSSKZFFJJI50MMskimxxyySOfAgopopgSSimjnAoqqaKaGmqpo54G
 GmmimRZaaaOdDjrpopseeumjnwEGGWKYEUYZY5z/AfRd1+E=
          "], CompressedData["
+
 1:eJwt13c8Vf//AHBE9s6MsjPuca+9cs+LZG+StEihPpmFZBcqhEpWRKWokJVR
 3HMrMtKwCSEyUyIjGb9z+/7uf8/He7xer/c451zJE772p+jp6OhSttH9/48A
 j/z02XofyEPH9ckhIdznHObYvuO+fW7sJRG3X1UBO32+PKi8lt+ux0mAojNb
@@ -7690,8 +7705,9 @@ FzlZMw2z+v8Dzqgacw==
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -7733,6 +7749,7 @@ wWQ1hH9QJbL22elCh6R1EL767xMTNikUOXishfC3dj9qvZ9f5CC7CsJ/L7T6
                     
                     LineBox[{{28.224633138000716`, 14.32379111993986}, {
                     28.2270866991551, 14.324603338849093`}}], 
+                    
                     LineBox[{{34.33700061952075, 14.324603338849093`}, {
                     34.34224441257785, 14.32379111993986}}], 
                     
@@ -7781,8 +7798,9 @@ wWQ1hH9QJbL22elCh6R1EL767xMTNikUOXishfC3dj9qvZ9f5CC7CsJ/L7T6
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -7838,8 +7856,9 @@ wWQ1hH9QJbL22elCh6R1EL767xMTNikUOXishfC3dj9qvZ9f5CC7CsJ/L7T6
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -7866,6 +7885,7 @@ vy3dnndZa4HDwxMQvthOY5nSKwUOB+5A+HqPdeRuahY6nDoI4T9WexezvrbQ
 wWQ1hH9QJbL22elCh6R1EL767xMTNikUOXishfC3dj9qvZ9f5CC7CsJ/L7T6
 1//9RQ6HlkP4AIjoF6o=
                     "]], 
+                    
                     LineBox[{{0.2647623356124451, 14.32379111993986}, {
                     0.26542653433933494`, 14.324603338849093`}}], 
                     
@@ -7883,7 +7903,6 @@ wWQ1hH9QJbL22elCh6R1EL767xMTNikUOXishfC3dj9qvZ9f5CC7CsJ/L7T6
                     
                     LineBox[{{34.33700061952075, 14.324603338849093`}, {
                     34.34224441257785, 14.32379111993986}}], 
-                    
                     LineBox[{{42.418196834138776`, 14.32379111993986}, {
                     42.439031612635596`, 14.324603338849093`}}], 
                     
@@ -7929,8 +7948,9 @@ wWQ1hH9QJbL22elCh6R1EL767xMTNikUOXishfC3dj9qvZ9f5CC7CsJ/L7T6
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -8091,6 +8111,7 @@ BZdccc1v/nDDLXfc88AjTzzzwitvvPPBJ18E/K1/AgkimBBCCSOcCCKJIpoY
 YokjngQSSSKZFFJJI50MMskimxxyySOfAgopopgSSimjnAoqqaKaGmqpo54G
 GmmimRZaaaOdDjrpopseeumjnwEGGWKYEUYZY5z/AfRd1+E=
          "], CompressedData["
+
 1:eJwt13c8V9//AHCERJGRrOztvu093ucoI2SnKGSTCEVW9sjM1qAhKZtIme/7
 ztanYW8iI1upjCK/+/b9vf97Pl73vF6vc+45974vn4OXmTM5GRlZ6iGy//8h
 8IW3Bu1QPhtcrlxbo8O8IZ+cMI35vf/XiZOYcUdHaVcwM66xN+RSI9BDaS7i
@@ -8266,15 +8287,15 @@ vH2jeaFGcMn/rLG+4fuC20mj+eX//EpxplQ2X7np/wBvFhBc
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
                     RGBColor[0.368417, 0.506779, 0.709798], 
                     AbsoluteThickness[1]], 
-                    
                     LineBox[{{70.45673633758, 50.90346734806581}, {
                     70.8167961003146, 50.90728482706499}, {72.36461093800509, 
                     50.91258311749396}}], 
@@ -8355,8 +8376,9 @@ OnI3NQsd3l2A8B+rvYtZX1vosP48hH9QJbL22elCh9ybEL767xMTNikUOSRB
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -8412,8 +8434,9 @@ OnI3NQsd3l2A8B+rvYtZX1vosP48hH9QJbL22elCh9ybEL767xMTNikUOSRB
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -8452,7 +8475,6 @@ OnI3NQsd3l2A8B+rvYtZX1vosP48hH9QJbL22elCh9ybEL767xMTNikUOSRB
                     
                     LineBox[{{23.309934137635462`, 50.91258311749396}, {
                     23.313384720383723`, 50.90346734806581}}], 
-                    
                     LineBox[{{29.23879377293933, 50.90346734806581}, {
                     29.24584016515683, 50.91258311749396}}], 
                     
@@ -8501,8 +8523,9 @@ OnI3NQsd3l2A8B+rvYtZX1vosP48hH9QJbL22elCh9ybEL767xMTNikUOSRB
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -8663,6 +8686,7 @@ BZdccc1v/nDDLXfc88AjTzzzwitvvPPBJ18E/K1/AgkimBBCCSOcCCKJIpoY
 YokjngQSSSKZFFJJI50MMskimxxyySOfAgopopgSSimjnAoqqaKaGmqpo54G
 GmmimRZaaaOdDjrpopseeumjnwEGGWKYEUYZY5z/AfRd1+E=
          "], CompressedData["
+
 1:eJw913k4VV0XAPCLkMiUWcYQGRKFxD2LTNc8FTKLUoZQMpYxRYQQJSIZSrMx
 1T1HZKxIMpOUjAkVCvnOvbyf/37PWnuvtfc+ez+umNspSw8aAoGQQkf4/1+V
 8IUpi2pZYJdxW7jRuwsJdqYrd8bd0a5fkN+rjhjapoX74Oau/OT3uTYHOW4Y
@@ -8831,8 +8855,9 @@ V7dTOqb54P26F1/UCvJrZWlKdqw7ev/Hqo/N0pr/A+EsmW8=
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -8913,8 +8938,9 @@ X/7Cl/vmhgUOcyb+B/Pb0u15l7UWOLRdgPDFdhrLlF4pcNC4C+HrPdaRu6lZ
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -8970,8 +8996,9 @@ X/7Cl/vmhgUOcyb+B/Pb0u15l7UWOLRdgPDFdhrLlF4pcNC4C+HrPdaRu6lZ
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -9051,8 +9078,9 @@ X/7Cl/vmhgUOcyb+B/Pb0u15l7UWOLRdgPDFdhrLlF4pcNC4C+HrPdaRu6lZ
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -9213,6 +9241,7 @@ BZdccc1v/nDDLXfc88AjTzzzwitvvPPBJ18E/K1/AgkimBBCCSOcCCKJIpoY
 YokjngQSSSKZFFJJI50MMskimxxyySOfAgopopgSSimjnAoqqaKaGmqpo54G
 GmmimRZaaaOdDjrpopseeumjnwEGGWKYEUYZY5z/AfRd1+E=
          "], CompressedData["
+
 1:eJxl13c8le//B/Bjk4zsVUakFB2SzHNdthSRbBVKRgNJZR+JJGWVrBCyFZWR
 OPctRWQnK2V/SFZWtu99Dv3++fnv+Xi9r+t6X+M8jiNq73ragQqHw0XS4P7f
 n1JqkLGAlCghSvwDPqhMFLjxlF7biygR3tNm0ASUyYJW+/dhViwLBOs2g9n7
@@ -10951,8 +10980,9 @@ Cell[BoxData[
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -11040,8 +11070,9 @@ Coe/xw5cvgXku+66wa41tcKhOm1JIIhvJ/nkx///FQ7WizJqQXwANQGUew==
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -11097,8 +11128,9 @@ Coe/xw5cvgXku+66wa41tcKhOm1JIIhvJ/nkx///FQ7WizJqQXwANQGUew==
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -11152,7 +11184,6 @@ Coe/xw5cvgXku+66wa41tcKhOm1JIIhvJ/nkx///FQ7WizJqQXwANQGUew==
                     
                     LineBox[{{188.77027925159985`, 14.308233864573555`}, {
                     189.49875035500565`, 6.177950561930769}}], 
-                    
                     LineBox[{{198.19723041135506`, 6.177950561930769}, {
                     201.16977977774962`, 14.308233864573555`}}], 
                     
@@ -11186,8 +11217,9 @@ Coe/xw5cvgXku+66wa41tcKhOm1JIIhvJ/nkx///FQ7WizJqQXwANQGUew==
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -12210,7 +12242,8 @@ zne50JqtBhW/7PKr4rbyfKA9z8XTN/LlVl3nsrgC/dklor7V+XnVwvcHetCy
 HKZYu0N8VdayuRZ055Z0TlbY9Sod8VFt6CIXRdkmrRCi9nOCAbS7fH7DSuIj
 4sK9EPOd47fd161+kkTUiTC5Dm05tzhlNpJMlNh/3A06LZKfQ1c3idh+Ufcm
 9JzgwZwgl3hiisZd353zkbGjVI95RPyZZecPfX9/dEP4zYfE/wH2b1K8
-         "]}, {Automatic}],
+         "]}, {
+        Automatic}],
        Editable->False,
        SelectWithContents->True,
        Selectable->False], "[", "t", "]"}]}], ",", 
@@ -12233,8 +12266,9 @@ HKZYu0N8VdayuRZ055Z0TlbY9Sod8VFt6CIXRdkmrRCi9nOCAbS7fH7DSuIj
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -12251,6 +12285,7 @@ Q+rUHHhSWwS+/Qh1yPf6XTixFqi+2LiFY3a4w+egKUx3gHy59YGxpgmRDmzz
 4+cfAfJbiz+cl5CNdihIOFZ+CsiXzJP4xrAnxuFWV/UMEP9vX4mrDmesQ25A
 tY9Or5YDAM5OfKQ=
                     "]], 
+                    
                     LineBox[{{127.0911247142217, 13.275728597691534`}, {
                     128.53190632160272`, 10.516869334330979`}, {
                     130.33570391378413`, 8.870462741514524}}], 
@@ -12279,6 +12314,7 @@ p+bAmya55+7+EodfqhmmIbVqDmE5L+9o6Jc67GW6uvUjkK91YLbW12mlDvHL
 utkPA/lx91cKdrCXOXhqvyw4CeTL+sxSnVNQ5iAmMd/2DJBv0/LsUtmjMoe4
 zrUBJ4D85nuT1OyDyh2+LumafQrID21TXN6xq9zh2H2FSJD+9p/cB2doVziU
 /ub8DeK77rrBrjW1wmHthnlbQXw7ySc//v+vcDg2+ccZEB8AtMic+w==
+                    
                     "]], 
                     
                     LineBox[{{138.5352710915199, 8.870462741514524}, {
@@ -12292,6 +12328,7 @@ zrUBJ4D85nuT1OyDyh2+LumafQrID21TXN6xq9zh2H2FSJD+9p/cB2doVziU
                     
                     LineBox[{{249.03533112781668`, 13.275728597691534`}, {
                     249.73192013664584`, 8.870462741514524}}], 
+                    
                     LineBox[{{259.4148092188535, 8.870462741514524}, {
                     262.8184687637799, 13.275728597691534`}}]}, 
                     Annotation[#, 
@@ -12319,8 +12356,9 @@ zrUBJ4D85nuT1OyDyh2+LumafQrID21TXN6xq9zh2H2FSJD+9p/cB2doVziU
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -12376,8 +12414,9 @@ zrUBJ4D85nuT1OyDyh2+LumafQrID21TXN6xq9zh2H2FSJD+9p/cB2doVziU
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -12423,6 +12462,7 @@ p+bAmya55+7+EodfqhmmIbVqDmE5L+9o6Jc67GW6uvUjkK91YLbW12mlDvHL
 utkPA/lx91cKdrCXOXhqvyw4CeTL+sxSnVNQ5iAmMd/2DJBv0/LsUtmjMoe4
 zrUBJ4D85nuT1OyDyh2+LumafQrID21TXN6xq9zh2H2FSJD+9p/cB2doVziU
 /ub8DeK77rrBrjW1wmHthnlbQXw7ySc//v+vcDg2+ccZEB8AtMic+w==
+                    
                     "]], 
                     
                     LineBox[{{138.5352710915199, 8.870462741514524}, {
@@ -12430,7 +12470,6 @@ zrUBJ4D85nuT1OyDyh2+LumafQrID21TXN6xq9zh2H2FSJD+9p/cB2doVziU
                     
                     LineBox[{{187.55358388739128`, 13.275728597691534`}, {
                     188.7225558063949, 8.870462741514524}}], 
-                    
                     LineBox[{{199.02189858083744`, 8.870462741514524}, {
                     201.85971346983985`, 13.275728597691534`}}], 
                     
@@ -12464,8 +12503,9 @@ zrUBJ4D85nuT1OyDyh2+LumafQrID21TXN6xq9zh2H2FSJD+9p/cB2doVziU
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -13484,7 +13524,8 @@ emdTE2PtiSdVV6U3P0InF1ku9vx4XLWPgaYKGi/UrLpcnlC1rRD/Htr/27ta
 h+aQqlhWrXxoOa4IuvP05lVv5bn+H8+/s45EoYce5OzDLkXQy8x6BdI9d8gt
 SZfLoZdY+6yVFcLJtlsvqqFVTRZfhNyLIOfxjdRDv+Cs9H02cpdsyF/SDK0i
 15Fl/imELJ3l1gIdLC1FtfXpDrnswXordFHKfoLh/UDyf/U26Es=
-         "]}, {Automatic}],
+         "]}, {
+        Automatic}],
        Editable->False,
        SelectWithContents->True,
        Selectable->False], "[", "t", "]"}]}], ",", 
@@ -13507,8 +13548,9 @@ SZfLoZdY+6yVFcLJtlsvqqFVTRZfhNyLIOfxjdRDv+Cs9H02cpdsyF/SDK0i
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -13571,6 +13613,7 @@ gfh2kk9+/P9f4fCytCIdxAcAwDaLeA==
                     
                     LineBox[{{16.5463468948274, 51.144687038366826`}, {
                     19.251601833441573`, 62.02365262795577}}], 
+                    
                     LineBox[{{133.99950988137027`, 62.02365262795577}, {
                     134.4242400554091, 51.144687038366826`}}], 
                     
@@ -13582,7 +13625,6 @@ gfh2kk9+/P9f4fCytCIdxAcAwDaLeA==
                     
                     LineBox[{{200.5907431009542, 51.144687038366826`}, {
                     201.93684458811438`, 62.02365262795577}}], 
-                    
                     LineBox[{{260.8423698458308, 51.144687038366826`}, {
                     262.2166651743427, 62.02365262795577}}], 
                     
@@ -13613,8 +13655,9 @@ gfh2kk9+/P9f4fCytCIdxAcAwDaLeA==
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -13670,8 +13713,9 @@ gfh2kk9+/P9f4fCytCIdxAcAwDaLeA==
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -13777,8 +13821,9 @@ gfh2kk9+/P9f4fCytCIdxAcAwDaLeA==
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -14813,8 +14858,9 @@ pKEQGOD0f703O6xI4z82O+mP
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -14864,6 +14910,7 @@ uDjwpknuubu/xGFWXMkdaSA/LOflHQ39UgdJM369+/+dHbQOzNb6Oq3UIUaw
 vVgKKB93f6VgB3uZw4u3W9U+A+VlfWapzikoczg2u/weK1DepuXZpbJHZQ76
 zV57/gLlm+9NUrMPKneYLN58kgEoH9qmuLxjV7nDa6+nN/4D5dt/ch+coV3h
 MOMo718Q33XXDXatqRUOafJd/CD1dpJPfvz/X+HwUHXSZ5A8ANoom34=
+                    
                     "]], 
                     
                     LineBox[{{2.404291544273341, 34.233790535811806`}, {
@@ -14877,7 +14924,6 @@ MOMo718Q33XXDXatqRUOafJd/CD1dpJPfvz/X+HwUHXSZ5A8ANoom34=
                     
                     LineBox[{{122.5853827656222, 34.233790535811806`}, {
                     122.79290075130766`, 44.15976662882886}}], 
-                    
                     LineBox[{{134.94191698143084`, 44.15976662882886}, {
                     135.17369799018869`, 34.233790535811806`}}], 
                     
@@ -14923,8 +14969,9 @@ MOMo718Q33XXDXatqRUOafJd/CD1dpJPfvz/X+HwUHXSZ5A8ANoom34=
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -14980,8 +15027,9 @@ MOMo718Q33XXDXatqRUOafJd/CD1dpJPfvz/X+HwUHXSZ5A8ANoom34=
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -15031,6 +15079,7 @@ uDjwpknuubu/xGFWXMkdaSA/LOflHQ39UgdJM369+/+dHbQOzNb6Oq3UIUaw
 vVgKKB93f6VgB3uZw4u3W9U+A+VlfWapzikoczg2u/weK1DepuXZpbJHZQ76
 zV57/gLlm+9NUrMPKneYLN58kgEoH9qmuLxjV7nDa6+nN/4D5dt/ch+coV3h
 MOMo718Q33XXDXatqRUOafJd/CD1dpJPfvz/X+HwUHXSZ5A8ANoom34=
+                    
                     "]], 
                     
                     LineBox[{{2.404291544273341, 34.233790535811806`}, {
@@ -15041,6 +15090,7 @@ MOMo718Q33XXDXatqRUOafJd/CD1dpJPfvz/X+HwUHXSZ5A8ANoom34=
                     
                     LineBox[{{16.40227491028514, 34.233790535811806`}, {
                     19.659301897782576`, 44.15976662882886}}], 
+                    
                     LineBox[{{122.5853827656222, 34.233790535811806`}, {
                     122.79290075130766`, 44.15976662882886}}], 
                     
@@ -15058,7 +15108,6 @@ MOMo718Q33XXDXatqRUOafJd/CD1dpJPfvz/X+HwUHXSZ5A8ANoom34=
                     
                     LineBox[{{245.4941218205505, 34.233790535811806`}, {
                     246.18839581249046`, 44.15976662882886}}], 
-                    
                     LineBox[{{254.96981192612125`, 44.15976662882886}, {
                     255.64957230432586`, 34.233790535811806`}}], 
                     
@@ -15089,8 +15138,9 @@ MOMo718Q33XXDXatqRUOafJd/CD1dpJPfvz/X+HwUHXSZ5A8ANoom34=
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -18702,8 +18752,9 @@ Cell[BoxData[
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -18759,8 +18810,9 @@ wgEvEqxQc8sTRedQ5x6gUPJI7JimuAxuqcXdqB+yVrxJCOiNhebnajHSvcGM
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -18816,8 +18868,9 @@ wgEvEqxQc8sTRedQ5x6gUPJI7JimuAxuqcXdqB+yVrxJCOiNhebnajHSvcGM
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -18873,8 +18926,9 @@ wgEvEqxQc8sTRedQ5x6gUPJI7JimuAxuqcXdqB+yVrxJCOiNhebnajHSvcGM
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -19040,7 +19094,8 @@ yaQO9Qq43tETiHKpQCybV9PhxAqUuVMM/6uuQATH2zXtdxWwuifZdJazEnI+
 cZ6r+pXg4n3Bb5dcie8PRZ7fvFuJF0FhiRwLlajf9VTWT6oKOV0CE0/cq/DQ
 OMJnV00V/rzqmwkZq8Ihm0PBT/eegddg9uIujzOodJmKIF84g/5R7eWn42fg
 GyL6l8RVjf//yYRq/A+/wWqj
-        "], {Developer`PackedArrayForm, CompressedData["
+        "], {
+        Developer`PackedArrayForm, CompressedData["
 1:eJwd1QFHIIgWBtB2XpIkSZIkbZIkSZIkSZIkbZIkSZIkaZMkSZIkSZIkSZIk
 SZIkyRhJkiRJkiRJxkiSJEn29C7H/QHfd92/G/6taPsrICDgnx8B/5/vFUgQ
 wYQQShjhRBBJFNHEEEsc8SSQSBLJpJBKGulkkEkW2eSQSx75FFBIEcWUUEoZ
@@ -19281,8 +19336,9 @@ IvpKza599qgg7L4QpdaETUwNWRy4JgB7WBYahE4SkbRTWzX9O374H5wRVyQ=
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -19338,8 +19394,9 @@ YwFB5+ipP9nozol0up5Af3+ijoo7pz+OHx33/z+fQNJx3bTqzaQ/+TrDxA==
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -19394,8 +19451,9 @@ YwFB5+ipP9nozol0up5Af3+ijoo7pz+OHx33/z+fQNJx3bTqzaQ/+TrDxA==
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -19451,8 +19509,9 @@ YwFB5+ipP9nozol0up5Af3+ijoo7pz+OHx33/z+fQNJx3bTqzaQ/+TrDxA==
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -19617,7 +19676,8 @@ yaQO9Qq43tETiHKpQCybV9PhxAqUuVMM/6uuQATH2zXtdxWwuifZdJazEnI+
 cZ6r+pXg4n3Bb5dcie8PRZ7fvFuJF0FhiRwLlajf9VTWT6oKOV0CE0/cq/DQ
 OMJnV00V/rzqmwkZq8Ihm0PBT/eegddg9uIujzOodJmKIF84g/5R7eWn42fg
 GyL6l8RVjf//yYRq/A+/wWqj
-        "], {Developer`PackedArrayForm, CompressedData["
+        "], {
+        Developer`PackedArrayForm, CompressedData["
 1:eJwd1QFHIIgWBtB2XpIkSZIkbZIkSZIkSZIkbZIkSZIkaZMkSZIkSZIkSZIk
 SZIkyRhJkiRJkiRJxkiSJEn29C7H/QHfd92/G/6taPsrICDgnx8B/5/vFUgQ
 wYQQShjhRBBJFNHEEEsc8SSQSBLJpJBKGulkkEkW2eSQSx75FFBIEcWUUEoZ
@@ -19861,8 +19921,9 @@ W4mZj7DF5yPD2XqC4G/UHP/1fSFGG/bhXVa2APwfGNVZxQ==
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -19890,8 +19951,8 @@ rj3j1Zj49dD5c9SyiXeiPZNqEJPKlnZQl/d6+P78pAYc2Wu2Huq0a+87zeUZ
 0K9e6mel5ptDD7bPG+BQ5yC9Ti2QOLnsV9WiUP5P3BD1mnEGx/q2EWK3gbgR
 ajG7odip1gh7/h/c0Ve/XvD34Jo6rGDu2n+Peubh9LCPqQ7mPt7cferHLyLt
 +fzTsF3XJExSjz4aVGV3n8bY4EjgQ2qtx6oX/wXXI9z9yNA09f/mgZbh
-                    "]]}, 
-                    Annotation[#, 
+                    
+                    "]]}, Annotation[#, 
                     "Charting`Private`Tag$13178#1"]& ]}}, {}, {}}, {
                   DisplayFunction -> Identity, 
                    Ticks -> {Automatic, Automatic}, 
@@ -19916,8 +19977,9 @@ ajG7odip1gh7/h/c0Ve/XvD34Jo6rGDu2n+Peubh9LCPqQ7mPt7cferHLyLt
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -19973,8 +20035,9 @@ ajG7odip1gh7/h/c0Ve/XvD34Jo6rGDu2n+Peubh9LCPqQ7mPt7cferHLyLt
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -20002,8 +20065,8 @@ rj3j1Zj49dD5c9SyiXeiPZNqEJPKlnZQl/d6+P78pAYc2Wu2Huq0a+87zeUZ
 0K9e6mel5ptDD7bPG+BQ5yC9Ti2QOLnsV9WiUP5P3BD1mnEGx/q2EWK3gbgR
 ajG7odip1gh7/h/c0Ve/XvD34Jo6rGDu2n+Peubh9LCPqQ7mPt7cferHLyLt
 +fzTsF3XJExSjz4aVGV3n8bY4EjgQ2qtx6oX/wXXI9z9yNA09f/mgZbh
-                    "]]}, 
-                    Annotation[#, 
+                    
+                    "]]}, Annotation[#, 
                     "Charting`Private`Tag$13178#1"]& ]}}, {}, {}}, {
                   DisplayFunction -> Identity, 
                    Ticks -> {Automatic, Automatic}, 
@@ -20028,8 +20091,9 @@ ajG7odip1gh7/h/c0Ve/XvD34Jo6rGDu2n+Peubh9LCPqQ7mPt7cferHLyLt
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -20195,7 +20259,8 @@ yaQO9Qq43tETiHKpQCybV9PhxAqUuVMM/6uuQATH2zXtdxWwuifZdJazEnI+
 cZ6r+pXg4n3Bb5dcie8PRZ7fvFuJF0FhiRwLlajf9VTWT6oKOV0CE0/cq/DQ
 OMJnV00V/rzqmwkZq8Ihm0PBT/eegddg9uIujzOodJmKIF84g/5R7eWn42fg
 GyL6l8RVjf//yYRq/A+/wWqj
-        "], {Developer`PackedArrayForm, CompressedData["
+        "], {
+        Developer`PackedArrayForm, CompressedData["
 1:eJwd1QFHIIgWBtB2XpIkSZIkbZIkSZIkSZIkbZIkSZIkaZMkSZIkSZIkSZIk
 SZIkyRhJkiRJkiRJxkiSJEn29C7H/QHfd92/G/6taPsrICDgnx8B/5/vFUgQ
 wYQQShjhRBBJFNHEEEsc8SSQSBLJpJBKGulkkEkW2eSQSx75FFBIEcWUUEoZ
@@ -20995,8 +21060,9 @@ Cell[BoxData[
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -21052,8 +21118,9 @@ CyhwnGaW1tbe/opJjfU5Cv8BUFKfUw==
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -21109,8 +21176,9 @@ CyhwnGaW1tbe/opJjfU5Cv8BUFKfUw==
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -21166,8 +21234,9 @@ CyhwnGaW1tbe/opJjfU5Cv8BUFKfUw==
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -21519,8 +21588,9 @@ dsQcrpicSe8DTHHHTwJ7O6JnZ5n6gHyAbr9MmN/rNjRsWsGldN4HRvekclP9
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -21576,8 +21646,9 @@ QLDbs7mlJTUyBrsUVRoB/gNhcKF2
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -21633,8 +21704,9 @@ QLDbs7mlJTUyBrsUVRoB/gNhcKF2
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -21690,8 +21762,9 @@ QLDbs7mlJTUyBrsUVRoB/gNhcKF2
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -22043,8 +22116,9 @@ ACs4Y/6cKa6jDfs/Cb7lTA==
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -22100,8 +22174,9 @@ dFhCjul87hKiV0K0enBLCTmK89b57ZsSy2bp0k6T/wPDtpcx
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -22157,8 +22232,9 @@ dFhCjul87hKiV0K0enBLCTmK89b57ZsSy2bp0k6T/wPDtpcx
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -22214,8 +22290,9 @@ dFhCjul87hKiV0K0enBLCTmK89b57ZsSy2bp0k6T/wPDtpcx
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -22566,8 +22643,9 @@ ptowIrn+pGcB6cdpV7f3Hw0j/ge+K6BY
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -22596,6 +22674,7 @@ KuTN3rv0GfmTB01L35OowfrYENVLlppjOw4MqvH4avrIbfL+6QXftSRocOOb
 gRXT5PWDd4P4Fg36Mm2+l+hfUrm/+QMBDSrmVU4lk/8DVK6Zsg==
                     "]], 
                     
+                    
                     LineBox[{{15.20535795600199, 143.36545226236478`}, {
                     16.323698421612466`, 144.09280178480185`}}]}, 
                     Annotation[#, 
@@ -22623,8 +22702,9 @@ gRXT5PWDd4P4Fg36Mm2+l+hfUrm/+QMBDSrmVU4lk/8DVK6Zsg==
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -22680,8 +22760,9 @@ gRXT5PWDd4P4Fg36Mm2+l+hfUrm/+QMBDSrmVU4lk/8DVK6Zsg==
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -22710,6 +22791,7 @@ KuTN3rv0GfmTB01L35OowfrYENVLlppjOw4MqvH4avrIbfL+6QXftSRocOOb
 gRXT5PWDd4P4Fg36Mm2+l+hfUrm/+QMBDSrmVU4lk/8DVK6Zsg==
                     "]], 
                     
+                    
                     LineBox[{{15.20535795600199, 143.36545226236478`}, {
                     16.323698421612466`, 144.09280178480185`}}]}, 
                     Annotation[#, 
@@ -22737,8 +22819,9 @@ gRXT5PWDd4P4Fg36Mm2+l+hfUrm/+QMBDSrmVU4lk/8DVK6Zsg==
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -23066,7 +23149,8 @@ mf/RG/rGASf0pndb4h5mrsmEsrAqJ8RbM1A78Z+93g9M3nRCfGljSyLYficu
 ZtrTnnZC0UtnX3tivnavuW7cygkV6erqjGOet4rJ+EjthJp4LDOssHmy+qhk
 wrvJEXnOK0Q3Yu5xjNg9HeaILD/GTMhj82jgAoeisIwjSouuqcjEfIpHn/fB
 kAPajEwY3sNMfyrWJjDOAYmYhm0ewubZ/kDt0ipbB/Q/E4PHyQ==
-         "]}, {Automatic}],
+         "]}, {
+        Automatic}],
        Editable->False,
        SelectWithContents->True,
        Selectable->False], "[", "t", "]"}]}]}], "}"}], "}"}]], "Output",
@@ -23681,8 +23765,9 @@ Cell[BoxData[
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -23763,8 +23848,9 @@ pwsdZKB89d8nJmxSKHKQg/K3dj9qvZ9f5KAA5b8XWv3r//4iByUoHwDuPSlJ
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -23820,8 +23906,9 @@ pwsdZKB89d8nJmxSKHKQg/K3dj9qvZ9f5KAA5b8XWv3r//4iByUoHwDuPSlJ
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -23902,8 +23989,9 @@ pwsdZKB89d8nJmxSKHKQg/K3dj9qvZ9f5KAA5b8XWv3r//4iByUoHwDuPSlJ
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -24013,7 +24101,8 @@ I/xJCZ4ovneg7kqPJ06/vSy86ZsnSv8e2z6q7YUKeamOPUwv8LDbzBvOeMF/
 VQ2iSmk+WCp5pWbR6ANqlxnriSITR6ePlO7KYmJAYnxY8jMTOemTAhxFPzhz
 3+vrOm6BQMQcoynOHw2Dw5mS1wOxVjU0YF0q67eUkN/yRvy2MwpFEleMTiMW
 Lod9ZVwPxuF/598Rj38AUe55gw==
-        "], {Developer`PackedArrayForm, CompressedData["
+        "], {
+        Developer`PackedArrayForm, CompressedData["
 1:eJwl02FHGAAABNBKJkkySZK0JEmSJEmSJEmSJEkmSZK0ZJIkSZIkSZIkSZIk
 yUySZJIkSZIkSZIkSZJJspd9eHd/4O5b/Y+K1sCAgICgz/hsgvlCCKGEEU4E
 X4kkimhiiCWOeBJIJIlkUkgljXQyyCSLbHLIJY98CiikiGJKKKWMciqopIpq
@@ -24135,8 +24224,9 @@ OYRpPg==
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -24179,6 +24269,7 @@ TNikUATnb+1+1Ho/v8jhHZT/Xmj1r//7i+DmAQBN4iLF
                     
                     LineBox[{{45.32608268445496, 11.771616535543641`}, {
                     45.326243380885096`, 11.771616415514726`}}], 
+                    
                     LineBox[{{54.69284751409358, 11.771616415514726`}, {
                     54.69404414786856, 11.771616535543641`}}], 
                     
@@ -24215,8 +24306,9 @@ TNikUATnb+1+1Ho/v8jhHZT/Xmj1r//7i+DmAQBN4iLF
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -24272,8 +24364,9 @@ TNikUATnb+1+1Ho/v8jhHZT/Xmj1r//7i+DmAQBN4iLF
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -24313,6 +24406,7 @@ TNikUATnb+1+1Ho/v8jhHZT/Xmj1r//7i+DmAQBN4iLF
                     
                     LineBox[{{38.26900150317544, 11.771616415514726`}, {
                     38.26908739388131, 11.771616535543641`}}], 
+                    
                     LineBox[{{45.32608268445496, 11.771616535543641`}, {
                     45.326243380885096`, 11.771616415514726`}}], 
                     
@@ -24321,7 +24415,6 @@ TNikUATnb+1+1Ho/v8jhHZT/Xmj1r//7i+DmAQBN4iLF
                     
                     LineBox[{{63.94671413745256, 11.771616535543641`}, {
                     63.95812050095686, 11.771616415514726`}}], 
-                    
                     LineBox[{{80.14822055642762, 11.771616535543641`}, {
                     80.34907251824413, 11.771616415514726`}}], 
                     
@@ -24352,8 +24445,9 @@ TNikUATnb+1+1Ho/v8jhHZT/Xmj1r//7i+DmAQBN4iLF
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -24463,7 +24557,8 @@ I/xJCZ4ovneg7kqPJ06/vSy86ZsnSv8e2z6q7YUKeamOPUwv8LDbzBvOeMF/
 VQ2iSmk+WCp5pWbR6ANqlxnriSITR6ePlO7KYmJAYnxY8jMTOemTAhxFPzhz
 3+vrOm6BQMQcoynOHw2Dw5mS1wOxVjU0YF0q67eUkN/yRvy2MwpFEleMTiMW
 Lod9ZVwPxuF/598Rj38AUe55gw==
-        "], {Developer`PackedArrayForm, CompressedData["
+        "], {
+        Developer`PackedArrayForm, CompressedData["
 1:eJwl02FHGAAABNBKJkkySZK0JEmSJEmSJEmSJEkmSZK0ZJIkSZIkSZIkSZIk
 yUySZJIkSZIkSZIkSZJJspd9eHd/4O5b/Y+K1sCAgICgz/hsgvlCCKGEEU4E
 X4kkimhiiCWOeBJIJIlkUkgljXQyyCSLbHLIJY98CiikiGJKKKWMciqopIpq
@@ -24584,8 +24679,9 @@ YliZ0qVG/wLHHkcF
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -24622,7 +24718,6 @@ ExM2KRQ5MEH5W7sftd7PL4Lrfy+0+tf//UUOLFA+AB92RRI=
                     
                     LineBox[{{39.403337559088996`, 55.99999718852652}, {
                     39.403625285898705`, 56.00000176072405}}], 
-                    
                     LineBox[{{48.45277029837659, 56.00000176072405}, {
                     48.45610117217716, 55.99999718852652}}], 
                     
@@ -24659,8 +24754,9 @@ ExM2KRQ5MEH5W7sftd7PL4Lrfy+0+tf//UUOLFA+AB92RRI=
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -24716,8 +24812,9 @@ ExM2KRQ5MEH5W7sftd7PL4Lrfy+0+tf//UUOLFA+AB92RRI=
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -24739,6 +24836,7 @@ B0rz4HxhSbVZZ+TzHcKh/AalOO+9x/IdpKB8+Qtf7psbFjj8h5rflm7Pu6y1
 wIETKi+201im9AqCr/dYR+6mZqEDM5T/WO1dzPraQgcGKP+gSmTts9MIvvrv
 ExM2KRQ5MEH5W7sftd7PL4Lrfy+0+tf//UUOLFA+AB92RRI=
                     "]], 
+                    
                     LineBox[{{3.673540497088959, 55.99999718852652}, {
                     3.6735407970199807`, 56.00000176072405}}], 
                     
@@ -24790,8 +24888,9 @@ ExM2KRQ5MEH5W7sftd7PL4Lrfy+0+tf//UUOLFA+AB92RRI=
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -24901,7 +25000,8 @@ I/xJCZ4ovneg7kqPJ06/vSy86ZsnSv8e2z6q7YUKeamOPUwv8LDbzBvOeMF/
 VQ2iSmk+WCp5pWbR6ANqlxnriSITR6ePlO7KYmJAYnxY8jMTOemTAhxFPzhz
 3+vrOm6BQMQcoynOHw2Dw5mS1wOxVjU0YF0q67eUkN/yRvy2MwpFEleMTiMW
 Lod9ZVwPxuF/598Rj38AUe55gw==
-        "], {Developer`PackedArrayForm, CompressedData["
+        "], {
+        Developer`PackedArrayForm, CompressedData["
 1:eJwl02FHGAAABNBKJkkySZK0JEmSJEmSJEmSJEkmSZK0ZJIkSZIkSZIkSZIk
 yUySZJIkSZIkSZIkSZJJspd9eHd/4O5b/Y+K1sCAgICgz/hsgvlCCKGEEU4E
 X4kkimhiiCWOeBJIJIlkUkgljXQyyCSLbHLIJY98CiikiGJKKKWMciqopIpq
@@ -24996,7 +25096,8 @@ vj02+zJ92XiauOZvkT1xdGjFx1ntB4u4dYHOP/pwZW2+SLNkXzq75BGWj/ii
 Q38sgyhG7UWsek+HrDlD2QBKmt8hAnO/bUvSHTdOWVBihMVZdp9qntwurUAv
 CGRjefBShQ1HFjddbpDBWl/fqJ51rKblycCvVXsL12RIOYYZFTNWTfBKkpgr
 cDYisv7dM783d1ds+DcZEdbM52TqqxNWWM+x5tD+jHWO7d2G/wf7XBut
-         "]}, {Automatic}],
+         "]}, {
+        Automatic}],
        Editable->False,
        SelectWithContents->True,
        Selectable->False], "[", "t", "]"}]}], ",", 
@@ -25019,8 +25120,9 @@ cDYisv7dM783d1ds+DcZEdbM52TqqxNWWM+x5tD+jHWO7d2G/wf7XBut
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -25043,6 +25145,7 @@ z7ustcCBHSovttNYpvRKgQMHlK/3WEfupmYhXP9jtXcx62sLHRih/IMqkbXP
 Thc6MEH56r9PTNikUATnb+1+1Ho/H8F/L7T61//9CD4A2NQ/hQ==
                     "]], 
                     
+                    
                     LineBox[{{5.747373860289038, 39.99999423270188}, {
                     5.747376934744349, 40.00000352250257}}], 
                     
@@ -25060,7 +25163,6 @@ Thc6MEH56r9PTNikUATnb+1+1Ho/H8F/L7T61//9CD4A2NQ/hQ==
                     
                     LineBox[{{49.44588994969979, 40.00000352250257}, {
                     49.45095333125621, 39.99999423270188}}], 
-                    
                     LineBox[{{57.91356560273641, 39.99999423270188}, {
                     57.9726585344701, 40.00000352250257}}], 
                     
@@ -25094,8 +25196,9 @@ Thc6MEH56r9PTNikUATnb+1+1Ho/H8F/L7T61//9CD4A2NQ/hQ==
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -25151,8 +25254,9 @@ Thc6MEH56r9PTNikUATnb+1+1Ho/H8F/L7T61//9CD4A2NQ/hQ==
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, 
                     TagBox[{
                     Directive[
@@ -25175,6 +25279,7 @@ z7ustcCBHSovttNYpvRKgQMHlK/3WEfupmYhXP9jtXcx62sLHRih/IMqkbXP
 Thc6MEH56r9PTNikUATnb+1+1Ho/H8F/L7T61//9CD4A2NQ/hQ==
                     "]], 
                     
+                    
                     LineBox[{{5.747373860289038, 39.99999423270188}, {
                     5.747376934744349, 40.00000352250257}}], 
                     
@@ -25195,7 +25300,6 @@ Thc6MEH56r9PTNikUATnb+1+1Ho/H8F/L7T61//9CD4A2NQ/hQ==
                     
                     LineBox[{{57.91356560273641, 39.99999423270188}, {
                     57.9726585344701, 40.00000352250257}}], 
-                    
                     LineBox[{{65.44008818088734, 40.00000352250257}, {
                     65.54477969703457, 39.99999423270188}}], 
                     
@@ -25226,8 +25330,9 @@ Thc6MEH56r9PTNikUATnb+1+1Ho/H8F/L7T61//9CD4A2NQ/hQ==
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -25337,7 +25442,8 @@ I/xJCZ4ovneg7kqPJ06/vSy86ZsnSv8e2z6q7YUKeamOPUwv8LDbzBvOeMF/
 VQ2iSmk+WCp5pWbR6ANqlxnriSITR6ePlO7KYmJAYnxY8jMTOemTAhxFPzhz
 3+vrOm6BQMQcoynOHw2Dw5mS1wOxVjU0YF0q67eUkN/yRvy2MwpFEleMTiMW
 Lod9ZVwPxuF/598Rj38AUe55gw==
-        "], {Developer`PackedArrayForm, CompressedData["
+        "], {
+        Developer`PackedArrayForm, CompressedData["
 1:eJwl02FHGAAABNBKJkkySZK0JEmSJEmSJEmSJEkmSZK0ZJIkSZIkSZIkSZIk
 yUySZJIkSZIkSZIkSZJJspd9eHd/4O5b/Y+K1sCAgICgz/hsgvlCCKGEEU4E
 X4kkimhiiCWOeBJIJIlkUkgljXQyyCSLbHLIJY98CiikiGJKKKWMciqopIpq
@@ -34980,10 +35086,11 @@ yJWhxHQn5ddvWNOLtDLUZeRQ/g8uE6Ve
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1712, 1069},
+WindowSize->{Full, Full},
 WindowMargins->{{-8, Automatic}, {Automatic, 0}},
 Magnification:>1.3 Inherited,
-FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (2018\:5e743\
+\:67085\:65e5)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -34997,110 +35104,105 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 157, 3, 44, "Text",ExpressionUUID->"6dc2228f-b90c-4983-b545-6c6eee40990c"],
+Cell[558, 20, 448, 11, 92, "Input",ExpressionUUID->"40c1b10f-ef6f-41cb-8dbb-be85ef5f5676"],
 Cell[CellGroupData[{
-Cell[740, 27, 454, 10, 161, "Input",ExpressionUUID->"40c1b10f-ef6f-41cb-8dbb-be85ef5f5676"],
-Cell[1197, 39, 232, 4, 43, "Output",ExpressionUUID->"634f1eb3-9d7c-40b9-a769-ed5fb238a692"],
-Cell[1432, 45, 148, 2, 43, "Output",ExpressionUUID->"77a78c9e-c5d0-4681-a6fe-8f54868b443a"]
+Cell[1031, 35, 6016, 143, 668, "Input",ExpressionUUID->"ea4b7756-6b46-46be-82eb-b02100809cdf"],
+Cell[7050, 180, 63130, 1188, 149, "Output",ExpressionUUID->"ce4581b1-a1f7-4d32-b872-8bc774dec670"],
+Cell[70183, 1370, 51557, 924, 335, "Output",ExpressionUUID->"c8a69ef3-5655-4430-b6a2-276e53ce2218"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1617, 52, 6010, 142, 571, "Input",ExpressionUUID->"ea4b7756-6b46-46be-82eb-b02100809cdf"],
-Cell[7630, 196, 63082, 1184, 167, "Output",ExpressionUUID->"ce4581b1-a1f7-4d32-b872-8bc774dec670"],
-Cell[70715, 1382, 51461, 918, 337, "Output",ExpressionUUID->"c8a69ef3-5655-4430-b6a2-276e53ce2218"]
+Cell[121777, 2299, 666, 17, 163, "Input",ExpressionUUID->"1f102572-1f9f-431e-b1dd-f36a7aebd007"],
+Cell[122446, 2318, 232, 4, 45, "Output",ExpressionUUID->"927fdc99-8e06-4f48-a11c-6c74ac7a5e43"],
+Cell[122681, 2324, 151, 2, 45, "Output",ExpressionUUID->"75f8a1cb-7d65-4ad2-a044-a5549b3ef16e"],
+Cell[122835, 2328, 213, 3, 45, "Output",ExpressionUUID->"188a0633-9036-4834-aa9f-8534b1043f7d"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[122213, 2305, 653, 14, 383, "Input",ExpressionUUID->"1f102572-1f9f-431e-b1dd-f36a7aebd007"],
-Cell[122869, 2321, 232, 4, 72, "Output",ExpressionUUID->"927fdc99-8e06-4f48-a11c-6c74ac7a5e43"],
-Cell[123104, 2327, 151, 2, 72, "Output",ExpressionUUID->"75f8a1cb-7d65-4ad2-a044-a5549b3ef16e"],
-Cell[123258, 2331, 213, 3, 72, "Output",ExpressionUUID->"188a0633-9036-4834-aa9f-8534b1043f7d"]
+Cell[123085, 2336, 6172, 166, 806, "Input",ExpressionUUID->"437c96c5-70f4-416b-861a-6d08dbabc033"],
+Cell[129260, 2504, 153293, 2679, 149, "Output",ExpressionUUID->"0b11edb2-97ff-438c-9203-267c65ad4f2b"],
+Cell[282556, 5185, 100995, 1687, 333, "Output",ExpressionUUID->"fb0a1cc0-7fdd-400d-b260-f301b1bb1cb1"],
+Cell[383554, 6874, 510, 9, 45, "Output",ExpressionUUID->"93f5394f-d5ed-4c77-942d-ef2e4a7107e6"],
+Cell[384067, 6885, 510, 9, 45, "Output",ExpressionUUID->"36e58f8f-6f34-4997-b73f-39146fc98b73"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[123508, 2339, 6172, 166, 1133, "Input",ExpressionUUID->"437c96c5-70f4-416b-861a-6d08dbabc033"],
-Cell[129683, 2507, 152997, 2666, 282, "Output",ExpressionUUID->"0b11edb2-97ff-438c-9203-267c65ad4f2b"],
-Cell[282683, 5175, 100995, 1687, 566, "Output",ExpressionUUID->"fb0a1cc0-7fdd-400d-b260-f301b1bb1cb1"],
-Cell[383681, 6864, 510, 9, 72, "Output",ExpressionUUID->"93f5394f-d5ed-4c77-942d-ef2e4a7107e6"],
-Cell[384194, 6875, 510, 9, 72, "Output",ExpressionUUID->"36e58f8f-6f34-4997-b73f-39146fc98b73"]
+Cell[384614, 6899, 453, 10, 165, "Input",ExpressionUUID->"b78cf6e4-ffbf-4617-b3d5-064a66d84007"],
+Cell[385070, 6911, 233, 4, 45, "Output",ExpressionUUID->"5eff47b9-7ee3-49a0-b701-4b334bd30dde"],
+Cell[385306, 6917, 149, 2, 45, "Output",ExpressionUUID->"3cc7e927-2cf3-4281-9db1-4b54a24c68d2"]
+}, Open  ]],
+Cell[385470, 6922, 154, 3, 39, "Input",ExpressionUUID->"580f1029-9e96-481a-9dbb-05ba9f4a0f4b"],
+Cell[CellGroupData[{
+Cell[385649, 6929, 6481, 170, 621, "Input",ExpressionUUID->"46d43aa4-f85c-4e7a-8583-3f7b8b97f73a"],
+Cell[392133, 7101, 126553, 2304, 149, "Output",ExpressionUUID->"3b06d864-1cb1-43db-8a77-368b9aff03ed"],
+Cell[518689, 9407, 79008, 1317, 333, "Output",ExpressionUUID->"0806b949-8889-4af2-b09d-528eba24fda5"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[384741, 6889, 453, 10, 272, "Input",ExpressionUUID->"b78cf6e4-ffbf-4617-b3d5-064a66d84007"],
-Cell[385197, 6901, 233, 4, 72, "Output",ExpressionUUID->"5eff47b9-7ee3-49a0-b701-4b334bd30dde"],
-Cell[385433, 6907, 149, 2, 72, "Output",ExpressionUUID->"3cc7e927-2cf3-4281-9db1-4b54a24c68d2"]
+Cell[597734, 10729, 526, 12, 164, "Input",ExpressionUUID->"6ca0753c-cb08-42b1-9c2d-acad54d8b41c"],
+Cell[598263, 10743, 235, 4, 45, "Output",ExpressionUUID->"d7874d84-4ebe-47ab-a94f-93e7a4ed8d37"],
+Cell[598501, 10749, 149, 2, 45, "Output",ExpressionUUID->"a1c17fb3-1c8f-4a16-9530-de554ee0fd65"],
+Cell[598653, 10753, 211, 3, 45, "Output",ExpressionUUID->"74b4d995-8885-4477-8b2f-218f5193a507"]
 }, Open  ]],
-Cell[385597, 6912, 154, 3, 62, "Input",ExpressionUUID->"580f1029-9e96-481a-9dbb-05ba9f4a0f4b"],
+Cell[598879, 10759, 197, 3, 67, "Input",ExpressionUUID->"3003b1d0-6afa-4e56-a917-369279a7ffed"],
 Cell[CellGroupData[{
-Cell[385776, 6919, 6481, 170, 939, "Input",ExpressionUUID->"46d43aa4-f85c-4e7a-8583-3f7b8b97f73a"],
-Cell[392260, 7091, 126202, 2285, 282, "Output",ExpressionUUID->"3b06d864-1cb1-43db-8a77-368b9aff03ed"],
-Cell[518465, 9378, 79008, 1317, 566, "Output",ExpressionUUID->"0806b949-8889-4af2-b09d-528eba24fda5"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[597510, 10700, 526, 12, 272, "Input",ExpressionUUID->"6ca0753c-cb08-42b1-9c2d-acad54d8b41c"],
-Cell[598039, 10714, 235, 4, 72, "Output",ExpressionUUID->"d7874d84-4ebe-47ab-a94f-93e7a4ed8d37"],
-Cell[598277, 10720, 149, 2, 72, "Output",ExpressionUUID->"a1c17fb3-1c8f-4a16-9530-de554ee0fd65"],
-Cell[598429, 10724, 211, 3, 72, "Output",ExpressionUUID->"74b4d995-8885-4477-8b2f-218f5193a507"]
-}, Open  ]],
-Cell[598655, 10730, 197, 3, 106, "Input",ExpressionUUID->"3003b1d0-6afa-4e56-a917-369279a7ffed"],
-Cell[CellGroupData[{
-Cell[598877, 10737, 6931, 191, 1024, "Input",ExpressionUUID->"6aaaf151-cbe6-4830-bb20-30df3ab3e8de"],
-Cell[605811, 10930, 303366, 5182, 282, "Output",ExpressionUUID->"01816d26-6853-4f4d-8915-ca598fcaed8d"],
-Cell[909180, 16114, 141883, 2356, 566, "Output",ExpressionUUID->"36b50b01-2927-4587-9cf6-f7bb13921497"]
+Cell[599101, 10766, 6931, 191, 695, "Input",ExpressionUUID->"6aaaf151-cbe6-4830-bb20-30df3ab3e8de"],
+Cell[606035, 10959, 303815, 5203, 149, "Output",ExpressionUUID->"01816d26-6853-4f4d-8915-ca598fcaed8d"],
+Cell[909853, 16164, 141883, 2356, 333, "Output",ExpressionUUID->"36b50b01-2927-4587-9cf6-f7bb13921497"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1051100, 18475, 509, 12, 148, "Input",ExpressionUUID->"88a1590d-a937-4b0d-b69a-1e3d83787ac2"],
-Cell[1051612, 18489, 212, 3, 72, "Output",ExpressionUUID->"4f730e21-2911-4021-84a2-9f436af9bf55"],
-Cell[1051827, 18494, 212, 3, 72, "Output",ExpressionUUID->"5303a96a-8abb-40ed-b727-a2e139131b0d"]
+Cell[1051773, 18525, 509, 12, 94, "Input",ExpressionUUID->"88a1590d-a937-4b0d-b69a-1e3d83787ac2"],
+Cell[1052285, 18539, 212, 3, 45, "Output",ExpressionUUID->"4f730e21-2911-4021-84a2-9f436af9bf55"],
+Cell[1052500, 18544, 212, 3, 45, "Output",ExpressionUUID->"5303a96a-8abb-40ed-b727-a2e139131b0d"]
 }, Open  ]],
-Cell[1052054, 18500, 195, 4, 62, "Input",ExpressionUUID->"62f4b772-6bc6-4f72-8b47-90227e09ad18"],
+Cell[1052727, 18550, 195, 4, 39, "Input",ExpressionUUID->"62f4b772-6bc6-4f72-8b47-90227e09ad18"],
 Cell[CellGroupData[{
-Cell[1052274, 18508, 623, 14, 436, "Input",ExpressionUUID->"3a139cf1-c333-47fc-b61d-56e3431ce5c9"],
-Cell[1052900, 18524, 255, 4, 72, "Output",ExpressionUUID->"c9bdb864-9574-4da9-b10e-0561310ce394"],
-Cell[1053158, 18530, 232, 4, 72, "Output",ExpressionUUID->"2c814091-d1f0-45ba-9667-7e20500bd7f4"],
-Cell[1053393, 18536, 151, 2, 72, "Output",ExpressionUUID->"f4f44b14-ca23-43d8-8deb-b17b105d9e8a"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[1053581, 18543, 5390, 136, 963, "Input",ExpressionUUID->"4921b9c3-a2ca-45b9-8605-d6a8888975c2"],
-Cell[1058974, 18681, 98152, 1740, 300, "Output",ExpressionUUID->"0859ef97-99b7-4ea5-b83f-eb7ba3a3575e"],
-Cell[1157129, 20423, 20316, 356, 566, "Output",ExpressionUUID->"41abc78b-2ff6-44b2-906d-26e6ac6ad286"]
+Cell[1052947, 18558, 623, 14, 264, "Input",ExpressionUUID->"3a139cf1-c333-47fc-b61d-56e3431ce5c9"],
+Cell[1053573, 18574, 255, 4, 45, "Output",ExpressionUUID->"c9bdb864-9574-4da9-b10e-0561310ce394"],
+Cell[1053831, 18580, 232, 4, 45, "Output",ExpressionUUID->"2c814091-d1f0-45ba-9667-7e20500bd7f4"],
+Cell[1054066, 18586, 151, 2, 45, "Output",ExpressionUUID->"f4f44b14-ca23-43d8-8deb-b17b105d9e8a"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1177482, 20784, 598, 13, 387, "Input",ExpressionUUID->"b65028c3-487d-4fad-8bbf-7add336f41d2"],
-Cell[1178083, 20799, 257, 4, 72, "Output",ExpressionUUID->"044b72a4-1059-473d-af10-6e39e75096ed"],
-Cell[1178343, 20805, 234, 4, 72, "Output",ExpressionUUID->"6f18aeff-a31e-4bd3-8e7d-e7d49cf58685"],
-Cell[1178580, 20811, 151, 2, 72, "Output",ExpressionUUID->"3e2d7d70-fba7-4d1e-9443-6987202a2b39"]
+Cell[1054254, 18593, 5390, 136, 650, "Input",ExpressionUUID->"4921b9c3-a2ca-45b9-8605-d6a8888975c2"],
+Cell[1059647, 18731, 98455, 1755, 169, "Output",ExpressionUUID->"0859ef97-99b7-4ea5-b83f-eb7ba3a3575e"],
+Cell[1158105, 20488, 20316, 356, 333, "Output",ExpressionUUID->"41abc78b-2ff6-44b2-906d-26e6ac6ad286"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1178768, 20818, 5858, 154, 1022, "Input",ExpressionUUID->"77fb1f12-79c6-49d7-a2e5-12eabdd4594b"],
-Cell[1184629, 20974, 117298, 2101, 282, "Output",ExpressionUUID->"e9e2f42e-76d5-48fd-98dd-7705920aaf4f"],
-Cell[1301930, 23077, 20829, 364, 566, "Output",ExpressionUUID->"c91a63ce-ff0b-4b1b-946b-cf5bd2602ebd"]
+Cell[1178458, 20849, 598, 13, 234, "Input",ExpressionUUID->"b65028c3-487d-4fad-8bbf-7add336f41d2"],
+Cell[1179059, 20864, 257, 4, 45, "Output",ExpressionUUID->"044b72a4-1059-473d-af10-6e39e75096ed"],
+Cell[1179319, 20870, 234, 4, 45, "Output",ExpressionUUID->"6f18aeff-a31e-4bd3-8e7d-e7d49cf58685"],
+Cell[1179556, 20876, 151, 2, 45, "Output",ExpressionUUID->"3e2d7d70-fba7-4d1e-9443-6987202a2b39"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1322796, 23446, 601, 13, 387, "Input",ExpressionUUID->"d0e87ac1-ec9d-41e9-be3c-e9566f7b187c"],
-Cell[1323400, 23461, 254, 4, 72, "Output",ExpressionUUID->"571cd4cf-0d8f-439d-aee3-00584b8fbd12"],
-Cell[1323657, 23467, 232, 4, 72, "Output",ExpressionUUID->"c5cdea44-91e4-4d98-b088-16608218f0ff"],
-Cell[1323892, 23473, 149, 2, 72, "Output",ExpressionUUID->"6f50ab49-89b3-48ee-9360-eefa94e19510"]
+Cell[1179744, 20883, 5858, 154, 673, "Input",ExpressionUUID->"77fb1f12-79c6-49d7-a2e5-12eabdd4594b"],
+Cell[1185605, 21039, 117717, 2120, 149, "Output",ExpressionUUID->"e9e2f42e-76d5-48fd-98dd-7705920aaf4f"],
+Cell[1303325, 23161, 20829, 364, 333, "Output",ExpressionUUID->"c91a63ce-ff0b-4b1b-946b-cf5bd2602ebd"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1324078, 23480, 6584, 178, 981, "Input",ExpressionUUID->"18fc61ad-5679-458e-8431-90b9a040b0d2"],
-Cell[1330665, 23660, 95925, 1782, 282, "Output",ExpressionUUID->"b1ca1fe8-0b86-4315-9236-9d577c8aa3f0"],
-Cell[1426593, 25444, 42775, 725, 566, "Output",ExpressionUUID->"c8509a4c-0506-4c4f-bc3a-24476d4d389b"]
+Cell[1324191, 23530, 601, 13, 234, "Input",ExpressionUUID->"d0e87ac1-ec9d-41e9-be3c-e9566f7b187c"],
+Cell[1324795, 23545, 254, 4, 45, "Output",ExpressionUUID->"571cd4cf-0d8f-439d-aee3-00584b8fbd12"],
+Cell[1325052, 23551, 232, 4, 45, "Output",ExpressionUUID->"c5cdea44-91e4-4d98-b088-16608218f0ff"],
+Cell[1325287, 23557, 149, 2, 45, "Output",ExpressionUUID->"6f50ab49-89b3-48ee-9360-eefa94e19510"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1469405, 26174, 698, 15, 498, "Input",ExpressionUUID->"11b40919-df91-4d0f-b765-be662e9986f4"],
-Cell[1470106, 26191, 254, 4, 72, "Output",ExpressionUUID->"92a41a80-8ec6-4960-8ede-30f31a5a771f"],
-Cell[1470363, 26197, 232, 4, 72, "Output",ExpressionUUID->"7cbac56a-cd87-437f-9235-df307f265350"],
-Cell[1470598, 26203, 149, 2, 72, "Output",ExpressionUUID->"2c293e63-3979-4b1b-bbc3-2d0a562c0dec"],
-Cell[1470750, 26207, 211, 3, 72, "Output",ExpressionUUID->"dc6dc3a1-d4ba-4ab9-9172-794c19de8ede"]
+Cell[1325473, 23564, 6584, 178, 648, "Input",ExpressionUUID->"18fc61ad-5679-458e-8431-90b9a040b0d2"],
+Cell[1332060, 23744, 96359, 1804, 149, "Output",ExpressionUUID->"b1ca1fe8-0b86-4315-9236-9d577c8aa3f0"],
+Cell[1428422, 25550, 42775, 725, 333, "Output",ExpressionUUID->"c8509a4c-0506-4c4f-bc3a-24476d4d389b"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1470998, 26215, 7734, 207, 1066, "Input",ExpressionUUID->"1b70fc5a-9f74-472d-8605-38bed97e5c3d"],
-Cell[1478735, 26424, 294843, 5028, 282, "Output",ExpressionUUID->"fee420c1-75da-48c8-904c-0ae90a37defa"],
-Cell[1773581, 31454, 104797, 1746, 566, "Output",ExpressionUUID->"59b7b4b6-e530-4672-9f27-40efd077778b"]
+Cell[1471234, 26280, 698, 15, 302, "Input",ExpressionUUID->"11b40919-df91-4d0f-b765-be662e9986f4"],
+Cell[1471935, 26297, 254, 4, 45, "Output",ExpressionUUID->"92a41a80-8ec6-4960-8ede-30f31a5a771f"],
+Cell[1472192, 26303, 232, 4, 45, "Output",ExpressionUUID->"7cbac56a-cd87-437f-9235-df307f265350"],
+Cell[1472427, 26309, 149, 2, 45, "Output",ExpressionUUID->"2c293e63-3979-4b1b-bbc3-2d0a562c0dec"],
+Cell[1472579, 26313, 211, 3, 45, "Output",ExpressionUUID->"dc6dc3a1-d4ba-4ab9-9172-794c19de8ede"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1878415, 33205, 313, 7, 615, "Title",ExpressionUUID->"1b62ddd4-1729-41a1-b1c5-8fe02854cee7"],
+Cell[1472827, 26321, 7734, 207, 722, "Input",ExpressionUUID->"1b70fc5a-9f74-472d-8605-38bed97e5c3d"],
+Cell[1480564, 26530, 294843, 5028, 476, "Output",ExpressionUUID->"fee420c1-75da-48c8-904c-0ae90a37defa"],
+Cell[1775410, 31560, 104797, 1746, 956, "Output",ExpressionUUID->"59b7b4b6-e530-4672-9f27-40efd077778b"]
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[1878753, 33216, 5060, 135, 1007, "Input",ExpressionUUID->"aec8c2b1-55e5-4b7a-b3e2-7ac175d85094"],
-Cell[1883816, 33353, 59988, 1120, 300, "Output",ExpressionUUID->"37017601-3bb4-4fba-954a-f2bbf6be2fa0"],
-Cell[1943807, 34475, 25853, 503, 569, "Output",ExpressionUUID->"43233ec5-0950-4477-8237-e224c56ccfa8"]
+Cell[1880244, 33311, 313, 7, 1039, "Title",ExpressionUUID->"1b62ddd4-1729-41a1-b1c5-8fe02854cee7"],
+Cell[CellGroupData[{
+Cell[1880582, 33322, 5060, 135, 1701, "Input",ExpressionUUID->"aec8c2b1-55e5-4b7a-b3e2-7ac175d85094"],
+Cell[1885645, 33459, 59988, 1120, 507, "Output",ExpressionUUID->"37017601-3bb4-4fba-954a-f2bbf6be2fa0"],
+Cell[1945636, 34581, 25853, 503, 961, "Output",ExpressionUUID->"43233ec5-0950-4477-8237-e224c56ccfa8"]
 }, Open  ]]
 }, Open  ]]
 }
