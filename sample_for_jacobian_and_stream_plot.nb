@@ -1,0 +1,222 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7766,        214]
+NotebookOptionsPosition[      6947,        193]
+NotebookOutlinePosition[      7310,        209]
+CellTagsIndexPosition[      7267,        206]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"6.", " ", "Supercritical", " ", "Hopf", " ", "Bifurcation"}], 
+  "Subsection"]], "Input",
+ CellChangeTimes->{{3.7568583526062803`*^9, 
+  3.756858374444013*^9}},ExpressionUUID->"e5220f7d-0f07-463b-b4d6-\
+e7d4bcd38186"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"StreamPlot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"\[Mu]", "*", "x"}], "-", "y"}], ",", 
+       RowBox[{"x", "+", 
+        RowBox[{"\[Mu]", "*", " ", "y"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", 
+       RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+     RowBox[{"StreamScale", "\[Rule]", "0.1"}], ",", 
+     RowBox[{"StreamStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Arrowheads", "[", "Small", "]"}], ",", "Black"}], "}"}]}]}], 
+    "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Mu]", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "0", ",", "1"}], "}"}]}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"JacobianMatrix", "[", 
+    RowBox[{
+     RowBox[{"f_List", "?", "VectorQ"}], ",", "x_List"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Outer", "[", 
+     RowBox[{"D", ",", "f", ",", "x"}], "]"}], "/;", 
+    RowBox[{"Equal", "@@", 
+     RowBox[{"(", 
+      RowBox[{"Dimensions", "/@", 
+       RowBox[{"{", 
+        RowBox[{"f", ",", "x"}], "}"}]}], ")"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"\[Mu]", "*", "x1"}], "-", "x2"}], ",", 
+     RowBox[{"x1", "+", 
+      RowBox[{"\[Mu]", "*", " ", "x2"}]}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"b", "=", 
+   RowBox[{"{", 
+    RowBox[{"x1", ",", "x2"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"jacobian", "  ", "=", " ", 
+   RowBox[{
+    RowBox[{"JacobianMatrix", "[", 
+     RowBox[{"a", ",", "b"}], "]"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"x1", "\[Rule]", " ", "0"}], ",", 
+      RowBox[{"x2", "\[Rule]", " ", "0"}]}], "}"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"eig", " ", "=", " ", 
+  RowBox[{"Eigenvalues", "[", "jacobian", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\[CapitalDelta]", "=", 
+  RowBox[{"Det", "[", 
+   RowBox[{
+    RowBox[{"JacobianMatrix", "[", 
+     RowBox[{"a", ",", "b"}], "]"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"x1", "\[Rule]", " ", "0"}], ",", 
+      RowBox[{"x2", "\[Rule]", " ", "0"}]}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\[Tau]", "=", 
+  RowBox[{"Tr", "[", 
+   RowBox[{
+    RowBox[{"JacobianMatrix", "[", 
+     RowBox[{"a", ",", "b"}], "]"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"x1", "\[Rule]", " ", "0"}], ",", 
+      RowBox[{"x2", "\[Rule]", " ", "0"}]}], "}"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.756858342278842*^9, 3.7568583436878242`*^9}, {
+  3.7568590518912*^9, 3.7568590867686157`*^9}, {3.7568591411523848`*^9, 
+  3.756859182445759*^9}, {3.756859228542918*^9, 3.7568592438499317`*^9}, {
+  3.756859301628592*^9, 3.756859330096759*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"510b65ff-374c-4df8-86b1-b2ef034c3aa7"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`\[Mu]$$ = -1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"\:65e0\:6807\:9898\"", Typeset`specs$$ = {{
+      Hold[$CellContext`\[Mu]$$], {-1, 0, 1}}}, Typeset`size$$ = {
+    360., {178., 183.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`\[Mu]$7465$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`\[Mu]$$ = -1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`\[Mu]$$, $CellContext`\[Mu]$7465$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      StreamPlot[{$CellContext`\[Mu]$$ $CellContext`x - $CellContext`y, \
+$CellContext`x + $CellContext`\[Mu]$$ $CellContext`y}, {$CellContext`x, -2, 
+         2}, {$CellContext`y, -2, 2}, StreamScale -> 0.1, StreamStyle -> {
+          Arrowheads[Small], Black}], 
+      "Specifications" :> {{$CellContext`\[Mu]$$, {-1, 0, 1}}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {222., 228.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.7568590990771646`*^9, {3.75685914396309*^9, 3.756859183012439*^9}, 
+   3.75685933196036*^9, 3.7609035734308968`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"82da5396-09f1-4802-9661-8e67de407433"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", "\[ImaginaryI]"}], "+", "\[Mu]"}], ",", 
+   RowBox[{"\[ImaginaryI]", "+", "\[Mu]"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7568590990771646`*^9, {3.75685914396309*^9, 3.756859183012439*^9}, 
+   3.75685933196036*^9, 3.7609035736207*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"9bb546cc-7f42-4e46-ba0c-bcf1df80ea2b"],
+
+Cell[BoxData[
+ RowBox[{"1", "+", 
+  SuperscriptBox["\[Mu]", "2"]}]], "Output",
+ CellChangeTimes->{
+  3.7568590990771646`*^9, {3.75685914396309*^9, 3.756859183012439*^9}, 
+   3.75685933196036*^9, 3.7609035736246643`*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"f280168f-dfba-4298-894e-e84facd1c85e"],
+
+Cell[BoxData[
+ RowBox[{"2", " ", "\[Mu]"}]], "Output",
+ CellChangeTimes->{
+  3.7568590990771646`*^9, {3.75685914396309*^9, 3.756859183012439*^9}, 
+   3.75685933196036*^9, 3.76090357362857*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"5e295402-bbe3-459e-811b-7128c93855ac"]
+}, Open  ]]
+},
+WindowSize->{808, 675},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (2018\:5e743\
+\:67085\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 253, 6, 39, "Input",ExpressionUUID->"e5220f7d-0f07-463b-b4d6-e7d4bcd38186"],
+Cell[CellGroupData[{
+Cell[836, 30, 3111, 93, 323, "Input",ExpressionUUID->"510b65ff-374c-4df8-86b1-b2ef034c3aa7"],
+Cell[3950, 125, 2017, 39, 469, "Output",ExpressionUUID->"82da5396-09f1-4802-9661-8e67de407433"],
+Cell[5970, 166, 388, 9, 34, "Output",ExpressionUUID->"9bb546cc-7f42-4e46-ba0c-bcf1df80ea2b"],
+Cell[6361, 177, 297, 6, 34, "Output",ExpressionUUID->"f280168f-dfba-4298-894e-e84facd1c85e"],
+Cell[6661, 185, 270, 5, 34, "Output",ExpressionUUID->"5e295402-bbe3-459e-811b-7128c93855ac"]
+}, Open  ]]
+}
+]
+*)
+

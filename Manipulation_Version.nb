@@ -1,0 +1,3578 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    170053,       3570]
+NotebookOptionsPosition[    162187,       3465]
+NotebookOutlinePosition[    162585,       3482]
+CellTagsIndexPosition[    162542,       3479]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{"Competing", " ", "cells", 
+    RowBox[{"(", 
+     RowBox[{"self", " ", "renewal", " ", "regulated"}], ")"}]}], " "}], 
+  "Subsection"], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"Differentiations", " ", "=", " ", "1"}], "Subsection"]}], "Input",
+ CellChangeTimes->{{3.760590676092965*^9, 3.7605907804046383`*^9}, 
+   3.760902989799582*^9},ExpressionUUID->"40c1b10f-ef6f-41cb-8dbb-\
+be85ef5f5676"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "defining", " ", "system", " ", "and", " ", "giving", " ", "numerical", 
+    " ", "values", " ", "to", " ", "parameters"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"sol1", "=", 
+     RowBox[{"NDSolve", "[", 
+      RowBox[{
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", "p", "*", 
+              FractionBox["Kd", 
+               RowBox[{"Kd", "+", 
+                RowBox[{"z", "[", "t", "]"}]}]]}], " ", "-", " ", "1"}], 
+            ")"}], "Vx", "*", 
+           RowBox[{"x", "[", "t", "]"}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"y", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", "p", "*", 
+              FractionBox["Kd", 
+               RowBox[{"Kd", "+", 
+                RowBox[{"z", "[", "t", "]"}]}]]}], " ", "-", " ", "1"}], 
+            ")"}], "Vy", "*", 
+           RowBox[{"y", "[", "t", "]"}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"z", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"2", "*", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", 
+              RowBox[{"p", "*", 
+               FractionBox["Kd", 
+                RowBox[{"Kd", "+", 
+                 RowBox[{"z", "[", "t", "]"}]}]]}]}], ")"}], "*", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"Vx", "*", 
+               RowBox[{"x", "[", "t", "]"}]}], "+", 
+              RowBox[{"Vy", "*", 
+               RowBox[{"y", "[", "t", "]"}]}]}], ")"}]}], " ", "-", " ", 
+           RowBox[{"dz", "*", 
+            RowBox[{"z", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"x", "[", "0", "]"}], "==", " ", "x0"}], ",", " ", 
+         RowBox[{
+          RowBox[{"y", "[", "0", "]"}], "==", "x0"}], ",", 
+         RowBox[{
+          RowBox[{"z", "[", "0", "]"}], "\[Equal]", "0"}]}], 
+        "\[IndentingNewLine]", "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y", ",", "z"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", "tmax"}], "}"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"x", "[", "t", "]"}], "/.", "sol1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"y", "[", "t", "]"}], "/.", "sol1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"z", "[", "t", "]"}], "/.", "sol1"}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "tmax"}], "}"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "50"}], "}"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"AxesLabel", "\[Rule]", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<Time\>\"", " ", ",", "Black", ",", "Bold", ",", "12"}],
+           "]"}], " ", ",", 
+         RowBox[{"Style", "[", " ", 
+          RowBox[{
+          "\"\<Cell Number\>\"", " ", ",", "Black", ",", "Bold", ",", "12"}], 
+          "]"}]}], "}"}]}], ",", " ", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"Red", ",", "Thick"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Green", ",", "Thick"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Blue", ",", "Thick"}], "}"}]}], "}"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"PlotLegends", "\[Rule]", 
+       RowBox[{"LineLegend", "[", 
+        RowBox[{"{", 
+         RowBox[{"\"\<X\>\"", ",", "\"\<Y\>\"", ",", "\"\<Z\>\""}], "}"}], 
+        "]"}]}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Vx", ",", "1.1", ",", "\"\<\!\(\*SubscriptBox[\(v\), \(x\)]\)\>\""}], 
+      "}"}], ",", "0.0", ",", "5.0", ",", "0.2", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Vy", ",", "1", ",", "\"\<\!\(\*SubscriptBox[\(v\), \(y\)]\)\>\""}], 
+      "}"}], ",", "0.0", ",", "5.0", ",", "0.2", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"p", ",", "0.7", ",", "\"\<p\>\""}], "}"}], ",", "0.1", ",", 
+     "1.0", ",", "0.05", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "dz", ",", "1", ",", "\"\<\!\(\*SubscriptBox[\(d\), \(z\)]\)\>\""}], 
+      "}"}], ",", "1", ",", "10", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Kd", ",", "100", ",", "\"\<\!\(\*SubscriptBox[\(k\), \(d\)]\)\>\""}], 
+      "}"}], ",", "10", ",", "100", ",", "10", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x0", ",", "1", ",", "\"\<x0\>\""}], "}"}], ",", "1", ",", 
+     "100", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"tmax", ",", "200", ",", "\"\<tmax\>\""}], "}"}], ",", "100", 
+     ",", "500", ",", "100", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.760905620508868*^9, 3.760905668481707*^9}, {
+  3.760905717169162*^9, 3.760905752281433*^9}, {3.760905834826285*^9, 
+  3.7609058731424627`*^9}, {3.7609059180850267`*^9, 3.7609059200458393`*^9}, {
+  3.760905954786462*^9, 3.760906039478071*^9}, {3.760906406663465*^9, 
+  3.760906450954468*^9}, {3.760906497218794*^9, 3.760906512543971*^9}, {
+  3.7609066339341917`*^9, 3.760906698101053*^9}, {3.760906767997675*^9, 
+  3.7609069375845947`*^9}, {3.7609070593872538`*^9, 3.7609070596785507`*^9}, {
+  3.760907117026263*^9, 3.7609071171539507`*^9}, {3.760907230211967*^9, 
+  3.7609073031930323`*^9}, {3.760907637951888*^9, 3.760907644683916*^9}, {
+  3.760909484344799*^9, 3.760909484470306*^9}, {3.760922234267352*^9, 
+  3.760922272665988*^9}, {3.760927375545438*^9, 3.7609273759766417`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"56cf72dd-bee0-47ab-9010-efce14718147"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`dz$$ = 1, $CellContext`Kd$$ = 
+    100, $CellContext`p$$ = 0.7, $CellContext`tmax$$ = 
+    200, $CellContext`Vx$$ = 1.1, $CellContext`Vy$$ = 1, $CellContext`x0$$ = 
+    1, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"\:65e0\:6807\:9898\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`Vx$$], 1.1, "\!\(\*SubscriptBox[\(v\), \(x\)]\)"}, 
+      0., 5., 0.2}, {{
+       Hold[$CellContext`Vy$$], 1, "\!\(\*SubscriptBox[\(v\), \(y\)]\)"}, 0., 
+      5., 0.2}, {{
+       Hold[$CellContext`p$$], 0.7, "p"}, 0.1, 1., 0.05}, {{
+       Hold[$CellContext`dz$$], 1, "\!\(\*SubscriptBox[\(d\), \(z\)]\)"}, 1, 
+      10, 1}, {{
+       Hold[$CellContext`Kd$$], 100, "\!\(\*SubscriptBox[\(k\), \(d\)]\)"}, 
+      10, 100, 10}, {{
+       Hold[$CellContext`x0$$], 1, "x0"}, 1, 100, 1}, {{
+       Hold[$CellContext`tmax$$], 200, "tmax"}, 100, 500, 100}}, 
+    Typeset`size$$ = {539., {138., 145.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`Vx$2197$$ = 0, $CellContext`Vy$2198$$ = 
+    0, $CellContext`p$2199$$ = 0, $CellContext`dz$2200$$ = 
+    0, $CellContext`Kd$2201$$ = 0, $CellContext`x0$2202$$ = 
+    0, $CellContext`tmax$2203$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`dz$$ = 1, $CellContext`Kd$$ = 
+        100, $CellContext`p$$ = 0.7, $CellContext`tmax$$ = 
+        200, $CellContext`Vx$$ = 1.1, $CellContext`Vy$$ = 
+        1, $CellContext`x0$$ = 1}, "ControllerVariables" :> {
+        Hold[$CellContext`Vx$$, $CellContext`Vx$2197$$, 0], 
+        Hold[$CellContext`Vy$$, $CellContext`Vy$2198$$, 0], 
+        Hold[$CellContext`p$$, $CellContext`p$2199$$, 0], 
+        Hold[$CellContext`dz$$, $CellContext`dz$2200$$, 0], 
+        Hold[$CellContext`Kd$$, $CellContext`Kd$2201$$, 0], 
+        Hold[$CellContext`x0$$, $CellContext`x0$2202$$, 0], 
+        Hold[$CellContext`tmax$$, $CellContext`tmax$2203$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`sol1 = 
+        NDSolve[{
+          Derivative[
+            1][$CellContext`x][$CellContext`t] == (
+             2 $CellContext`p$$ ($CellContext`Kd$$/($CellContext`Kd$$ + \
+$CellContext`z[$CellContext`t])) - 
+             1) $CellContext`Vx$$ $CellContext`x[$CellContext`t], 
+           Derivative[
+            1][$CellContext`y][$CellContext`t] == (
+             2 $CellContext`p$$ ($CellContext`Kd$$/($CellContext`Kd$$ + \
+$CellContext`z[$CellContext`t])) - 
+             1) $CellContext`Vy$$ $CellContext`y[$CellContext`t], 
+           Derivative[1][$CellContext`z][$CellContext`t] == 
+           2 (1 - $CellContext`p$$ ($CellContext`Kd$$/($CellContext`Kd$$ + \
+$CellContext`z[$CellContext`t]))) ($CellContext`Vx$$ \
+$CellContext`x[$CellContext`t] + $CellContext`Vy$$ \
+$CellContext`y[$CellContext`t]) - $CellContext`dz$$ \
+$CellContext`z[$CellContext`t], $CellContext`x[
+            0] == $CellContext`x0$$, $CellContext`y[
+            0] == $CellContext`x0$$, $CellContext`z[0] == 
+           0}, {$CellContext`x, $CellContext`y, $CellContext`z}, \
+{$CellContext`t, 0, $CellContext`tmax$$}]; Plot[{{
+           ReplaceAll[
+            $CellContext`x[$CellContext`t], $CellContext`sol1]}, {
+           ReplaceAll[
+            $CellContext`y[$CellContext`t], $CellContext`sol1]}, {
+           ReplaceAll[
+            $CellContext`z[$CellContext`t], $CellContext`sol1]}}, \
+{$CellContext`t, 0, $CellContext`tmax$$}, PlotRange -> {0, 50}, 
+         AxesLabel -> {
+           Style["Time", Black, Bold, 12], 
+           Style["Cell Number", Black, Bold, 12]}, 
+         PlotStyle -> {{Red, Thick}, {Green, Thick}, {Blue, Thick}}, 
+         PlotLegends -> LineLegend[{"X", "Y", "Z"}]]), 
+      "Specifications" :> {{{$CellContext`Vx$$, 1.1, 
+          "\!\(\*SubscriptBox[\(v\), \(x\)]\)"}, 0., 5., 0.2, Appearance -> 
+         "Labeled"}, {{$CellContext`Vy$$, 1, 
+          "\!\(\*SubscriptBox[\(v\), \(y\)]\)"}, 0., 5., 0.2, Appearance -> 
+         "Labeled"}, {{$CellContext`p$$, 0.7, "p"}, 0.1, 1., 0.05, Appearance -> 
+         "Labeled"}, {{$CellContext`dz$$, 1, 
+          "\!\(\*SubscriptBox[\(d\), \(z\)]\)"}, 1, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`Kd$$, 100, 
+          "\!\(\*SubscriptBox[\(k\), \(d\)]\)"}, 10, 100, 10, Appearance -> 
+         "Labeled"}, {{$CellContext`x0$$, 1, "x0"}, 1, 100, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`tmax$$, 200, "tmax"}, 100, 500, 100, 
+         Appearance -> "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{596., {280., 288.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.760906867733947*^9, {3.760906916193036*^9, 3.76090700881383*^9}, 
+   3.760907060460126*^9, 3.760907118983692*^9, {3.7609072310983553`*^9, 
+   3.760907303725629*^9}, 3.760907507651532*^9, {3.7609076392862873`*^9, 
+   3.760907645803349*^9}, {3.760907714479993*^9, 3.760907731682461*^9}, 
+   3.760907764831451*^9, 3.7609094849698553`*^9, 3.760921445402437*^9, {
+   3.760922255399575*^9, 3.760922273331678*^9}, 3.760925425117681*^9, 
+   3.760927377930934*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"d5ad2ceb-2732-4e57-a217-51354ac3fdc3"]
+}, Open  ]],
+
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{"Competing", " ", "cells", 
+    RowBox[{"(", 
+     RowBox[{"self", " ", "renewal", " ", "regulated"}], ")"}]}], " "}], 
+  "Subsection"], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"Differentiations", " ", "=", " ", "1"}], 
+  "Subsection"], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"Perturbed", " ", "from", " ", "steady", " ", "state"}], 
+  "Subsection"]}], "Input",
+ CellChangeTimes->{{3.7605907516643705`*^9, 3.7605907568054986`*^9}, {
+   3.7605907902153053`*^9, 3.760590791581293*^9}, {3.760590854932575*^9, 
+   3.760590877024151*^9}, 
+   3.760903025550207*^9},ExpressionUUID->"1f102572-1f9f-431e-b1dd-\
+f36a7aebd007"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pulseStart", " ", "=", " ", "50"}], ";", " ", 
+  RowBox[{"pulseStop", " ", "=", " ", "52"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"pulse", "[", 
+    RowBox[{"time_", ",", "pulseAmplitude_"}], "]"}], ":=", 
+   RowBox[{"Piecewise", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", 
+        RowBox[{"time", "<", "pulseStart"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"pulseAmplitude", ",", " ", 
+        RowBox[{
+        "pulseStop", "\[GreaterEqual]", "time", "\[GreaterEqual]", 
+         "pulseStart"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", 
+        RowBox[{"time", ">", "pulseStop"}]}], "}"}]}], "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"sol1", "=", 
+     RowBox[{"NDSolve", "[", 
+      RowBox[{
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", "p", "*", 
+              FractionBox["Kd", 
+               RowBox[{"Kd", "+", 
+                RowBox[{"z", "[", "t", "]"}]}]]}], " ", "-", " ", "1"}], 
+            ")"}], "Vx", "*", 
+           RowBox[{"x", "[", "t", "]"}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"y", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", "p", "*", 
+              FractionBox["Kd", 
+               RowBox[{"Kd", "+", 
+                RowBox[{"z", "[", "t", "]"}]}]]}], " ", "-", " ", "1"}], 
+            ")"}], "Vy", "*", 
+           RowBox[{"y", "[", "t", "]"}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"z", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"2", "*", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", 
+              RowBox[{"p", "*", 
+               FractionBox["Kd", 
+                RowBox[{"Kd", "+", 
+                 RowBox[{"z", "[", "t", "]"}]}]]}]}], ")"}], "*", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"Vx", "*", 
+               RowBox[{"x", "[", "t", "]"}]}], "+", 
+              RowBox[{"Vy", "*", 
+               RowBox[{"y", "[", "t", "]"}]}]}], ")"}]}], " ", " ", "-", " ", 
+           
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"dz", "+", 
+              RowBox[{"pulse", "[", 
+               RowBox[{"t", ",", "10"}], "]"}], "+", 
+              RowBox[{"pulse", "[", 
+               RowBox[{
+                RowBox[{"t", "-", "25"}], ",", "10"}], "]"}], "+", 
+              RowBox[{"pulse", "[", 
+               RowBox[{
+                RowBox[{"t", "-", "50"}], ",", "10"}], "]"}]}], ")"}], "*", 
+            RowBox[{"z", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"x", "[", "0", "]"}], "==", " ", "x0"}], ",", " ", 
+         RowBox[{
+          RowBox[{"y", "[", "0", "]"}], "==", "x0"}], ",", 
+         RowBox[{
+          RowBox[{"z", "[", "0", "]"}], "\[Equal]", "25"}]}], 
+        "\[IndentingNewLine]", "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y", ",", "z"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", "tmax"}], "}"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"x", "[", "t", "]"}], "/.", "sol1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"y", "[", "t", "]"}], "/.", "sol1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"z", "[", "t", "]"}], "/.", "sol1"}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "tmax"}], "}"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "60"}], "}"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"AxesLabel", "\[Rule]", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<Time\>\"", " ", ",", "Black", ",", "Bold", ",", "12"}],
+           "]"}], " ", ",", 
+         RowBox[{"Style", "[", " ", 
+          RowBox[{
+          "\"\<Cell Number\>\"", " ", ",", "Black", ",", "Bold", ",", "12"}], 
+          "]"}]}], "}"}]}], ",", " ", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"Red", ",", "Thick"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Green", ",", "Thick"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Blue", ",", "Thick"}], "}"}]}], "}"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"PlotLegends", "\[Rule]", 
+       RowBox[{"LineLegend", "[", 
+        RowBox[{"{", 
+         RowBox[{"\"\<X\>\"", ",", "\"\<Y\>\"", ",", "\"\<Z\>\""}], "}"}], 
+        "]"}]}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Vx", ",", "2.2", ",", "\"\<\!\(\*SubscriptBox[\(v\), \(x\)]\)\>\""}], 
+      "}"}], ",", "0.0", ",", "5.0", ",", "0.2", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Vy", ",", "1.1", ",", "\"\<\!\(\*SubscriptBox[\(v\), \(y\)]\)\>\""}], 
+      "}"}], ",", "0.0", ",", "5.0", ",", "0.2", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"p", ",", "0.7", ",", "\"\<p\>\""}], "}"}], ",", "0.1", ",", 
+     "1.0", ",", "0.05", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "dz", ",", "1", ",", "\"\<\!\(\*SubscriptBox[\(d\), \(z\)]\)\>\""}], 
+      "}"}], ",", "1", ",", "10", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Kd", ",", "50", ",", "\"\<\!\(\*SubscriptBox[\(k\), \(d\)]\)\>\""}], 
+      "}"}], ",", "10", ",", "100", ",", "10", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x0", ",", "25", ",", "\"\<x0\>\""}], "}"}], ",", "1", ",", 
+     "100", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"tmax", ",", "200", ",", "\"\<tmax\>\""}], "}"}], ",", "100", 
+     ",", "500", ",", "100", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.7605810586021633`*^9, 3.7605810586161575`*^9}, 
+   3.7605834261086483`*^9, {3.760585068666834*^9, 3.7605850690832596`*^9}, {
+   3.76058513850476*^9, 3.760585251174341*^9}, {3.7605853103843203`*^9, 
+   3.7605853149998484`*^9}, {3.7605853881509295`*^9, 3.760585399819285*^9}, {
+   3.760585585316145*^9, 3.76058564282015*^9}, {3.760585691502201*^9, 
+   3.7605857169405785`*^9}, {3.760895856858721*^9, 3.760895873966922*^9}, {
+   3.760896025323888*^9, 3.760896041766817*^9}, {3.760898789326149*^9, 
+   3.760898810483468*^9}, 3.7609085695223837`*^9, {3.760909317907721*^9, 
+   3.760909382010027*^9}, {3.760909412757257*^9, 3.760909438653933*^9}, {
+   3.760909468932542*^9, 3.760909504791192*^9}, {3.760921535231395*^9, 
+   3.760921563442251*^9}, 3.7609221786175127`*^9, 3.760922282190591*^9, {
+   3.7609273843947067`*^9, 3.760927385092211*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"437c96c5-70f4-416b-861a-6d08dbabc033"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`dz$$ = 1, $CellContext`Kd$$ = 
+    50, $CellContext`p$$ = 0.7, $CellContext`tmax$$ = 200, $CellContext`Vx$$ =
+     2.2, $CellContext`Vy$$ = 1.1, $CellContext`x0$$ = 25, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"\:65e0\:6807\:9898\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`Vx$$], 2.2, "\!\(\*SubscriptBox[\(v\), \(x\)]\)"}, 
+      0., 5., 0.2}, {{
+       Hold[$CellContext`Vy$$], 1.1, "\!\(\*SubscriptBox[\(v\), \(y\)]\)"}, 
+      0., 5., 0.2}, {{
+       Hold[$CellContext`p$$], 0.7, "p"}, 0.1, 1., 0.05}, {{
+       Hold[$CellContext`dz$$], 1, "\!\(\*SubscriptBox[\(d\), \(z\)]\)"}, 1, 
+      10, 1}, {{
+       Hold[$CellContext`Kd$$], 50, "\!\(\*SubscriptBox[\(k\), \(d\)]\)"}, 10,
+       100, 10}, {{
+       Hold[$CellContext`x0$$], 25, "x0"}, 1, 100, 1}, {{
+       Hold[$CellContext`tmax$$], 200, "tmax"}, 100, 500, 100}}, 
+    Typeset`size$$ = {539., {148., 155.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`Vx$5236$$ = 0, $CellContext`Vy$5237$$ = 
+    0, $CellContext`p$5238$$ = 0, $CellContext`dz$5239$$ = 
+    0, $CellContext`Kd$5240$$ = 0, $CellContext`x0$5241$$ = 
+    0, $CellContext`tmax$5242$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`dz$$ = 1, $CellContext`Kd$$ = 
+        50, $CellContext`p$$ = 0.7, $CellContext`tmax$$ = 
+        200, $CellContext`Vx$$ = 2.2, $CellContext`Vy$$ = 
+        1.1, $CellContext`x0$$ = 25}, "ControllerVariables" :> {
+        Hold[$CellContext`Vx$$, $CellContext`Vx$5236$$, 0], 
+        Hold[$CellContext`Vy$$, $CellContext`Vy$5237$$, 0], 
+        Hold[$CellContext`p$$, $CellContext`p$5238$$, 0], 
+        Hold[$CellContext`dz$$, $CellContext`dz$5239$$, 0], 
+        Hold[$CellContext`Kd$$, $CellContext`Kd$5240$$, 0], 
+        Hold[$CellContext`x0$$, $CellContext`x0$5241$$, 0], 
+        Hold[$CellContext`tmax$$, $CellContext`tmax$5242$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`sol1 = 
+        NDSolve[{
+          Derivative[
+            1][$CellContext`x][$CellContext`t] == (
+             2 $CellContext`p$$ ($CellContext`Kd$$/($CellContext`Kd$$ + \
+$CellContext`z[$CellContext`t])) - 
+             1) $CellContext`Vx$$ $CellContext`x[$CellContext`t], 
+           Derivative[
+            1][$CellContext`y][$CellContext`t] == (
+             2 $CellContext`p$$ ($CellContext`Kd$$/($CellContext`Kd$$ + \
+$CellContext`z[$CellContext`t])) - 
+             1) $CellContext`Vy$$ $CellContext`y[$CellContext`t], 
+           Derivative[1][$CellContext`z][$CellContext`t] == 
+           2 (1 - $CellContext`p$$ ($CellContext`Kd$$/($CellContext`Kd$$ + \
+$CellContext`z[$CellContext`t]))) ($CellContext`Vx$$ \
+$CellContext`x[$CellContext`t] + $CellContext`Vy$$ \
+$CellContext`y[$CellContext`t]) - ($CellContext`dz$$ + \
+$CellContext`pulse[$CellContext`t, 10] + $CellContext`pulse[$CellContext`t - 
+               25, 10] + $CellContext`pulse[$CellContext`t - 50, 
+               10]) $CellContext`z[$CellContext`t], $CellContext`x[
+            0] == $CellContext`x0$$, $CellContext`y[
+            0] == $CellContext`x0$$, $CellContext`z[0] == 
+           25}, {$CellContext`x, $CellContext`y, $CellContext`z}, \
+{$CellContext`t, 0, $CellContext`tmax$$}]; Plot[{{
+           ReplaceAll[
+            $CellContext`x[$CellContext`t], $CellContext`sol1]}, {
+           ReplaceAll[
+            $CellContext`y[$CellContext`t], $CellContext`sol1]}, {
+           ReplaceAll[
+            $CellContext`z[$CellContext`t], $CellContext`sol1]}}, \
+{$CellContext`t, 0, $CellContext`tmax$$}, PlotRange -> {0, 60}, 
+         AxesLabel -> {
+           Style["Time", Black, Bold, 12], 
+           Style["Cell Number", Black, Bold, 12]}, 
+         PlotStyle -> {{Red, Thick}, {Green, Thick}, {Blue, Thick}}, 
+         PlotLegends -> LineLegend[{"X", "Y", "Z"}]]), 
+      "Specifications" :> {{{$CellContext`Vx$$, 2.2, 
+          "\!\(\*SubscriptBox[\(v\), \(x\)]\)"}, 0., 5., 0.2, Appearance -> 
+         "Labeled"}, {{$CellContext`Vy$$, 1.1, 
+          "\!\(\*SubscriptBox[\(v\), \(y\)]\)"}, 0., 5., 0.2, Appearance -> 
+         "Labeled"}, {{$CellContext`p$$, 0.7, "p"}, 0.1, 1., 0.05, Appearance -> 
+         "Labeled"}, {{$CellContext`dz$$, 1, 
+          "\!\(\*SubscriptBox[\(d\), \(z\)]\)"}, 1, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`Kd$$, 50, 
+          "\!\(\*SubscriptBox[\(k\), \(d\)]\)"}, 10, 100, 10, Appearance -> 
+         "Labeled"}, {{$CellContext`x0$$, 25, "x0"}, 1, 100, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`tmax$$, 200, "tmax"}, 100, 500, 100, 
+         Appearance -> "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{596., {290., 298.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.760585238878048*^9, 3.760585269051891*^9, 3.7605853185097923`*^9, 
+   3.760585402972282*^9, 3.76058560544059*^9, 3.760585646404074*^9, {
+   3.760585696088549*^9, 3.760585720026808*^9}, 3.760895713584494*^9, {
+   3.7608958775293093`*^9, 3.7608958853243055`*^9}, {3.7608960308907614`*^9, 
+   3.760896044876546*^9}, 3.7608998563015375`*^9, {3.760909416781745*^9, 
+   3.760909439882854*^9}, {3.7609094702513866`*^9, 3.760909519969884*^9}, {
+   3.7609215192626047`*^9, 3.760921565082996*^9}, 3.760922285463545*^9, 
+   3.760925420898497*^9, {3.760927385563558*^9, 3.760927393587451*^9}},
+ CellLabel->"Out[10]=",ExpressionUUID->"69d168b5-ec17-4c5b-b59c-84defa401974"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","underdet",
+   "\"There are more dependent variables, \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"pulse\\\", \\\"[\\\", RowBox[{\\\"t\\\", \\\",\\\", \
+\\\"10\\\"}], \\\"]\\\"}], \\\",\\\", RowBox[{\\\"x\\\", \\\"[\\\", \
+\\\"t\\\", \\\"]\\\"}], \\\",\\\", RowBox[{\\\"y\\\", \\\"[\\\", \\\"t\\\", \
+\\\"]\\\"}], \\\",\\\", RowBox[{\\\"z\\\", \\\"[\\\", \\\"t\\\", \
+\\\"]\\\"}]}], \\\"}\\\"}]\\), than equations, so the system is \
+underdetermined.\"",2,13,10,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7609274190611*^9},
+ CellLabel->"",ExpressionUUID->"44587798-8651-4e31-b4e7-d8bc33b16fea"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","dsvar",
+   "\"\\!\\(\\*RowBox[{\\\"0.004085714285714286`\\\"}]\\) cannot be used as a \
+variable.\"",2,13,11,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7609274193273163`*^9},
+ CellLabel->"",ExpressionUUID->"ca41774b-4f3d-45d5-8075-1c19e2ef144b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"}\\\"}]\\) is neither a list of replacement \
+rules nor a valid dispatch table, and so cannot be used for replacing.\"",2,
+   13,12,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927419347744*^9},
+ CellLabel->"",ExpressionUUID->"0c60b3ac-b0d0-423f-b277-cbb17f356b91"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","dsvar",
+   "\"\\!\\(\\*RowBox[{\\\"0.004085714285714286`\\\"}]\\) cannot be used as a \
+variable.\"",2,13,13,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927419368462*^9},
+ CellLabel->"",ExpressionUUID->"052985c7-6b9b-4566-86ce-3e23a7b14fc8"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"NDSolve\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"x\\\", \
+\\\"\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"0.004085714285714286`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \
+RowBox[{\\\"2.2`\\\", \\\" \\\", RowBox[{\\\"x\\\", \\\"[\\\", \
+\\\"0.004085714285714286`\\\", \\\"]\\\"}], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"1.`\\\"}], \\\"+\\\", RowBox[{\\\"70.`\\\", \\\
+\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}]}]}], \
+\\\",\\\", RowBox[{RowBox[{SuperscriptBox[\\\"y\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]], \\\"[\\\", \\\"0.004085714285714286`\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{\\\"1.1`\\\", \\\" \\\", RowBox[{\\\"y\
+\\\", \\\"[\\\", \\\"0.004085714285714286`\\\", \\\"]\\\"}], \\\" \\\", \
+RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1.`\\\"}], \\\"+\\\", \
+RowBox[{\\\"70.`\\\", \\\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\
+\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}]}]}], \\\")\\\"}]}]}], \\\",\\\", \
+RowBox[{RowBox[{SuperscriptBox[\\\"z\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]], \\\"[\\\", \\\"0.004085714285714286`\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \
+\\\"1.`\\\"}], \\\" \\\", RowBox[{\\\"(\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\")\\\"}], \\\" \\\", \
+RowBox[{\\\"z\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"21\\\", \\\
+\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\"+\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}]}]}], \\\",\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\",\
+\\\", RowBox[{RowBox[{\\\"y\\\", \\\"[\\\", \\\"0.`\\\", \\\"]\\\"}], \\\"\
+\[Equal]\\\", \\\"25.`\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"z\\\", \
+\\\"[\\\", \\\"0.`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \\\"25.`\\\"}]}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"}\\\"}]}], \\\
+\"]\\\"}], \\\"}\\\"}]\\) is neither a list of replacement rules nor a valid \
+dispatch table, and so cannot be used for replacing.\"",2,13,14,
+   21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7609274193892393`*^9},
+ CellLabel->"",ExpressionUUID->"1fe96576-38f8-48b0-ba05-d9dede8f987e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","dsvar",
+   "\"\\!\\(\\*RowBox[{\\\"4.085718367346939`\\\"}]\\) cannot be used as a \
+variable.\"",2,13,15,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927419411007*^9},
+ CellLabel->"",ExpressionUUID->"d1050309-7126-43db-9fb1-860da687ba7e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"NDSolve\\\", \
+\\\"::\\\", \\\"dsvar\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,13,16,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7609274194955397`*^9},
+ CellLabel->"",ExpressionUUID->"b5bb08ec-ba89-4b99-9e2c-57725abae98b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"NDSolve\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"x\\\", \
+\\\"\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"4.085718367346939`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{\\\"2.2`\\\
+\", \\\" \\\", RowBox[{\\\"x\\\", \\\"[\\\", \\\"4.085718367346939`\\\", \
+\\\"]\\\"}], \\\" \\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1\\\
+\"}], \\\"+\\\", RowBox[{\\\"70.`\\\", \\\" \\\", RowBox[{\\\"Power\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}]}]}], \\\")\\\"}]}]}], \\\",\\\", \
+RowBox[{RowBox[{SuperscriptBox[\\\"y\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]], \\\"[\\\", \\\"4.085718367346939`\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{\\\"1.1`\\\", \\\" \\\", RowBox[{\\\"y\
+\\\", \\\"[\\\", \\\"4.085718367346939`\\\", \\\"]\\\"}], \\\" \\\", RowBox[{\
+\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\"+\\\", \
+RowBox[{\\\"70.`\\\", \\\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\
+\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}]}]}], \\\")\\\"}]}]}], \\\",\\\", \
+RowBox[{RowBox[{SuperscriptBox[\\\"z\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]], \\\"[\\\", \\\"4.085718367346939`\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \
+RowBox[{\\\"(\\\", RowBox[{\\\"1\\\", \\\"+\\\", RowBox[{\\\"pulse\\\", \\\"[\
+\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}], \\\"+\\\", RowBox[{\\\"pulse\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\"+\\\", RowBox[{\\\"pulse\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\")\\\"}]}], \\\" \
+\\\", RowBox[{\\\"z\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"18\\\
+\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\"+\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}]}]}], \\\",\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\",\
+\\\", RowBox[{RowBox[{\\\"y\\\", \\\"[\\\", \\\"0\\\", \\\"]\\\"}], \\\"\
+\[Equal]\\\", \\\"25\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"z\\\", \\\"[\\\", \
+\\\"0\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \\\"25\\\"}]}], \\\"}\\\"}], \
+\\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \
+\\\"}\\\"}]\\) is neither a list of replacement rules nor a valid dispatch \
+table, and so cannot be used for replacing.\"",2,13,17,21476105351699886191,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927419517066*^9},
+ CellLabel->"",ExpressionUUID->"e3178a52-aefd-4173-98ff-8798f70840b7"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ReplaceAll\\\", \
+\\\"::\\\", \\\"reps\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,13,18,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927419588352*^9},
+ CellLabel->"",ExpressionUUID->"9663cda7-1fd0-4ea7-b605-f241a9dd5c4a"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","underdet",
+   "\"There are more dependent variables, \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"pulse\\\", \\\"[\\\", RowBox[{\\\"t\\\", \\\",\\\", \
+\\\"10\\\"}], \\\"]\\\"}], \\\",\\\", RowBox[{\\\"x\\\", \\\"[\\\", \
+\\\"t\\\", \\\"]\\\"}], \\\",\\\", RowBox[{\\\"y\\\", \\\"[\\\", \\\"t\\\", \
+\\\"]\\\"}], \\\",\\\", RowBox[{\\\"z\\\", \\\"[\\\", \\\"t\\\", \
+\\\"]\\\"}]}], \\\"}\\\"}]\\), than equations, so the system is \
+underdetermined.\"",2,27,82,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927651792437*^9},
+ CellLabel->"",ExpressionUUID->"0d788c13-ac90-404a-b878-43d9a5470c84"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","dsvar",
+   "\"\\!\\(\\*RowBox[{\\\"0.004085714285714286`\\\"}]\\) cannot be used as a \
+variable.\"",2,27,83,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927651886608*^9},
+ CellLabel->"",ExpressionUUID->"8ed1b930-fb40-4a30-bff0-3bcf9787ef7a"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"}\\\"}]\\) is neither a list of replacement \
+rules nor a valid dispatch table, and so cannot be used for replacing.\"",2,
+   27,84,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927651952734*^9},
+ CellLabel->"",ExpressionUUID->"a07d8b76-3f08-4a23-b6eb-480f5a56092d"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","dsvar",
+   "\"\\!\\(\\*RowBox[{\\\"0.004085714285714286`\\\"}]\\) cannot be used as a \
+variable.\"",2,27,85,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.76092765197304*^9},
+ CellLabel->"",ExpressionUUID->"ce23ae07-2915-47f6-8d77-12a809a3a93b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"NDSolve\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"x\\\", \
+\\\"\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"0.004085714285714286`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \
+RowBox[{\\\"2.2`\\\", \\\" \\\", RowBox[{\\\"x\\\", \\\"[\\\", \
+\\\"0.004085714285714286`\\\", \\\"]\\\"}], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"1.`\\\"}], \\\"+\\\", RowBox[{\\\"70.`\\\", \\\
+\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}]}]}], \
+\\\",\\\", RowBox[{RowBox[{SuperscriptBox[\\\"y\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]], \\\"[\\\", \\\"0.004085714285714286`\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{\\\"1.1`\\\", \\\" \\\", RowBox[{\\\"y\
+\\\", \\\"[\\\", \\\"0.004085714285714286`\\\", \\\"]\\\"}], \\\" \\\", \
+RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1.`\\\"}], \\\"+\\\", \
+RowBox[{\\\"70.`\\\", \\\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\
+\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}]}]}], \\\")\\\"}]}]}], \\\",\\\", \
+RowBox[{RowBox[{SuperscriptBox[\\\"z\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]], \\\"[\\\", \\\"0.004085714285714286`\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \
+\\\"1.`\\\"}], \\\" \\\", RowBox[{\\\"(\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\")\\\"}], \\\" \\\", \
+RowBox[{\\\"z\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"21\\\", \\\
+\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\"+\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}]}]}], \\\",\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\",\
+\\\", RowBox[{RowBox[{\\\"y\\\", \\\"[\\\", \\\"0.`\\\", \\\"]\\\"}], \\\"\
+\[Equal]\\\", \\\"25.`\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"z\\\", \
+\\\"[\\\", \\\"0.`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \\\"25.`\\\"}]}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"}\\\"}]}], \\\
+\"]\\\"}], \\\"}\\\"}]\\) is neither a list of replacement rules nor a valid \
+dispatch table, and so cannot be used for replacing.\"",2,27,86,
+   21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7609276519943943`*^9},
+ CellLabel->"",ExpressionUUID->"b44d2a37-39de-470f-b700-33e2fda47b26"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","dsvar",
+   "\"\\!\\(\\*RowBox[{\\\"4.085718367346939`\\\"}]\\) cannot be used as a \
+variable.\"",2,27,87,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927652017108*^9},
+ CellLabel->"",ExpressionUUID->"a71a2819-6194-43b1-a058-a49d06a25012"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"NDSolve\\\", \
+\\\"::\\\", \\\"dsvar\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,27,88,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927652038769*^9},
+ CellLabel->"",ExpressionUUID->"1a6f80bd-5fd6-46a6-b78e-047b190159c6"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"NDSolve\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"x\\\", \
+\\\"\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"4.085718367346939`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{\\\"2.2`\\\
+\", \\\" \\\", RowBox[{\\\"x\\\", \\\"[\\\", \\\"4.085718367346939`\\\", \
+\\\"]\\\"}], \\\" \\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1\\\
+\"}], \\\"+\\\", RowBox[{\\\"70.`\\\", \\\" \\\", RowBox[{\\\"Power\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}]}]}], \\\")\\\"}]}]}], \\\",\\\", \
+RowBox[{RowBox[{SuperscriptBox[\\\"y\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]], \\\"[\\\", \\\"4.085718367346939`\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{\\\"1.1`\\\", \\\" \\\", RowBox[{\\\"y\
+\\\", \\\"[\\\", \\\"4.085718367346939`\\\", \\\"]\\\"}], \\\" \\\", RowBox[{\
+\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\"+\\\", \
+RowBox[{\\\"70.`\\\", \\\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\
+\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}]}]}], \\\")\\\"}]}]}], \\\",\\\", \
+RowBox[{RowBox[{SuperscriptBox[\\\"z\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]], \\\"[\\\", \\\"4.085718367346939`\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \
+RowBox[{\\\"(\\\", RowBox[{\\\"1\\\", \\\"+\\\", RowBox[{\\\"pulse\\\", \\\"[\
+\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}], \\\"+\\\", RowBox[{\\\"pulse\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\"+\\\", RowBox[{\\\"pulse\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\")\\\"}]}], \\\" \
+\\\", RowBox[{\\\"z\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"18\\\
+\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\"+\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}]}]}], \\\",\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\",\
+\\\", RowBox[{RowBox[{\\\"y\\\", \\\"[\\\", \\\"0\\\", \\\"]\\\"}], \\\"\
+\[Equal]\\\", \\\"25\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"z\\\", \\\"[\\\", \
+\\\"0\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \\\"25\\\"}]}], \\\"}\\\"}], \
+\\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \
+\\\"}\\\"}]\\) is neither a list of replacement rules nor a valid dispatch \
+table, and so cannot be used for replacing.\"",2,27,89,21476105351699886191,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927652061097*^9},
+ CellLabel->"",ExpressionUUID->"3fccf350-bf8d-440e-b40d-107cfdecad6b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ReplaceAll\\\", \
+\\\"::\\\", \\\"reps\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,27,90,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927652084805*^9},
+ CellLabel->"",ExpressionUUID->"4338133d-86cc-4f3f-995b-ada3190468dd"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","underdet",
+   "\"There are more dependent variables, \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"pulse\\\", \\\"[\\\", RowBox[{\\\"t\\\", \\\",\\\", \
+\\\"10\\\"}], \\\"]\\\"}], \\\",\\\", RowBox[{\\\"x\\\", \\\"[\\\", \
+\\\"t\\\", \\\"]\\\"}], \\\",\\\", RowBox[{\\\"y\\\", \\\"[\\\", \\\"t\\\", \
+\\\"]\\\"}], \\\",\\\", RowBox[{\\\"z\\\", \\\"[\\\", \\\"t\\\", \
+\\\"]\\\"}]}], \\\"}\\\"}]\\), than equations, so the system is \
+underdetermined.\"",2,27,91,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927661489263*^9},
+ CellLabel->"",ExpressionUUID->"c19a27e6-93d3-42aa-8990-177d3374bf2f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","dsvar",
+   "\"\\!\\(\\*RowBox[{\\\"0.004085714285714286`\\\"}]\\) cannot be used as a \
+variable.\"",2,27,92,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7609276619178762`*^9},
+ CellLabel->"",ExpressionUUID->"d2780f9e-277f-4291-88c7-154ab2aca724"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"}\\\"}]\\) is neither a list of replacement \
+rules nor a valid dispatch table, and so cannot be used for replacing.\"",2,
+   27,93,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7609276619383497`*^9},
+ CellLabel->"",ExpressionUUID->"e2e8cb41-32fb-4b4b-8ad2-e7113ccd44d1"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","dsvar",
+   "\"\\!\\(\\*RowBox[{\\\"0.004085714285714286`\\\"}]\\) cannot be used as a \
+variable.\"",2,27,94,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927661959684*^9},
+ CellLabel->"",ExpressionUUID->"af7a0d5b-d570-4337-9440-b8518013ee8a"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"NDSolve\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"x\\\", \
+\\\"\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"0.004085714285714286`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \
+RowBox[{\\\"2.2`\\\", \\\" \\\", RowBox[{\\\"x\\\", \\\"[\\\", \
+\\\"0.004085714285714286`\\\", \\\"]\\\"}], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"1.`\\\"}], \\\"+\\\", RowBox[{\\\"70.`\\\", \\\
+\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}]}]}], \
+\\\",\\\", RowBox[{RowBox[{SuperscriptBox[\\\"y\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]], \\\"[\\\", \\\"0.004085714285714286`\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{\\\"1.1`\\\", \\\" \\\", RowBox[{\\\"y\
+\\\", \\\"[\\\", \\\"0.004085714285714286`\\\", \\\"]\\\"}], \\\" \\\", \
+RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1.`\\\"}], \\\"+\\\", \
+RowBox[{\\\"70.`\\\", \\\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\
+\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}]}]}], \\\")\\\"}]}]}], \\\",\\\", \
+RowBox[{RowBox[{SuperscriptBox[\\\"z\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]], \\\"[\\\", \\\"0.004085714285714286`\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \
+\\\"1.`\\\"}], \\\" \\\", RowBox[{\\\"(\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\")\\\"}], \\\" \\\", \
+RowBox[{\\\"z\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"21\\\", \\\
+\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\"+\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}]}]}], \\\",\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\",\
+\\\", RowBox[{RowBox[{\\\"y\\\", \\\"[\\\", \\\"0.`\\\", \\\"]\\\"}], \\\"\
+\[Equal]\\\", \\\"25.`\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"z\\\", \
+\\\"[\\\", \\\"0.`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \\\"25.`\\\"}]}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"}\\\"}]}], \\\
+\"]\\\"}], \\\"}\\\"}]\\) is neither a list of replacement rules nor a valid \
+dispatch table, and so cannot be used for replacing.\"",2,27,95,
+   21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927661980188*^9},
+ CellLabel->"",ExpressionUUID->"e1a38118-4f47-4026-9912-facac411eb43"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","dsvar",
+   "\"\\!\\(\\*RowBox[{\\\"4.085718367346939`\\\"}]\\) cannot be used as a \
+variable.\"",2,27,96,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927662002131*^9},
+ CellLabel->"",ExpressionUUID->"b922bfa9-8e2f-40ad-847a-ecb0b691767f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"NDSolve\\\", \
+\\\"::\\\", \\\"dsvar\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,27,97,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927662022846*^9},
+ CellLabel->"",ExpressionUUID->"b7da3e42-cb35-4a98-a537-0da8e2501d56"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"NDSolve\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"x\\\", \
+\\\"\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"4.085718367346939`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{\\\"2.2`\\\
+\", \\\" \\\", RowBox[{\\\"x\\\", \\\"[\\\", \\\"4.085718367346939`\\\", \
+\\\"]\\\"}], \\\" \\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1\\\
+\"}], \\\"+\\\", RowBox[{\\\"70.`\\\", \\\" \\\", RowBox[{\\\"Power\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}]}]}], \\\")\\\"}]}]}], \\\",\\\", \
+RowBox[{RowBox[{SuperscriptBox[\\\"y\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]], \\\"[\\\", \\\"4.085718367346939`\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{\\\"1.1`\\\", \\\" \\\", RowBox[{\\\"y\
+\\\", \\\"[\\\", \\\"4.085718367346939`\\\", \\\"]\\\"}], \\\" \\\", RowBox[{\
+\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\"+\\\", \
+RowBox[{\\\"70.`\\\", \\\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\
+\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}]}]}], \\\")\\\"}]}]}], \\\",\\\", \
+RowBox[{RowBox[{SuperscriptBox[\\\"z\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]], \\\"[\\\", \\\"4.085718367346939`\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \
+RowBox[{\\\"(\\\", RowBox[{\\\"1\\\", \\\"+\\\", RowBox[{\\\"pulse\\\", \\\"[\
+\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}], \\\"+\\\", RowBox[{\\\"pulse\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\"+\\\", RowBox[{\\\"pulse\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\")\\\"}]}], \\\" \
+\\\", RowBox[{\\\"z\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"18\\\
+\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\"+\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}]}]}], \\\",\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\",\
+\\\", RowBox[{RowBox[{\\\"y\\\", \\\"[\\\", \\\"0\\\", \\\"]\\\"}], \\\"\
+\[Equal]\\\", \\\"25\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"z\\\", \\\"[\\\", \
+\\\"0\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \\\"25\\\"}]}], \\\"}\\\"}], \
+\\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \
+\\\"}\\\"}]\\) is neither a list of replacement rules nor a valid dispatch \
+table, and so cannot be used for replacing.\"",2,27,98,21476105351699886191,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927662043606*^9},
+ CellLabel->"",ExpressionUUID->"9c6243f3-6d8f-469b-a79a-a2c60214e0ac"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ReplaceAll\\\", \
+\\\"::\\\", \\\"reps\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,27,99,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927662069455*^9},
+ CellLabel->"",ExpressionUUID->"f006ed63-075a-4981-af52-a474f3b7f520"]
+}, Open  ]],
+
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{"Competing", " ", "cells", 
+    RowBox[{"(", 
+     RowBox[{"self", " ", "renewal", " ", "regulated"}], ")"}]}], " "}], 
+  "Subsection"], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"Differentiations", " ", "=", " ", "2"}], "Subsection"]}], "Input",
+ CellChangeTimes->{{3.760590892154339*^9, 3.760590900478875*^9}, 
+   3.760921579896059*^9},ExpressionUUID->"b78cf6e4-ffbf-4617-b3d5-\
+064a66d84007"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "defining", " ", "system", " ", "and", " ", "giving", " ", "numerical", 
+    " ", "values", " ", "to", " ", "parameters"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"sol1", "=", 
+     RowBox[{"NDSolve", "[", 
+      RowBox[{
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", "p", "*", 
+              FractionBox["Kd", 
+               RowBox[{"Kd", "+", 
+                RowBox[{"td", "[", "t", "]"}]}]]}], " ", "-", " ", "1"}], 
+            ")"}], "Vx", "*", 
+           RowBox[{"x", "[", "t", "]"}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"y", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", "p", "*", 
+              FractionBox["Kd", 
+               RowBox[{"Kd", "+", 
+                RowBox[{"td", "[", "t", "]"}]}]]}], " ", "-", " ", "1"}], 
+            ")"}], "Vy", "*", 
+           RowBox[{"y", "[", "t", "]"}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"z", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"2", "*", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", 
+              RowBox[{"p", "*", 
+               FractionBox["Kd", 
+                RowBox[{"Kd", "+", 
+                 RowBox[{"td", "[", "t", "]"}]}]]}]}], ")"}], "*", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"Vx", "*", 
+               RowBox[{"x", "[", "t", "]"}]}], "+", 
+              RowBox[{"Vy", "*", 
+               RowBox[{"y", "[", "t", "]"}]}]}], ")"}]}], " ", 
+           "\[IndentingNewLine]", "\t", "+", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"2", 
+               RowBox[{"(", 
+                RowBox[{"p", " ", "-", " ", "0.2"}], ")"}], "*", 
+               FractionBox["Kd", 
+                RowBox[{"Kd", "+", 
+                 RowBox[{"td", "[", "t", "]"}]}]]}], " ", "-", " ", "1"}], 
+             ")"}], "*", "Vz", "*", 
+            RowBox[{"z", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"td", "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"2", "*", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"p", " ", "-", " ", "0.2"}], ")"}], "*", 
+               FractionBox["Kd", 
+                RowBox[{"Kd", "+", 
+                 RowBox[{"td", "[", "t", "]"}]}]]}]}], ")"}], "*", "Vz", "*", 
+            
+            RowBox[{"z", "[", "t", "]"}]}], " ", "-", " ", 
+           RowBox[{"d", "*", 
+            RowBox[{"td", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"x", "[", "0", "]"}], "==", " ", "x0"}], ",", " ", 
+         RowBox[{
+          RowBox[{"y", "[", "0", "]"}], "==", "x0"}], ",", 
+         RowBox[{
+          RowBox[{"z", "[", "0", "]"}], "\[Equal]", "0"}], ",", 
+         RowBox[{
+          RowBox[{"td", "[", "0", "]"}], "\[Equal]", "0"}]}], 
+        "\[IndentingNewLine]", "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y", ",", "z", ",", "td"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", "tmax"}], "}"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"x", "[", "t", "]"}], "/.", "sol1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"y", "[", "t", "]"}], "/.", "sol1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"z", "[", "t", "]"}], "/.", "sol1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"td", "[", "t", "]"}], "/.", "sol1"}], "}"}]}], "}"}], ",", 
+      
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "tmax"}], "}"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "80"}], "}"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"AxesLabel", "\[Rule]", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<Time\>\"", " ", ",", "Black", ",", "Bold", ",", "12"}],
+           "]"}], " ", ",", 
+         RowBox[{"Style", "[", " ", 
+          RowBox[{
+          "\"\<Cell Number\>\"", " ", ",", "Black", ",", "Bold", ",", "12"}], 
+          "]"}]}], "}"}]}], ",", " ", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"Orange", ",", "Thick"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Green", ",", "Thick"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Blue", ",", "Thick"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Red", ",", "Thick"}], "}"}]}], "}"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"PlotLegends", "\[Rule]", 
+       RowBox[{"LineLegend", "[", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<X\>\"", ",", "\"\<Y\>\"", ",", "\"\<Z\>\"", ",", "\"\<TD\>\""}],
+          "}"}], "]"}]}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Vx", ",", "2.2", ",", "\"\<\!\(\*SubscriptBox[\(v\), \(x\)]\)\>\""}], 
+      "}"}], ",", "0.0", ",", "5.0", ",", "0.2", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Vy", ",", "1.1", ",", "\"\<\!\(\*SubscriptBox[\(v\), \(y\)]\)\>\""}], 
+      "}"}], ",", "0.0", ",", "5.0", ",", "0.2", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Vz", ",", "1", ",", "\"\<\!\(\*SubscriptBox[\(v\), \(z\)]\)\>\""}], 
+      "}"}], ",", "0.0", ",", "5.0", ",", "0.2", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"p", ",", "0.7", ",", "\"\<p\>\""}], "}"}], ",", "0.1", ",", 
+     "1.0", ",", "0.05", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "d", ",", "1", ",", "\"\<\!\(\*SubscriptBox[\(d\), \(z\)]\)\>\""}], 
+      "}"}], ",", "1", ",", "10", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Kd", ",", "80", ",", "\"\<\!\(\*SubscriptBox[\(k\), \(d\)]\)\>\""}], 
+      "}"}], ",", "10", ",", "100", ",", "10", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x0", ",", "20", ",", "\"\<x0\>\""}], "}"}], ",", "1", ",", 
+     "100", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"tmax", ",", "200", ",", "\"\<tmax\>\""}], "}"}], ",", "100", 
+     ",", "500", ",", "100", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.760580431711048*^9, 3.7605804317220397`*^9}, 
+   3.7605810608008857`*^9, {3.760581210702826*^9, 3.7605813789182525`*^9}, {
+   3.7605814548906546`*^9, 3.760581504038422*^9}, {3.760581539645976*^9, 
+   3.760581580038807*^9}, {3.7605816370800395`*^9, 3.760581684187999*^9}, {
+   3.7605821139292994`*^9, 3.760582143007606*^9}, {3.760582262328783*^9, 
+   3.7605824312984343`*^9}, {3.760582558162409*^9, 3.760582571767785*^9}, {
+   3.7605826143730297`*^9, 3.760582614805662*^9}, {3.760582670800786*^9, 
+   3.7605827676522064`*^9}, {3.7605828038753967`*^9, 
+   3.7605828726218605`*^9}, {3.7605829263105674`*^9, 3.760583099778761*^9}, {
+   3.760583388049017*^9, 3.7605834128985457`*^9}, {3.760583445400426*^9, 
+   3.760583448393586*^9}, {3.760583480523789*^9, 3.7605835237259674`*^9}, {
+   3.7605835852650785`*^9, 3.7605836050464897`*^9}, {3.7605860442202053`*^9, 
+   3.760586047413503*^9}, {3.7608970402972445`*^9, 3.7608971115479727`*^9}, {
+   3.760897247697316*^9, 3.7608972726076117`*^9}, {3.760899059873398*^9, 
+   3.760899095717577*^9}, 3.760921597491514*^9, 3.76092218463843*^9, {
+   3.760922312704424*^9, 3.760922528515184*^9}, {3.760924769607955*^9, 
+   3.760924771165533*^9}, {3.760924807949444*^9, 3.760924857983328*^9}, 
+   3.7609249239344997`*^9, {3.760925135430622*^9, 3.760925220515291*^9}, {
+   3.7609252613393993`*^9, 3.7609252775404167`*^9}, {3.760925313804776*^9, 
+   3.760925415945858*^9}, {3.7609273986179867`*^9, 3.760927419195828*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"46d43aa4-f85c-4e7a-8583-3f7b8b97f73a"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`d$$ = 1, $CellContext`Kd$$ = 
+    80, $CellContext`p$$ = 0.7, $CellContext`tmax$$ = 200, $CellContext`Vx$$ =
+     2.2, $CellContext`Vy$$ = 1.1, $CellContext`Vz$$ = 1, $CellContext`x0$$ = 
+    20, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"\:65e0\:6807\:9898\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`Vx$$], 2.2, "\!\(\*SubscriptBox[\(v\), \(x\)]\)"}, 
+      0., 5., 0.2}, {{
+       Hold[$CellContext`Vy$$], 1.1, "\!\(\*SubscriptBox[\(v\), \(y\)]\)"}, 
+      0., 5., 0.2}, {{
+       Hold[$CellContext`Vz$$], 1, "\!\(\*SubscriptBox[\(v\), \(z\)]\)"}, 0., 
+      5., 0.2}, {{
+       Hold[$CellContext`p$$], 0.7, "p"}, 0.1, 1., 0.05}, {{
+       Hold[$CellContext`d$$], 1, "\!\(\*SubscriptBox[\(d\), \(z\)]\)"}, 1, 
+      10, 1}, {{
+       Hold[$CellContext`Kd$$], 80, "\!\(\*SubscriptBox[\(k\), \(d\)]\)"}, 10,
+       100, 10}, {{
+       Hold[$CellContext`x0$$], 20, "x0"}, 1, 100, 1}, {{
+       Hold[$CellContext`tmax$$], 200, "tmax"}, 100, 500, 100}}, 
+    Typeset`size$$ = {551., {138., 145.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`Vx$9231$$ = 0, $CellContext`Vy$9232$$ = 
+    0, $CellContext`Vz$9233$$ = 0, $CellContext`p$9234$$ = 
+    0, $CellContext`d$9235$$ = 0, $CellContext`Kd$9236$$ = 
+    0, $CellContext`x0$9237$$ = 0, $CellContext`tmax$9238$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`d$$ = 1, $CellContext`Kd$$ = 
+        80, $CellContext`p$$ = 0.7, $CellContext`tmax$$ = 
+        200, $CellContext`Vx$$ = 2.2, $CellContext`Vy$$ = 
+        1.1, $CellContext`Vz$$ = 1, $CellContext`x0$$ = 20}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`Vx$$, $CellContext`Vx$9231$$, 0], 
+        Hold[$CellContext`Vy$$, $CellContext`Vy$9232$$, 0], 
+        Hold[$CellContext`Vz$$, $CellContext`Vz$9233$$, 0], 
+        Hold[$CellContext`p$$, $CellContext`p$9234$$, 0], 
+        Hold[$CellContext`d$$, $CellContext`d$9235$$, 0], 
+        Hold[$CellContext`Kd$$, $CellContext`Kd$9236$$, 0], 
+        Hold[$CellContext`x0$$, $CellContext`x0$9237$$, 0], 
+        Hold[$CellContext`tmax$$, $CellContext`tmax$9238$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`sol1 = 
+        NDSolve[{
+          Derivative[
+            1][$CellContext`x][$CellContext`t] == (
+             2 $CellContext`p$$ ($CellContext`Kd$$/($CellContext`Kd$$ + \
+$CellContext`td[$CellContext`t])) - 
+             1) $CellContext`Vx$$ $CellContext`x[$CellContext`t], 
+           Derivative[
+            1][$CellContext`y][$CellContext`t] == (
+             2 $CellContext`p$$ ($CellContext`Kd$$/($CellContext`Kd$$ + \
+$CellContext`td[$CellContext`t])) - 
+             1) $CellContext`Vy$$ $CellContext`y[$CellContext`t], 
+           Derivative[1][$CellContext`z][$CellContext`t] == 
+           2 (1 - $CellContext`p$$ ($CellContext`Kd$$/($CellContext`Kd$$ + \
+$CellContext`td[$CellContext`t]))) ($CellContext`Vx$$ \
+$CellContext`x[$CellContext`t] + $CellContext`Vy$$ \
+$CellContext`y[$CellContext`t]) + (
+              2 ($CellContext`p$$ - 
+                0.2) ($CellContext`Kd$$/($CellContext`Kd$$ + \
+$CellContext`td[$CellContext`t])) - 
+              1) $CellContext`Vz$$ $CellContext`z[$CellContext`t], \
+$CellContext`td[$CellContext`t] == 
+           2 (1 - ($CellContext`p$$ - 
+               0.2) ($CellContext`Kd$$/($CellContext`Kd$$ + \
+$CellContext`td[$CellContext`t]))) $CellContext`Vz$$ \
+$CellContext`z[$CellContext`t] - $CellContext`d$$ \
+$CellContext`td[$CellContext`t], $CellContext`x[
+            0] == $CellContext`x0$$, $CellContext`y[
+            0] == $CellContext`x0$$, $CellContext`z[0] == 
+           0, $CellContext`td[0] == 
+           0}, {$CellContext`x, $CellContext`y, $CellContext`z, \
+$CellContext`td}, {$CellContext`t, 0, $CellContext`tmax$$}]; Plot[{{
+           ReplaceAll[
+            $CellContext`x[$CellContext`t], $CellContext`sol1]}, {
+           ReplaceAll[
+            $CellContext`y[$CellContext`t], $CellContext`sol1]}, {
+           ReplaceAll[
+            $CellContext`z[$CellContext`t], $CellContext`sol1]}, {
+           ReplaceAll[
+            $CellContext`td[$CellContext`t], $CellContext`sol1]}}, \
+{$CellContext`t, 0, $CellContext`tmax$$}, PlotRange -> {0, 80}, 
+         AxesLabel -> {
+           Style["Time", Black, Bold, 12], 
+           Style["Cell Number", Black, Bold, 12]}, 
+         PlotStyle -> {{Orange, Thick}, {Green, Thick}, {Blue, Thick}, {
+           Red, Thick}}, PlotLegends -> LineLegend[{"X", "Y", "Z", "TD"}]]), 
+      "Specifications" :> {{{$CellContext`Vx$$, 2.2, 
+          "\!\(\*SubscriptBox[\(v\), \(x\)]\)"}, 0., 5., 0.2, Appearance -> 
+         "Labeled"}, {{$CellContext`Vy$$, 1.1, 
+          "\!\(\*SubscriptBox[\(v\), \(y\)]\)"}, 0., 5., 0.2, Appearance -> 
+         "Labeled"}, {{$CellContext`Vz$$, 1, 
+          "\!\(\*SubscriptBox[\(v\), \(z\)]\)"}, 0., 5., 0.2, Appearance -> 
+         "Labeled"}, {{$CellContext`p$$, 0.7, "p"}, 0.1, 1., 0.05, Appearance -> 
+         "Labeled"}, {{$CellContext`d$$, 1, 
+          "\!\(\*SubscriptBox[\(d\), \(z\)]\)"}, 1, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`Kd$$, 80, 
+          "\!\(\*SubscriptBox[\(k\), \(d\)]\)"}, 10, 100, 10, Appearance -> 
+         "Labeled"}, {{$CellContext`x0$$, 20, "x0"}, 1, 100, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`tmax$$, 200, "tmax"}, 100, 500, 100, 
+         Appearance -> "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{971., {175., 183.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.760581241423189*^9, 3.760581308905447*^9}, 
+   3.7605813396437993`*^9, 3.7605813814867754`*^9, 3.760581524397732*^9, 
+   3.760581590405837*^9, 3.7605816448325915`*^9, 3.7605816951877003`*^9, {
+   3.7605821181188755`*^9, 3.7605821471002383`*^9}, {3.7605822681937857`*^9, 
+   3.7605824356147847`*^9}, {3.7605825620225325`*^9, 3.760582575075873*^9}, 
+   3.760582619056557*^9, 3.760582734998396*^9, {3.7605827890396357`*^9, 
+   3.760582854060193*^9}, {3.760582947366745*^9, 3.760582959520977*^9}, 
+   3.760582991622342*^9, {3.76058303835456*^9, 3.7605831033197904`*^9}, {
+   3.760583403235628*^9, 3.7605835266493325`*^9}, {3.7605835938926067`*^9, 
+   3.760583607448259*^9}, 3.7605860567462187`*^9, 3.7608970478285875`*^9, {
+   3.7608972360320234`*^9, 3.760897275855339*^9}, 3.760924786448018*^9, 
+   3.7609248596542263`*^9, {3.760925077168126*^9, 3.760925083921067*^9}, {
+   3.760925136179743*^9, 3.760925188115355*^9}, {3.760925222042039*^9, 
+   3.7609252784103317`*^9}, {3.7609253253029137`*^9, 3.760925416644656*^9}, {
+   3.760927410404991*^9, 3.760927420334888*^9}},
+ CellLabel->"Out[14]=",ExpressionUUID->"f0e9dbb9-4143-46d0-a2ff-1bf8821e50a0"]
+}, Open  ]],
+
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{"Competing", " ", "cells", 
+    RowBox[{"(", 
+     RowBox[{"self", " ", "renewal", " ", "regulated"}], ")"}]}], " "}], 
+  "Subsection"], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"Differentiations", " ", "=", " ", "2"}], 
+  "Subsection"], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"Perturbed", " ", "from", " ", "steady", " ", "state"}], 
+  "Subsection"]}], "Input",
+ CellChangeTimes->{{3.76059092913984*^9, 3.7605909293714285`*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"6ca0753c-cb08-42b1-9c2d-acad54d8b41c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pulseStart", " ", "=", " ", "120"}], ";", " ", 
+  RowBox[{"pulseStop", " ", "=", " ", "126"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pulse", "[", 
+   RowBox[{"time_", ",", "pulseAmplitude_"}], "]"}], ":=", 
+  RowBox[{"Piecewise", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", " ", 
+       RowBox[{"time", "<", "pulseStart"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"pulseAmplitude", ",", " ", 
+       RowBox[{
+       "pulseStop", "\[GreaterEqual]", "time", "\[GreaterEqual]", 
+        "pulseStart"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"time", ">", "pulseStop"}]}], "}"}]}], "}"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"sol1", "=", 
+     RowBox[{"NDSolve", "[", 
+      RowBox[{
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", "p", "*", 
+              FractionBox["Kd", 
+               RowBox[{"Kd", "+", 
+                RowBox[{"td", "[", "t", "]"}]}]]}], " ", "-", " ", "1"}], 
+            ")"}], "Vx", "*", 
+           RowBox[{"x", "[", "t", "]"}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"y", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", "p", "*", 
+              FractionBox["Kd", 
+               RowBox[{"Kd", "+", 
+                RowBox[{"td", "[", "t", "]"}]}]]}], " ", "-", " ", "1"}], 
+            ")"}], "Vy", "*", 
+           RowBox[{"y", "[", "t", "]"}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"z", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"2", "*", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", 
+              RowBox[{"p", "*", 
+               FractionBox["Kd", 
+                RowBox[{"Kd", "+", 
+                 RowBox[{"td", "[", "t", "]"}]}]]}]}], ")"}], "*", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"Vx", "*", 
+               RowBox[{"x", "[", "t", "]"}]}], "+", 
+              RowBox[{"Vy", "*", 
+               RowBox[{"y", "[", "t", "]"}]}]}], ")"}]}], " ", 
+           "\[IndentingNewLine]", "\t", "+", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"2", 
+               RowBox[{"(", 
+                RowBox[{"p", " ", "-", " ", "0.2"}], ")"}], "*", 
+               FractionBox["Kd", 
+                RowBox[{"Kd", "+", 
+                 RowBox[{"td", "[", "t", "]"}]}]]}], " ", "-", " ", "1"}], 
+             ")"}], "*", "Vz", "*", 
+            RowBox[{"z", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"td", "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"2", "*", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"p", " ", "-", " ", "0.2"}], ")"}], "*", 
+               FractionBox["Kd", 
+                RowBox[{"Kd", "+", 
+                 RowBox[{"td", "[", "t", "]"}]}]]}]}], ")"}], "*", "Vz", "*", 
+            
+            RowBox[{"z", "[", "t", "]"}]}], " ", "-", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"d", "+", 
+              RowBox[{"pulse", "[", 
+               RowBox[{"t", ",", "10"}], "]"}], "+", 
+              RowBox[{"pulse", "[", 
+               RowBox[{
+                RowBox[{"t", "-", "60"}], ",", "10"}], "]"}], "+", 
+              RowBox[{"pulse", "[", 
+               RowBox[{
+                RowBox[{"t", "-", "120"}], ",", "10"}], "]"}]}], ")"}], "*", 
+            RowBox[{"td", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"x", "[", "0", "]"}], "==", " ", "x0"}], ",", " ", 
+         RowBox[{
+          RowBox[{"y", "[", "0", "]"}], "==", "x0"}], ",", 
+         RowBox[{
+          RowBox[{"z", "[", "0", "]"}], "\[Equal]", "0"}], ",", 
+         RowBox[{
+          RowBox[{"td", "[", "0", "]"}], "\[Equal]", "0"}]}], 
+        "\[IndentingNewLine]", "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y", ",", "z", ",", "td"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", "tmax"}], "}"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"x", "[", "t", "]"}], "/.", "sol1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"y", "[", "t", "]"}], "/.", "sol1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"z", "[", "t", "]"}], "/.", "sol1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"td", "[", "t", "]"}], "/.", "sol1"}], "}"}]}], "}"}], ",", 
+      
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "tmax"}], "}"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "80"}], "}"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"AxesLabel", "\[Rule]", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<Time\>\"", " ", ",", "Black", ",", "Bold", ",", "12"}],
+           "]"}], " ", ",", 
+         RowBox[{"Style", "[", " ", 
+          RowBox[{
+          "\"\<Cell Number\>\"", " ", ",", "Black", ",", "Bold", ",", "12"}], 
+          "]"}]}], "}"}]}], ",", " ", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"Red", ",", "Thick"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Green", ",", "Thick"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Blue", ",", "Thick"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Orange", ",", "Thick"}], "}"}]}], "}"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"PlotLegends", "\[Rule]", 
+       RowBox[{"LineLegend", "[", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<X\>\"", ",", "\"\<Y\>\"", ",", "\"\<Z\>\"", ",", "\"\<TD\>\""}],
+          "}"}], "]"}]}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Vx", ",", "2.2", ",", "\"\<\!\(\*SubscriptBox[\(v\), \(x\)]\)\>\""}], 
+      "}"}], ",", "0.0", ",", "5.0", ",", "0.2", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Vy", ",", "1.1", ",", "\"\<\!\(\*SubscriptBox[\(v\), \(y\)]\)\>\""}], 
+      "}"}], ",", "0.0", ",", "5.0", ",", "0.2", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Vz", ",", "1", ",", "\"\<\!\(\*SubscriptBox[\(v\), \(z\)]\)\>\""}], 
+      "}"}], ",", "0.0", ",", "5.0", ",", "0.2", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"p", ",", "0.6", ",", "\"\<p\>\""}], "}"}], ",", "0.1", ",", 
+     "1.0", ",", "0.05", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "d", ",", "1", ",", "\"\<\!\(\*SubscriptBox[\(d\), \(z\)]\)\>\""}], 
+      "}"}], ",", "1", ",", "10", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Kd", ",", "80", ",", "\"\<\!\(\*SubscriptBox[\(k\), \(d\)]\)\>\""}], 
+      "}"}], ",", "10", ",", "100", ",", "10", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x0", ",", "12", ",", "\"\<x0\>\""}], "}"}], ",", "1", ",", 
+     "100", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"tmax", ",", "400", ",", "\"\<tmax\>\""}], "}"}], ",", "100", 
+     ",", "500", ",", "100", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.7605840286701536`*^9, 3.7605840290020223`*^9}, {
+  3.76058410781055*^9, 3.760584156258193*^9}, {3.7605843166372986`*^9, 
+  3.7605843559233093`*^9}, {3.760584449708252*^9, 3.760584461742075*^9}, {
+  3.7605846460913477`*^9, 3.7605846487105494`*^9}, {3.7608972844842644`*^9, 
+  3.7608973525255637`*^9}, {3.7608992372408047`*^9, 3.7608992707500124`*^9}, {
+  3.760925479768792*^9, 3.7609255256056337`*^9}, {3.7609255722885017`*^9, 
+  3.760925582108884*^9}, {3.760926470205625*^9, 3.760926478107675*^9}, {
+  3.760927424345722*^9, 3.760927432807949*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"6aaaf151-cbe6-4830-bb20-30df3ab3e8de"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`d$$ = 1, $CellContext`Kd$$ = 
+    80, $CellContext`p$$ = 0.6, $CellContext`tmax$$ = 400, $CellContext`Vx$$ =
+     2.2, $CellContext`Vy$$ = 1.1, $CellContext`Vz$$ = 1, $CellContext`x0$$ = 
+    12, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"\:65e0\:6807\:9898\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`Vx$$], 2.2, "\!\(\*SubscriptBox[\(v\), \(x\)]\)"}, 
+      0., 5., 0.2}, {{
+       Hold[$CellContext`Vy$$], 1.1, "\!\(\*SubscriptBox[\(v\), \(y\)]\)"}, 
+      0., 5., 0.2}, {{
+       Hold[$CellContext`Vz$$], 1, "\!\(\*SubscriptBox[\(v\), \(z\)]\)"}, 0., 
+      5., 0.2}, {{
+       Hold[$CellContext`p$$], 0.6, "p"}, 0.1, 1., 0.05}, {{
+       Hold[$CellContext`d$$], 1, "\!\(\*SubscriptBox[\(d\), \(z\)]\)"}, 1, 
+      10, 1}, {{
+       Hold[$CellContext`Kd$$], 80, "\!\(\*SubscriptBox[\(k\), \(d\)]\)"}, 10,
+       100, 10}, {{
+       Hold[$CellContext`x0$$], 12, "x0"}, 1, 100, 1}, {{
+       Hold[$CellContext`tmax$$], 400, "tmax"}, 100, 500, 100}}, 
+    Typeset`size$$ = {551., {138., 145.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`Vx$11367$$ = 0, $CellContext`Vy$11368$$ = 
+    0, $CellContext`Vz$11369$$ = 0, $CellContext`p$11370$$ = 
+    0, $CellContext`d$11371$$ = 0, $CellContext`Kd$11372$$ = 
+    0, $CellContext`x0$11373$$ = 0, $CellContext`tmax$11374$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`d$$ = 1, $CellContext`Kd$$ = 
+        80, $CellContext`p$$ = 0.6, $CellContext`tmax$$ = 
+        400, $CellContext`Vx$$ = 2.2, $CellContext`Vy$$ = 
+        1.1, $CellContext`Vz$$ = 1, $CellContext`x0$$ = 12}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`Vx$$, $CellContext`Vx$11367$$, 0], 
+        Hold[$CellContext`Vy$$, $CellContext`Vy$11368$$, 0], 
+        Hold[$CellContext`Vz$$, $CellContext`Vz$11369$$, 0], 
+        Hold[$CellContext`p$$, $CellContext`p$11370$$, 0], 
+        Hold[$CellContext`d$$, $CellContext`d$11371$$, 0], 
+        Hold[$CellContext`Kd$$, $CellContext`Kd$11372$$, 0], 
+        Hold[$CellContext`x0$$, $CellContext`x0$11373$$, 0], 
+        Hold[$CellContext`tmax$$, $CellContext`tmax$11374$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`sol1 = 
+        NDSolve[{
+          Derivative[
+            1][$CellContext`x][$CellContext`t] == (
+             2 $CellContext`p$$ ($CellContext`Kd$$/($CellContext`Kd$$ + \
+$CellContext`td[$CellContext`t])) - 
+             1) $CellContext`Vx$$ $CellContext`x[$CellContext`t], 
+           Derivative[
+            1][$CellContext`y][$CellContext`t] == (
+             2 $CellContext`p$$ ($CellContext`Kd$$/($CellContext`Kd$$ + \
+$CellContext`td[$CellContext`t])) - 
+             1) $CellContext`Vy$$ $CellContext`y[$CellContext`t], 
+           Derivative[1][$CellContext`z][$CellContext`t] == 
+           2 (1 - $CellContext`p$$ ($CellContext`Kd$$/($CellContext`Kd$$ + \
+$CellContext`td[$CellContext`t]))) ($CellContext`Vx$$ \
+$CellContext`x[$CellContext`t] + $CellContext`Vy$$ \
+$CellContext`y[$CellContext`t]) + (
+              2 ($CellContext`p$$ - 
+                0.2) ($CellContext`Kd$$/($CellContext`Kd$$ + \
+$CellContext`td[$CellContext`t])) - 
+              1) $CellContext`Vz$$ $CellContext`z[$CellContext`t], \
+$CellContext`td[$CellContext`t] == 
+           2 (1 - ($CellContext`p$$ - 
+               0.2) ($CellContext`Kd$$/($CellContext`Kd$$ + \
+$CellContext`td[$CellContext`t]))) $CellContext`Vz$$ \
+$CellContext`z[$CellContext`t] - ($CellContext`d$$ + \
+$CellContext`pulse[$CellContext`t, 10] + $CellContext`pulse[$CellContext`t - 
+               60, 10] + $CellContext`pulse[$CellContext`t - 120, 
+               10]) $CellContext`td[$CellContext`t], $CellContext`x[
+            0] == $CellContext`x0$$, $CellContext`y[
+            0] == $CellContext`x0$$, $CellContext`z[0] == 
+           0, $CellContext`td[0] == 
+           0}, {$CellContext`x, $CellContext`y, $CellContext`z, \
+$CellContext`td}, {$CellContext`t, 0, $CellContext`tmax$$}]; Plot[{{
+           ReplaceAll[
+            $CellContext`x[$CellContext`t], $CellContext`sol1]}, {
+           ReplaceAll[
+            $CellContext`y[$CellContext`t], $CellContext`sol1]}, {
+           ReplaceAll[
+            $CellContext`z[$CellContext`t], $CellContext`sol1]}, {
+           ReplaceAll[
+            $CellContext`td[$CellContext`t], $CellContext`sol1]}}, \
+{$CellContext`t, 0, $CellContext`tmax$$}, PlotRange -> {0, 80}, 
+         AxesLabel -> {
+           Style["Time", Black, Bold, 12], 
+           Style["Cell Number", Black, Bold, 12]}, 
+         PlotStyle -> {{Red, Thick}, {Green, Thick}, {Blue, Thick}, {
+           Orange, Thick}}, PlotLegends -> 
+         LineLegend[{"X", "Y", "Z", "TD"}]]), 
+      "Specifications" :> {{{$CellContext`Vx$$, 2.2, 
+          "\!\(\*SubscriptBox[\(v\), \(x\)]\)"}, 0., 5., 0.2, Appearance -> 
+         "Labeled"}, {{$CellContext`Vy$$, 1.1, 
+          "\!\(\*SubscriptBox[\(v\), \(y\)]\)"}, 0., 5., 0.2, Appearance -> 
+         "Labeled"}, {{$CellContext`Vz$$, 1, 
+          "\!\(\*SubscriptBox[\(v\), \(z\)]\)"}, 0., 5., 0.2, Appearance -> 
+         "Labeled"}, {{$CellContext`p$$, 0.6, "p"}, 0.1, 1., 0.05, Appearance -> 
+         "Labeled"}, {{$CellContext`d$$, 1, 
+          "\!\(\*SubscriptBox[\(d\), \(z\)]\)"}, 1, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`Kd$$, 80, 
+          "\!\(\*SubscriptBox[\(k\), \(d\)]\)"}, 10, 100, 10, Appearance -> 
+         "Labeled"}, {{$CellContext`x0$$, 12, "x0"}, 1, 100, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`tmax$$, 400, "tmax"}, 100, 500, 100, 
+         Appearance -> "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{971., {175., 183.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.760584163580569*^9, 3.760584359799776*^9, 3.760584465475663*^9, 
+   3.7605846545605965`*^9, 3.760895714408842*^9, {3.7608973316978135`*^9, 
+   3.7608973563926067`*^9}, 3.760899274269506*^9, 3.7609255898935738`*^9, 
+   3.760926479238958*^9, 3.760927435762175*^9},
+ CellLabel->"Out[18]=",ExpressionUUID->"8e8c6a97-2f6b-4e0a-81bd-c9d14c7b2c3b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","underdet",
+   "\"There are more dependent variables, \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"td\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"pulse\\\", \\\"[\\\", RowBox[{\\\"t\\\", \\\",\\\", \\\"10\\\"}], \
+\\\"]\\\"}], \\\",\\\", RowBox[{\\\"x\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"y\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"z\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}]}], \\\"}\\\"}]\\), than \
+equations, so the system is underdetermined.\"",2,21,55,21476105351699886191,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927452331641*^9},
+ CellLabel->"",ExpressionUUID->"f38c62ab-8ae3-45f4-9c74-d29060a6867a"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","dsvar",
+   "\"\\!\\(\\*RowBox[{\\\"0.008171428571428573`\\\"}]\\) cannot be used as a \
+variable.\"",2,21,56,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927452531766*^9},
+ CellLabel->"",ExpressionUUID->"5fab980d-1f2a-4362-86f4-d41659d6d5bf"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"NDSolve\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"x\\\", \
+\\\"\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"0.008171428571428573`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \
+RowBox[{\\\"2.2`\\\", \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\"+\\\", RowBox[{\\\"96.`\\\", \\\" \
+\\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}], \\\" \
+\\\", RowBox[{\\\"x\\\", \\\"[\\\", \\\"0.008171428571428573`\\\", \
+\\\"]\\\"}]}]}], \\\",\\\", RowBox[{RowBox[{SuperscriptBox[\\\"y\\\", \\\"\
+\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"0.008171428571428573`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \
+RowBox[{\\\"1.1`\\\", \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\"+\\\", RowBox[{\\\"96.`\\\", \\\" \
+\\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}], \\\" \
+\\\", RowBox[{\\\"y\\\", \\\"[\\\", \\\"0.008171428571428573`\\\", \
+\\\"]\\\"}]}]}], \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"4\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"z\\\", \\\"[\\\", \
+\\\"0\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \\\"0\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"td\\\", \\\"[\\\", \\\"0\\\", \\\"]\\\"}], \\\"\[Equal]\\\
+\", \\\"0\\\"}]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"x\\\
+\", \\\",\\\", \\\"y\\\", \\\",\\\", \\\"z\\\", \\\",\\\", \\\"td\\\"}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"0.008171428571428573`\\\", \\\",\\\", \\\"0\\\", \\\",\\\", \
+\\\"400\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,21,57,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927452610774*^9},
+ CellLabel->"",ExpressionUUID->"9e6197b0-75b6-4d40-b6b1-abd156483cae"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","dsvar",
+   "\"\\!\\(\\*RowBox[{\\\"0.008171428571428573`\\\"}]\\) cannot be used as a \
+variable.\"",2,21,58,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7609274526329927`*^9},
+ CellLabel->"",ExpressionUUID->"fb2e1d3c-cad4-4d24-a57a-52cc5be0c28e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"NDSolve\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"x\\\", \
+\\\"\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"0.008171428571428573`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \
+RowBox[{\\\"2.2`\\\", \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"1.`\\\"}], \\\"+\\\", RowBox[{\\\"96.`\\\", \\\
+\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}], \\\" \
+\\\", RowBox[{\\\"x\\\", \\\"[\\\", \\\"0.008171428571428573`\\\", \
+\\\"]\\\"}]}]}], \\\",\\\", RowBox[{RowBox[{SuperscriptBox[\\\"y\\\", \\\"\
+\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"0.008171428571428573`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \
+RowBox[{\\\"1.1`\\\", \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"1.`\\\"}], \\\"+\\\", RowBox[{\\\"96.`\\\", \\\
+\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}], \\\" \
+\\\", RowBox[{\\\"y\\\", \\\"[\\\", \\\"0.008171428571428573`\\\", \
+\\\"]\\\"}]}]}], \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"4\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"z\\\", \\\"[\\\", \
+\\\"0.`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \\\"0.`\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"td\\\", \\\"[\\\", \\\"0.`\\\", \\\"]\\\"}], \\\"\[Equal]\
+\\\", \\\"0.`\\\"}]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"x\\\", \\\",\\\", \\\"y\\\", \\\",\\\", \\\"z\\\", \\\",\\\", \
+\\\"td\\\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"0.008171428571428573`\\\", \\\",\\\", \\\"0.`\\\", \\\",\\\", \
+\\\"400.`\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,21,59,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927452653489*^9},
+ CellLabel->"",ExpressionUUID->"3a855212-a0f0-48a0-8440-5fd654168923"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","dsvar",
+   "\"\\!\\(\\*RowBox[{\\\"8.171436734693877`\\\"}]\\) cannot be used as a \
+variable.\"",2,21,60,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7609274526761312`*^9},
+ CellLabel->"",ExpressionUUID->"610f7c53-cb1c-499a-b4ab-8ea5398fa53b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"NDSolve\\\", \
+\\\"::\\\", \\\"dsvar\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,21,61,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927452696814*^9},
+ CellLabel->"",ExpressionUUID->"6ffc3bab-e06d-4e10-bcb5-25d453a8fa06"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"NDSolve\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"x\\\", \
+\\\"\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"8.171436734693877`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{\\\"2.2`\\\
+\", \\\" \\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \
+\\\"+\\\", RowBox[{\\\"96.`\\\", \\\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}]}]}], \\\")\\\"}], \\\" \\\", RowBox[{\\\"x\\\", \\\"[\\\", \
+\\\"8.171436734693877`\\\", \\\"]\\\"}]}]}], \\\",\\\", \
+RowBox[{RowBox[{SuperscriptBox[\\\"y\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]], \\\"[\\\", \\\"8.171436734693877`\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{\\\"1.1`\\\", \\\" \\\", RowBox[{\\\"(\
+\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\"+\\\", \
+RowBox[{\\\"96.`\\\", \\\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\
+\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}]}]}], \\\")\\\"}], \\\" \\\", RowBox[{\\\"y\\\", \\\"[\\\", \
+\\\"8.171436734693877`\\\", \\\"]\\\"}]}]}], \\\",\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"4\\\", \\\"\[RightSkeleton]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"z\\\", \\\"[\\\", \\\"0\\\", \\\"]\\\"}], \
+\\\"\[Equal]\\\", \\\"0\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"td\\\", \\\"[\\\
+\", \\\"0\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \\\"0\\\"}]}], \\\"}\\\"}], \
+\\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"x\\\", \\\",\\\", \\\"y\\\", \
+\\\",\\\", \\\"z\\\", \\\",\\\", \\\"td\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"8.171436734693877`\\\", \\\",\\\", \\\"0\\\", \
+\\\",\\\", \\\"400\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"}\\\"}]\\) is \
+neither a list of replacement rules nor a valid dispatch table, and so cannot \
+be used for replacing.\"",2,21,62,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7609274527173767`*^9},
+ CellLabel->"",ExpressionUUID->"9e707926-5370-49ee-ac4e-cbfbd42ffb09"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ReplaceAll\\\", \
+\\\"::\\\", \\\"reps\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,21,63,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7609274527405453`*^9},
+ CellLabel->"",ExpressionUUID->"53274342-a108-4462-a0fd-3a734d9f9b4d"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","underdet",
+   "\"There are more dependent variables, \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"td\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"pulse\\\", \\\"[\\\", RowBox[{\\\"t\\\", \\\",\\\", \\\"10\\\"}], \
+\\\"]\\\"}], \\\",\\\", RowBox[{\\\"x\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"y\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"z\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}]}], \\\"}\\\"}]\\), than \
+equations, so the system is underdetermined.\"",2,25,64,21476105351699886191,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927488989151*^9},
+ CellLabel->"",ExpressionUUID->"cfbdfcfb-7781-4f1f-a9f9-cfa3f28f5fdc"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","dsvar",
+   "\"\\!\\(\\*RowBox[{\\\"0.008171428571428573`\\\"}]\\) cannot be used as a \
+variable.\"",2,25,65,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7609274891516438`*^9},
+ CellLabel->"",ExpressionUUID->"f65b2133-5e55-4f70-8887-a04e85572702"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"NDSolve\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"x\\\", \
+\\\"\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"0.008171428571428573`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \
+RowBox[{\\\"2.2`\\\", \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\"+\\\", RowBox[{\\\"96.`\\\", \\\" \
+\\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}], \\\" \
+\\\", RowBox[{\\\"x\\\", \\\"[\\\", \\\"0.008171428571428573`\\\", \
+\\\"]\\\"}]}]}], \\\",\\\", RowBox[{RowBox[{SuperscriptBox[\\\"y\\\", \\\"\
+\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"0.008171428571428573`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \
+RowBox[{\\\"1.1`\\\", \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\"+\\\", RowBox[{\\\"96.`\\\", \\\" \
+\\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}], \\\" \
+\\\", RowBox[{\\\"y\\\", \\\"[\\\", \\\"0.008171428571428573`\\\", \
+\\\"]\\\"}]}]}], \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"4\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"z\\\", \\\"[\\\", \
+\\\"0\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \\\"0\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"td\\\", \\\"[\\\", \\\"0\\\", \\\"]\\\"}], \\\"\[Equal]\\\
+\", \\\"0\\\"}]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"x\\\
+\", \\\",\\\", \\\"y\\\", \\\",\\\", \\\"z\\\", \\\",\\\", \\\"td\\\"}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"0.008171428571428573`\\\", \\\",\\\", \\\"0\\\", \\\",\\\", \
+\\\"400\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,25,66,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.76092748917857*^9},
+ CellLabel->"",ExpressionUUID->"cd959341-c02a-4650-9fba-134241b1ecac"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","dsvar",
+   "\"\\!\\(\\*RowBox[{\\\"0.008171428571428573`\\\"}]\\) cannot be used as a \
+variable.\"",2,25,67,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927489200939*^9},
+ CellLabel->"",ExpressionUUID->"d46b3376-72a9-4057-9917-e52c1826f4dd"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"NDSolve\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"x\\\", \
+\\\"\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"0.008171428571428573`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \
+RowBox[{\\\"2.2`\\\", \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"1.`\\\"}], \\\"+\\\", RowBox[{\\\"96.`\\\", \\\
+\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}], \\\" \
+\\\", RowBox[{\\\"x\\\", \\\"[\\\", \\\"0.008171428571428573`\\\", \
+\\\"]\\\"}]}]}], \\\",\\\", RowBox[{RowBox[{SuperscriptBox[\\\"y\\\", \\\"\
+\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"0.008171428571428573`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \
+RowBox[{\\\"1.1`\\\", \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"1.`\\\"}], \\\"+\\\", RowBox[{\\\"96.`\\\", \\\
+\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}], \\\" \
+\\\", RowBox[{\\\"y\\\", \\\"[\\\", \\\"0.008171428571428573`\\\", \
+\\\"]\\\"}]}]}], \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"4\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"z\\\", \\\"[\\\", \
+\\\"0.`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \\\"0.`\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"td\\\", \\\"[\\\", \\\"0.`\\\", \\\"]\\\"}], \\\"\[Equal]\
+\\\", \\\"0.`\\\"}]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"x\\\", \\\",\\\", \\\"y\\\", \\\",\\\", \\\"z\\\", \\\",\\\", \
+\\\"td\\\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"0.008171428571428573`\\\", \\\",\\\", \\\"0.`\\\", \\\",\\\", \
+\\\"400.`\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,25,68,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927489224533*^9},
+ CellLabel->"",ExpressionUUID->"61dcc64a-3be2-40ac-8e59-beaa327ba983"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","dsvar",
+   "\"\\!\\(\\*RowBox[{\\\"8.171436734693877`\\\"}]\\) cannot be used as a \
+variable.\"",2,25,69,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927489296525*^9},
+ CellLabel->"",ExpressionUUID->"62a8519d-592f-4f29-8c49-b3707790d58f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"NDSolve\\\", \
+\\\"::\\\", \\\"dsvar\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,25,70,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7609274893197803`*^9},
+ CellLabel->"",ExpressionUUID->"d1064109-81a8-4345-958a-6bf5c30c0047"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"NDSolve\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"x\\\", \
+\\\"\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"8.171436734693877`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{\\\"2.2`\\\
+\", \\\" \\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \
+\\\"+\\\", RowBox[{\\\"96.`\\\", \\\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}]}]}], \\\")\\\"}], \\\" \\\", RowBox[{\\\"x\\\", \\\"[\\\", \
+\\\"8.171436734693877`\\\", \\\"]\\\"}]}]}], \\\",\\\", \
+RowBox[{RowBox[{SuperscriptBox[\\\"y\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]], \\\"[\\\", \\\"8.171436734693877`\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{\\\"1.1`\\\", \\\" \\\", RowBox[{\\\"(\
+\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\"+\\\", \
+RowBox[{\\\"96.`\\\", \\\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\
+\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}]}]}], \\\")\\\"}], \\\" \\\", RowBox[{\\\"y\\\", \\\"[\\\", \
+\\\"8.171436734693877`\\\", \\\"]\\\"}]}]}], \\\",\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"4\\\", \\\"\[RightSkeleton]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"z\\\", \\\"[\\\", \\\"0\\\", \\\"]\\\"}], \
+\\\"\[Equal]\\\", \\\"0\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"td\\\", \\\"[\\\
+\", \\\"0\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \\\"0\\\"}]}], \\\"}\\\"}], \
+\\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"x\\\", \\\",\\\", \\\"y\\\", \
+\\\",\\\", \\\"z\\\", \\\",\\\", \\\"td\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"8.171436734693877`\\\", \\\",\\\", \\\"0\\\", \
+\\\",\\\", \\\"400\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"}\\\"}]\\) is \
+neither a list of replacement rules nor a valid dispatch table, and so cannot \
+be used for replacing.\"",2,25,71,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7609274893433027`*^9},
+ CellLabel->"",ExpressionUUID->"8a8ad155-d047-46ca-9d4a-22cf7ada9c45"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ReplaceAll\\\", \
+\\\"::\\\", \\\"reps\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,25,72,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7609274893669357`*^9},
+ CellLabel->"",ExpressionUUID->"1d1ca993-9348-4039-8487-5bfb3263fc6c"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","underdet",
+   "\"There are more dependent variables, \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"td\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"pulse\\\", \\\"[\\\", RowBox[{\\\"t\\\", \\\",\\\", \\\"10\\\"}], \
+\\\"]\\\"}], \\\",\\\", RowBox[{\\\"x\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"y\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"z\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}]}], \\\"}\\\"}]\\), than \
+equations, so the system is underdetermined.\"",2,27,73,21476105351699886191,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927650636529*^9},
+ CellLabel->"",ExpressionUUID->"132078df-bc8e-4e7f-b13a-8eda9d68903e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","dsvar",
+   "\"\\!\\(\\*RowBox[{\\\"0.008171428571428573`\\\"}]\\) cannot be used as a \
+variable.\"",2,27,74,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.76092765130119*^9},
+ CellLabel->"",ExpressionUUID->"87114a58-8eb8-49b1-8bc0-1d7fab897df1"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"NDSolve\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"x\\\", \
+\\\"\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"0.008171428571428573`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \
+RowBox[{\\\"2.2`\\\", \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\"+\\\", RowBox[{\\\"96.`\\\", \\\" \
+\\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}], \\\" \
+\\\", RowBox[{\\\"x\\\", \\\"[\\\", \\\"0.008171428571428573`\\\", \
+\\\"]\\\"}]}]}], \\\",\\\", RowBox[{RowBox[{SuperscriptBox[\\\"y\\\", \\\"\
+\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"0.008171428571428573`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \
+RowBox[{\\\"1.1`\\\", \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\"+\\\", RowBox[{\\\"96.`\\\", \\\" \
+\\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}], \\\" \
+\\\", RowBox[{\\\"y\\\", \\\"[\\\", \\\"0.008171428571428573`\\\", \
+\\\"]\\\"}]}]}], \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"4\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"z\\\", \\\"[\\\", \
+\\\"0\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \\\"0\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"td\\\", \\\"[\\\", \\\"0\\\", \\\"]\\\"}], \\\"\[Equal]\\\
+\", \\\"0\\\"}]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"x\\\
+\", \\\",\\\", \\\"y\\\", \\\",\\\", \\\"z\\\", \\\",\\\", \\\"td\\\"}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"0.008171428571428573`\\\", \\\",\\\", \\\"0\\\", \\\",\\\", \
+\\\"400\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,27,75,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7609276513219023`*^9},
+ CellLabel->"",ExpressionUUID->"e6ef984a-3d57-4eac-b16e-5eada876bba4"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","dsvar",
+   "\"\\!\\(\\*RowBox[{\\\"0.008171428571428573`\\\"}]\\) cannot be used as a \
+variable.\"",2,27,76,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927651343096*^9},
+ CellLabel->"",ExpressionUUID->"84a0f822-6724-450c-9678-9d1c939d1ddd"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"NDSolve\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"x\\\", \
+\\\"\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"0.008171428571428573`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \
+RowBox[{\\\"2.2`\\\", \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"1.`\\\"}], \\\"+\\\", RowBox[{\\\"96.`\\\", \\\
+\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}], \\\" \
+\\\", RowBox[{\\\"x\\\", \\\"[\\\", \\\"0.008171428571428573`\\\", \
+\\\"]\\\"}]}]}], \\\",\\\", RowBox[{RowBox[{SuperscriptBox[\\\"y\\\", \\\"\
+\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"0.008171428571428573`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \
+RowBox[{\\\"1.1`\\\", \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"1.`\\\"}], \\\"+\\\", RowBox[{\\\"96.`\\\", \\\
+\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}], \\\" \
+\\\", RowBox[{\\\"y\\\", \\\"[\\\", \\\"0.008171428571428573`\\\", \
+\\\"]\\\"}]}]}], \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"4\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"z\\\", \\\"[\\\", \
+\\\"0.`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \\\"0.`\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"td\\\", \\\"[\\\", \\\"0.`\\\", \\\"]\\\"}], \\\"\[Equal]\
+\\\", \\\"0.`\\\"}]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"x\\\", \\\",\\\", \\\"y\\\", \\\",\\\", \\\"z\\\", \\\",\\\", \
+\\\"td\\\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"0.008171428571428573`\\\", \\\",\\\", \\\"0.`\\\", \\\",\\\", \
+\\\"400.`\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"",2,27,77,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927651363323*^9},
+ CellLabel->"",ExpressionUUID->"0046e883-9665-4d1f-85d8-035078321e59"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve","dsvar",
+   "\"\\!\\(\\*RowBox[{\\\"8.171436734693877`\\\"}]\\) cannot be used as a \
+variable.\"",2,27,78,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.76092765138523*^9},
+ CellLabel->"",ExpressionUUID->"7c8c4801-4a82-4831-aa7d-bccd29fa37cc"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"NDSolve\\\", \
+\\\"::\\\", \\\"dsvar\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,27,79,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927651405398*^9},
+ CellLabel->"",ExpressionUUID->"cf726e09-bd47-4609-81cb-8b2a0fe04082"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"NDSolve\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"x\\\", \
+\\\"\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \
+\\\"8.171436734693877`\\\", \\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{\\\"2.2`\\\
+\", \\\" \\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \
+\\\"+\\\", RowBox[{\\\"96.`\\\", \\\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}]}]}], \\\")\\\"}], \\\" \\\", RowBox[{\\\"x\\\", \\\"[\\\", \
+\\\"8.171436734693877`\\\", \\\"]\\\"}]}]}], \\\",\\\", \
+RowBox[{RowBox[{SuperscriptBox[\\\"y\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]], \\\"[\\\", \\\"8.171436734693877`\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{\\\"1.1`\\\", \\\" \\\", RowBox[{\\\"(\
+\\\", RowBox[{RowBox[{\\\"-\\\", \\\"1\\\"}], \\\"+\\\", \
+RowBox[{\\\"96.`\\\", \\\" \\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\
+\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}]}]}], \\\")\\\"}], \\\" \\\", RowBox[{\\\"y\\\", \\\"[\\\", \
+\\\"8.171436734693877`\\\", \\\"]\\\"}]}]}], \\\",\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"4\\\", \\\"\[RightSkeleton]\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"z\\\", \\\"[\\\", \\\"0\\\", \\\"]\\\"}], \
+\\\"\[Equal]\\\", \\\"0\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"td\\\", \\\"[\\\
+\", \\\"0\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \\\"0\\\"}]}], \\\"}\\\"}], \
+\\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"x\\\", \\\",\\\", \\\"y\\\", \
+\\\",\\\", \\\"z\\\", \\\",\\\", \\\"td\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"8.171436734693877`\\\", \\\",\\\", \\\"0\\\", \
+\\\",\\\", \\\"400\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \\\"}\\\"}]\\) is \
+neither a list of replacement rules nor a valid dispatch table, and so cannot \
+be used for replacing.\"",2,27,80,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927651425699*^9},
+ CellLabel->"",ExpressionUUID->"3999a9f3-35b6-4068-9e38-d2a841d69440"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ReplaceAll\\\", \
+\\\"::\\\", \\\"reps\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,27,81,21476105351699886191,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.760927651447693*^9},
+ CellLabel->"",ExpressionUUID->"cf16422d-1056-49a4-acc2-d9a849c1dedf"]
+}, Open  ]],
+
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{
+   "Competing", " ", "cells", " ", "division", " ", "independant", " ", "of", 
+    " ", "division"}], " "}], "Subsection"], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+    "Self", " ", "renewal", " ", "and", " ", "regeneration", " ", "limited"}],
+     ")"}], " "}], "Subsection"], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"Differentiations", " ", "=", " ", "1"}], "Subsection"]}], "Input",
+ CellChangeTimes->{{3.7605909598885417`*^9, 3.760591058691834*^9}, 
+   3.760925634525098*^9, 
+   3.7609258409630203`*^9},ExpressionUUID->"3a139cf1-c333-47fc-b61d-\
+56e3431ce5c9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"sol1", "=", 
+     RowBox[{"NDSolve", "[", 
+      RowBox[{
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", " ", 
+             FractionBox["Kd", 
+              RowBox[{"Kd", "+", 
+               RowBox[{"z", "[", "t", "]"}]}]], ")"}], "*", "Vx", "*", 
+            RowBox[{"x", "[", "t", "]"}]}], " ", "-", 
+           RowBox[{
+            RowBox[{"(", " ", 
+             RowBox[{"p", "*", 
+              FractionBox[
+               RowBox[{"z", "[", "t", "]"}], 
+               RowBox[{"Kd", "+", 
+                RowBox[{"z", "[", "t", "]"}]}]]}], ")"}], " ", "*", 
+            RowBox[{"x", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"y", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", " ", 
+             FractionBox["Kd", 
+              RowBox[{"Kd", "+", 
+               RowBox[{"z", "[", "t", "]"}]}]], ")"}], "*", "Vy", "*", 
+            RowBox[{"y", "[", "t", "]"}]}], "-", 
+           RowBox[{
+            RowBox[{"(", " ", 
+             RowBox[{"p", "*", 
+              FractionBox[
+               RowBox[{"z", "[", "t", "]"}], 
+               RowBox[{"Kd", "+", 
+                RowBox[{"z", "[", "t", "]"}]}]]}], ")"}], " ", "*", 
+            RowBox[{"y", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"z", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"1", "-", 
+              RowBox[{"p", "*", 
+               FractionBox[
+                RowBox[{"z", "[", "t", "]"}], 
+                RowBox[{"Kd", "+", 
+                 RowBox[{"z", "[", "t", "]"}]}]]}]}], ")"}], "*", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"x", "[", "t", "]"}], "+", 
+              RowBox[{"y", "[", "t", "]"}]}], ")"}]}], " ", "-", " ", 
+           RowBox[{"dz", "*", 
+            RowBox[{"z", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"x", "[", "0", "]"}], "==", " ", "x0"}], ",", " ", 
+         RowBox[{
+          RowBox[{"y", "[", "0", "]"}], "==", "x0"}], ",", 
+         RowBox[{
+          RowBox[{"z", "[", "0", "]"}], "\[Equal]", "0"}]}], 
+        "\[IndentingNewLine]", "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y", ",", "z"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", "tmax"}], "}"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"x", "[", "t", "]"}], "/.", "sol1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"y", "[", "t", "]"}], "/.", "sol1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"z", "[", "t", "]"}], "/.", "sol1"}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "tmax"}], "}"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "300"}], "}"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"AxesLabel", "\[Rule]", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<Time\>\"", " ", ",", "Black", ",", "Bold", ",", "12"}],
+           "]"}], " ", ",", 
+         RowBox[{"Style", "[", " ", 
+          RowBox[{
+          "\"\<Cell Number\>\"", " ", ",", "Black", ",", "Bold", ",", "12"}], 
+          "]"}]}], "}"}]}], ",", " ", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"Red", ",", "Thick"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Green", ",", "Thick"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Blue", ",", "Thick"}], "}"}]}], "}"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"PlotLegends", "\[Rule]", 
+       RowBox[{"LineLegend", "[", 
+        RowBox[{"{", 
+         RowBox[{"\"\<X\>\"", ",", "\"\<Y\>\"", ",", "\"\<Z\>\""}], "}"}], 
+        "]"}]}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Vx", ",", "1.1", ",", "\"\<\!\(\*SubscriptBox[\(v\), \(x\)]\)\>\""}], 
+      "}"}], ",", "0.0", ",", "5.0", ",", "0.2", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Vy", ",", "1", ",", "\"\<\!\(\*SubscriptBox[\(v\), \(y\)]\)\>\""}], 
+      "}"}], ",", "0.0", ",", "5.0", ",", "0.2", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"p", ",", "0.5", ",", "\"\<p\>\""}], "}"}], ",", "0.1", ",", 
+     "1.0", ",", "0.05", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "dz", ",", "0.1", ",", "\"\<\!\(\*SubscriptBox[\(d\), \(z\)]\)\>\""}], 
+      "}"}], ",", "0", ",", "10", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Kd", ",", "100", ",", "\"\<\!\(\*SubscriptBox[\(k\), \(d\)]\)\>\""}], 
+      "}"}], ",", "10", ",", "100", ",", "10", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x0", ",", "100", ",", "\"\<x0\>\""}], "}"}], ",", "1", ",", 
+     "100", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"tmax", ",", "800", ",", "\"\<tmax\>\""}], "}"}], ",", "100", 
+     ",", "2500", ",", "200", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.760587598626891*^9, 3.7605876508359003`*^9}, {
+   3.7605876964317226`*^9, 3.7605877004324265`*^9}, {3.7605877519258633`*^9, 
+   3.760587781260041*^9}, {3.760587852493128*^9, 3.760587999777571*^9}, {
+   3.760588092815158*^9, 3.7605881298539023`*^9}, {3.76058818439858*^9, 
+   3.760588213265008*^9}, {3.7605883119713373`*^9, 3.760588347739803*^9}, {
+   3.7607238195869136`*^9, 3.760723836090371*^9}, {3.7608978379981136`*^9, 
+   3.760897871858955*^9}, {3.760897962102383*^9, 3.7608979847010393`*^9}, {
+   3.760898023093698*^9, 3.7608980349202585`*^9}, {3.7608992850621834`*^9, 
+   3.7608993202782397`*^9}, 3.7609256422304983`*^9, {3.760925827132059*^9, 
+   3.760925882250988*^9}, {3.760925916770113*^9, 3.760925936155252*^9}, {
+   3.760925988947468*^9, 3.7609260365262413`*^9}, {3.760926074382753*^9, 
+   3.7609260983082523`*^9}, {3.760926131069524*^9, 3.760926137923315*^9}, {
+   3.760926182256084*^9, 3.7609262410411587`*^9}, {3.760927445748357*^9, 
+   3.760927449919004*^9}, {3.7609274888554897`*^9, 3.7609274890466137`*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"4921b9c3-a2ca-45b9-8605-d6a8888975c2"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`dz$$ = 0.1, $CellContext`Kd$$ = 
+    100, $CellContext`p$$ = 0.5, $CellContext`tmax$$ = 
+    800, $CellContext`Vx$$ = 1.1, $CellContext`Vy$$ = 1, $CellContext`x0$$ = 
+    100, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"\:65e0\:6807\:9898\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`Vx$$], 1.1, "\!\(\*SubscriptBox[\(v\), \(x\)]\)"}, 
+      0., 5., 0.2}, {{
+       Hold[$CellContext`Vy$$], 1, "\!\(\*SubscriptBox[\(v\), \(y\)]\)"}, 0., 
+      5., 0.2}, {{
+       Hold[$CellContext`p$$], 0.5, "p"}, 0.1, 1., 0.05}, {{
+       Hold[$CellContext`dz$$], 0.1, "\!\(\*SubscriptBox[\(d\), \(z\)]\)"}, 0,
+       10, 1}, {{
+       Hold[$CellContext`Kd$$], 100, "\!\(\*SubscriptBox[\(k\), \(d\)]\)"}, 
+      10, 100, 10}, {{
+       Hold[$CellContext`x0$$], 100, "x0"}, 1, 100, 1}, {{
+       Hold[$CellContext`tmax$$], 800, "tmax"}, 100, 2500, 200}}, 
+    Typeset`size$$ = {539., {138., 145.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`Vx$16758$$ = 0, $CellContext`Vy$16759$$ = 
+    0, $CellContext`p$16760$$ = 0, $CellContext`dz$16761$$ = 
+    0, $CellContext`Kd$16762$$ = 0, $CellContext`x0$16763$$ = 
+    0, $CellContext`tmax$16764$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`dz$$ = 0.1, $CellContext`Kd$$ = 
+        100, $CellContext`p$$ = 0.5, $CellContext`tmax$$ = 
+        800, $CellContext`Vx$$ = 1.1, $CellContext`Vy$$ = 
+        1, $CellContext`x0$$ = 100}, "ControllerVariables" :> {
+        Hold[$CellContext`Vx$$, $CellContext`Vx$16758$$, 0], 
+        Hold[$CellContext`Vy$$, $CellContext`Vy$16759$$, 0], 
+        Hold[$CellContext`p$$, $CellContext`p$16760$$, 0], 
+        Hold[$CellContext`dz$$, $CellContext`dz$16761$$, 0], 
+        Hold[$CellContext`Kd$$, $CellContext`Kd$16762$$, 0], 
+        Hold[$CellContext`x0$$, $CellContext`x0$16763$$, 0], 
+        Hold[$CellContext`tmax$$, $CellContext`tmax$16764$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`sol1 = 
+        NDSolve[{
+          Derivative[
+            1][$CellContext`x][$CellContext`t] == \
+($CellContext`Kd$$/($CellContext`Kd$$ + $CellContext`z[$CellContext`t])) \
+$CellContext`Vx$$ $CellContext`x[$CellContext`t] - ($CellContext`p$$ \
+($CellContext`z[$CellContext`t]/($CellContext`Kd$$ + \
+$CellContext`z[$CellContext`t]))) $CellContext`x[$CellContext`t], 
+           Derivative[
+            1][$CellContext`y][$CellContext`t] == \
+($CellContext`Kd$$/($CellContext`Kd$$ + $CellContext`z[$CellContext`t])) \
+$CellContext`Vy$$ $CellContext`y[$CellContext`t] - ($CellContext`p$$ \
+($CellContext`z[$CellContext`t]/($CellContext`Kd$$ + \
+$CellContext`z[$CellContext`t]))) $CellContext`y[$CellContext`t], 
+           Derivative[
+            1][$CellContext`z][$CellContext`t] == (
+              1 - $CellContext`p$$ \
+($CellContext`z[$CellContext`t]/($CellContext`Kd$$ + \
+$CellContext`z[$CellContext`t]))) ($CellContext`x[$CellContext`t] + \
+$CellContext`y[$CellContext`t]) - $CellContext`dz$$ \
+$CellContext`z[$CellContext`t], $CellContext`x[
+            0] == $CellContext`x0$$, $CellContext`y[
+            0] == $CellContext`x0$$, $CellContext`z[0] == 
+           0}, {$CellContext`x, $CellContext`y, $CellContext`z}, \
+{$CellContext`t, 0, $CellContext`tmax$$}]; Plot[{{
+           ReplaceAll[
+            $CellContext`x[$CellContext`t], $CellContext`sol1]}, {
+           ReplaceAll[
+            $CellContext`y[$CellContext`t], $CellContext`sol1]}, {
+           ReplaceAll[
+            $CellContext`z[$CellContext`t], $CellContext`sol1]}}, \
+{$CellContext`t, 0, $CellContext`tmax$$}, PlotRange -> {0, 300}, AxesLabel -> {
+           Style["Time", Black, Bold, 12], 
+           Style["Cell Number", Black, Bold, 12]}, 
+         PlotStyle -> {{Red, Thick}, {Green, Thick}, {Blue, Thick}}, 
+         PlotLegends -> LineLegend[{"X", "Y", "Z"}]]), 
+      "Specifications" :> {{{$CellContext`Vx$$, 1.1, 
+          "\!\(\*SubscriptBox[\(v\), \(x\)]\)"}, 0., 5., 0.2, Appearance -> 
+         "Labeled"}, {{$CellContext`Vy$$, 1, 
+          "\!\(\*SubscriptBox[\(v\), \(y\)]\)"}, 0., 5., 0.2, Appearance -> 
+         "Labeled"}, {{$CellContext`p$$, 0.5, "p"}, 0.1, 1., 0.05, Appearance -> 
+         "Labeled"}, {{$CellContext`dz$$, 0.1, 
+          "\!\(\*SubscriptBox[\(d\), \(z\)]\)"}, 0, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`Kd$$, 100, 
+          "\!\(\*SubscriptBox[\(k\), \(d\)]\)"}, 10, 100, 10, Appearance -> 
+         "Labeled"}, {{$CellContext`x0$$, 100, "x0"}, 1, 100, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`tmax$$, 800, "tmax"}, 100, 2500, 200, 
+         Appearance -> "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{596., {280., 288.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.7605877223628335`*^9, {3.760587757471677*^9, 3.760587784119378*^9}, {
+   3.760587880160241*^9, 3.760587897675186*^9}, {3.760587952904481*^9, 
+   3.760588002584963*^9}, {3.7605881063703737`*^9, 3.760588133142005*^9}, {
+   3.760588191855298*^9, 3.7605882161253633`*^9}, {3.760588337527666*^9, 
+   3.7605883514196906`*^9}, {3.760723823147023*^9, 3.7607238398324304`*^9}, 
+   3.760895715501728*^9, {3.760897974070305*^9, 3.7608979888110967`*^9}, {
+   3.760898028322276*^9, 3.7608980385421114`*^9}, {3.7608993102187567`*^9, 
+   3.76089932381355*^9}, {3.760926085615425*^9, 3.760926099733667*^9}, {
+   3.7609261318537827`*^9, 3.760926140322742*^9}, {3.76092620897213*^9, 
+   3.7609262422431583`*^9}, 3.7609274519445667`*^9, 3.760927490158864*^9},
+ CellLabel->"Out[26]=",ExpressionUUID->"5c1ca82c-fc31-4906-9765-23df6f4525f0"]
+}, Open  ]],
+
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{
+   "Competing", " ", "cells", " ", "division", " ", "independant", " ", "of", 
+    " ", "division"}], " "}], "Subsection"], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+    "Self", " ", "renewal", " ", "and", " ", "regeneration", " ", "limited"}],
+     ")"}], " "}], "Subsection"], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"Differentiations", " ", "=", " ", "2"}], "Subsection"]}], "Input",
+ CellChangeTimes->{{3.7605910770003633`*^9, 3.7605910790010242`*^9}, 
+   3.7609263309620047`*^9},ExpressionUUID->"b65028c3-487d-4fad-8bbf-\
+7add336f41d2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"sol1", "=", 
+     RowBox[{"NDSolve", "[", 
+      RowBox[{
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", " ", 
+             FractionBox["Kd", 
+              RowBox[{"Kd", "+", 
+               RowBox[{"td", "[", "t", "]"}]}]], ")"}], "*", "Vx", "*", 
+            RowBox[{"x", "[", "t", "]"}]}], " ", "-", 
+           RowBox[{
+            RowBox[{"(", " ", 
+             RowBox[{"p", "*", 
+              FractionBox[
+               RowBox[{"td", "[", "t", "]"}], 
+               RowBox[{"Kd", "+", 
+                RowBox[{"td", "[", "t", "]"}]}]]}], ")"}], " ", "*", 
+            RowBox[{"x", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"y", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", " ", 
+             FractionBox["Kd", 
+              RowBox[{"Kd", "+", 
+               RowBox[{"td", "[", "t", "]"}]}]], ")"}], "*", "Vy", "*", 
+            RowBox[{"y", "[", "t", "]"}]}], "-", 
+           RowBox[{
+            RowBox[{"(", " ", 
+             RowBox[{"p", "*", 
+              FractionBox[
+               RowBox[{"td", "[", "t", "]"}], 
+               RowBox[{"Kd", "+", 
+                RowBox[{"td", "[", "t", "]"}]}]]}], ")"}], " ", "*", 
+            RowBox[{"y", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"z", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"1", "-", 
+              RowBox[{"p", "*", 
+               FractionBox[
+                RowBox[{"td", "[", "t", "]"}], 
+                RowBox[{"Kd", "+", 
+                 RowBox[{"td", "[", "t", "]"}]}]]}]}], ")"}], "*", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"x", "[", "t", "]"}], "+", 
+              RowBox[{"y", "[", "t", "]"}]}], ")"}]}], " ", "-", " ", 
+           RowBox[{
+            RowBox[{"(", " ", 
+             RowBox[{"p", "*", 
+              FractionBox[
+               RowBox[{"td", "[", "t", "]"}], 
+               RowBox[{"Kd", "+", 
+                RowBox[{"td", "[", "t", "]"}]}]]}], ")"}], " ", "*", 
+            RowBox[{"z", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"td", "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"1", "-", "  ", 
+              RowBox[{"p", "*", 
+               FractionBox[
+                RowBox[{"td", "[", "t", "]"}], 
+                RowBox[{"Kd", "+", 
+                 RowBox[{"td", "[", "t", "]"}]}]]}]}], ")"}], "*", 
+            RowBox[{"z", "[", "t", "]"}]}], " ", "-", " ", 
+           RowBox[{"d", "*", 
+            RowBox[{"td", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"x", "[", "0", "]"}], "==", " ", "x0"}], ",", " ", 
+         RowBox[{
+          RowBox[{"y", "[", "0", "]"}], "==", "x0"}], ",", 
+         RowBox[{
+          RowBox[{"z", "[", "0", "]"}], "\[Equal]", "0"}], ",", 
+         RowBox[{
+          RowBox[{"td", "[", "0", "]"}], "\[Equal]", "0"}]}], 
+        "\[IndentingNewLine]", "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y", ",", "z", ",", "td"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", "tmax"}], "}"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"x", "[", "t", "]"}], "/.", "sol1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"y", "[", "t", "]"}], "/.", "sol1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"z", "[", "t", "]"}], "/.", "sol1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"td", "[", "t", "]"}], "/.", "sol1"}], "}"}]}], "}"}], ",", 
+      
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "tmax"}], "}"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "300"}], "}"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"AxesLabel", "\[Rule]", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<Time\>\"", " ", ",", "Black", ",", "Bold", ",", "12"}],
+           "]"}], " ", ",", 
+         RowBox[{"Style", "[", " ", 
+          RowBox[{
+          "\"\<Cell Number\>\"", " ", ",", "Black", ",", "Bold", ",", "12"}], 
+          "]"}]}], "}"}]}], ",", " ", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"Red", ",", "Thick"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Green", ",", "Thick"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Blue", ",", "Thick"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Orange", ",", "Thick"}], "}"}]}], "}"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"PlotLegends", "\[Rule]", 
+       RowBox[{"LineLegend", "[", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<X\>\"", ",", "\"\<Y\>\"", ",", "\"\<Z\>\"", ",", "\"\<TD\>\""}],
+          "}"}], "]"}]}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Vx", ",", "1.01", ",", "\"\<\!\(\*SubscriptBox[\(v\), \(x\)]\)\>\""}], 
+      "}"}], ",", "0.0", ",", "5.0", ",", "0.2", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Vy", ",", "1", ",", "\"\<\!\(\*SubscriptBox[\(v\), \(y\)]\)\>\""}], 
+      "}"}], ",", "0.0", ",", "5.0", ",", "0.2", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"p", ",", "0.7", ",", "\"\<p\>\""}], "}"}], ",", "0.1", ",", 
+     "1.0", ",", "0.05", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "d", ",", "0.1", ",", "\"\<\!\(\*SubscriptBox[\(d\), \(z\)]\)\>\""}], 
+      "}"}], ",", "0", ",", "10", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Kd", ",", "100", ",", "\"\<\!\(\*SubscriptBox[\(k\), \(d\)]\)\>\""}], 
+      "}"}], ",", "10", ",", "100", ",", "10", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x0", ",", "1", ",", "\"\<x0\>\""}], "}"}], ",", "1", ",", 
+     "100", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"tmax", ",", "500", ",", "\"\<tmax\>\""}], "}"}], ",", "100", 
+     ",", "2500", ",", "200", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.760588363953497*^9, 3.76058854013235*^9}, {
+  3.7608980710715976`*^9, 3.760898084447249*^9}, {3.7608981236872606`*^9, 
+  3.7608981753251495`*^9}, {3.760899432661131*^9, 3.760899487482503*^9}, {
+  3.7609263255196342`*^9, 3.760926462595964*^9}, {3.7609264998967247`*^9, 
+  3.760926504861257*^9}, {3.7609265359074097`*^9, 3.760926635152755*^9}, {
+  3.760926665294817*^9, 3.76092666547676*^9}, {3.760927461140218*^9, 
+  3.760927477680442*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"77fb1f12-79c6-49d7-a2e5-12eabdd4594b"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`d$$ = 0.1, $CellContext`Kd$$ = 
+    100, $CellContext`p$$ = 0.7, $CellContext`tmax$$ = 
+    500, $CellContext`Vx$$ = 1.01, $CellContext`Vy$$ = 1, $CellContext`x0$$ = 
+    1, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"\:65e0\:6807\:9898\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`Vx$$], 1.01, "\!\(\*SubscriptBox[\(v\), \(x\)]\)"}, 
+      0., 5., 0.2}, {{
+       Hold[$CellContext`Vy$$], 1, "\!\(\*SubscriptBox[\(v\), \(y\)]\)"}, 0., 
+      5., 0.2}, {{
+       Hold[$CellContext`p$$], 0.7, "p"}, 0.1, 1., 0.05}, {{
+       Hold[$CellContext`d$$], 0.1, "\!\(\*SubscriptBox[\(d\), \(z\)]\)"}, 0, 
+      10, 1}, {{
+       Hold[$CellContext`Kd$$], 100, "\!\(\*SubscriptBox[\(k\), \(d\)]\)"}, 
+      10, 100, 10}, {{
+       Hold[$CellContext`x0$$], 1, "x0"}, 1, 100, 1}, {{
+       Hold[$CellContext`tmax$$], 500, "tmax"}, 100, 2500, 200}}, 
+    Typeset`size$$ = {551., {138., 145.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`Vx$15942$$ = 0, $CellContext`Vy$15943$$ = 
+    0, $CellContext`p$15944$$ = 0, $CellContext`d$15945$$ = 
+    0, $CellContext`Kd$15946$$ = 0, $CellContext`x0$15947$$ = 
+    0, $CellContext`tmax$15948$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`d$$ = 0.1, $CellContext`Kd$$ = 
+        100, $CellContext`p$$ = 0.7, $CellContext`tmax$$ = 
+        500, $CellContext`Vx$$ = 1.01, $CellContext`Vy$$ = 
+        1, $CellContext`x0$$ = 1}, "ControllerVariables" :> {
+        Hold[$CellContext`Vx$$, $CellContext`Vx$15942$$, 0], 
+        Hold[$CellContext`Vy$$, $CellContext`Vy$15943$$, 0], 
+        Hold[$CellContext`p$$, $CellContext`p$15944$$, 0], 
+        Hold[$CellContext`d$$, $CellContext`d$15945$$, 0], 
+        Hold[$CellContext`Kd$$, $CellContext`Kd$15946$$, 0], 
+        Hold[$CellContext`x0$$, $CellContext`x0$15947$$, 0], 
+        Hold[$CellContext`tmax$$, $CellContext`tmax$15948$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`sol1 = 
+        NDSolve[{
+          Derivative[
+            1][$CellContext`x][$CellContext`t] == \
+($CellContext`Kd$$/($CellContext`Kd$$ + $CellContext`td[$CellContext`t])) \
+$CellContext`Vx$$ $CellContext`x[$CellContext`t] - ($CellContext`p$$ \
+($CellContext`td[$CellContext`t]/($CellContext`Kd$$ + \
+$CellContext`td[$CellContext`t]))) $CellContext`x[$CellContext`t], 
+           Derivative[
+            1][$CellContext`y][$CellContext`t] == \
+($CellContext`Kd$$/($CellContext`Kd$$ + $CellContext`td[$CellContext`t])) \
+$CellContext`Vy$$ $CellContext`y[$CellContext`t] - ($CellContext`p$$ \
+($CellContext`td[$CellContext`t]/($CellContext`Kd$$ + \
+$CellContext`td[$CellContext`t]))) $CellContext`y[$CellContext`t], 
+           Derivative[
+            1][$CellContext`z][$CellContext`t] == (
+              1 - $CellContext`p$$ \
+($CellContext`td[$CellContext`t]/($CellContext`Kd$$ + \
+$CellContext`td[$CellContext`t]))) ($CellContext`x[$CellContext`t] + \
+$CellContext`y[$CellContext`t]) - ($CellContext`p$$ \
+($CellContext`td[$CellContext`t]/($CellContext`Kd$$ + \
+$CellContext`td[$CellContext`t]))) $CellContext`z[$CellContext`t], \
+$CellContext`td[$CellContext`t] == (
+              1 - $CellContext`p$$ \
+($CellContext`td[$CellContext`t]/($CellContext`Kd$$ + \
+$CellContext`td[$CellContext`t]))) $CellContext`z[$CellContext`t] - \
+$CellContext`d$$ $CellContext`td[$CellContext`t], $CellContext`x[
+            0] == $CellContext`x0$$, $CellContext`y[
+            0] == $CellContext`x0$$, $CellContext`z[0] == 
+           0, $CellContext`td[0] == 
+           0}, {$CellContext`x, $CellContext`y, $CellContext`z, \
+$CellContext`td}, {$CellContext`t, 0, $CellContext`tmax$$}]; Plot[{{
+           ReplaceAll[
+            $CellContext`x[$CellContext`t], $CellContext`sol1]}, {
+           ReplaceAll[
+            $CellContext`y[$CellContext`t], $CellContext`sol1]}, {
+           ReplaceAll[
+            $CellContext`z[$CellContext`t], $CellContext`sol1]}, {
+           ReplaceAll[
+            $CellContext`td[$CellContext`t], $CellContext`sol1]}}, \
+{$CellContext`t, 0, $CellContext`tmax$$}, PlotRange -> {0, 300}, AxesLabel -> {
+           Style["Time", Black, Bold, 12], 
+           Style["Cell Number", Black, Bold, 12]}, 
+         PlotStyle -> {{Red, Thick}, {Green, Thick}, {Blue, Thick}, {
+           Orange, Thick}}, PlotLegends -> 
+         LineLegend[{"X", "Y", "Z", "TD"}]]), 
+      "Specifications" :> {{{$CellContext`Vx$$, 1.01, 
+          "\!\(\*SubscriptBox[\(v\), \(x\)]\)"}, 0., 5., 0.2, Appearance -> 
+         "Labeled"}, {{$CellContext`Vy$$, 1, 
+          "\!\(\*SubscriptBox[\(v\), \(y\)]\)"}, 0., 5., 0.2, Appearance -> 
+         "Labeled"}, {{$CellContext`p$$, 0.7, "p"}, 0.1, 1., 0.05, Appearance -> 
+         "Labeled"}, {{$CellContext`d$$, 0.1, 
+          "\!\(\*SubscriptBox[\(d\), \(z\)]\)"}, 0, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`Kd$$, 100, 
+          "\!\(\*SubscriptBox[\(k\), \(d\)]\)"}, 10, 100, 10, Appearance -> 
+         "Labeled"}, {{$CellContext`x0$$, 1, "x0"}, 1, 100, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`tmax$$, 500, "tmax"}, 100, 2500, 200, 
+         Appearance -> "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{608., {280., 288.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.7605885154405274`*^9, 3.760588544792675*^9}, 
+   3.7608957158969917`*^9, 3.760898263040389*^9, 3.760899491016624*^9, 
+   3.760926327400612*^9, {3.760926500591235*^9, 3.760926506424962*^9}, {
+   3.760926538976715*^9, 3.760926666441525*^9}, 3.7609267514171247`*^9, {
+   3.7609274664277*^9, 3.760927481078718*^9}},
+ CellLabel->"Out[24]=",ExpressionUUID->"88272b57-5d23-436f-9860-02fd785a95c0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Coupled Model with z1 and z2", "Subsection",
+ CellChangeTimes->{{3.760927667628295*^9, 
+  3.760927682905788*^9}},ExpressionUUID->"d5cf3d37-2b1e-433f-9155-\
+b6bebd2b27bb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"sol1", "=", 
+     RowBox[{"NDSolve", "[", 
+      RowBox[{
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", "p1", "*", 
+              FractionBox["Kd1", 
+               RowBox[{"Kd1", "+", 
+                RowBox[{"z1", "[", "t", "]"}]}]], "*", 
+              FractionBox["Kd2", 
+               RowBox[{"Kd2", "+", 
+                RowBox[{"z2", "[", "t", "]"}]}]]}], " ", "-", " ", "1"}], 
+            ")"}], "Vx", "*", 
+           RowBox[{"x", "[", "t", "]"}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"y", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", "p2", "*", 
+              FractionBox["Kd1", 
+               RowBox[{"Kd1", "+", 
+                RowBox[{"z1", "[", "t", "]"}]}]], "*", 
+              FractionBox["Kd2", 
+               RowBox[{"Kd2", "+", 
+                RowBox[{"z2", "[", "t", "]"}]}]]}], " ", "-", " ", "1"}], 
+            ")"}], "Vy", "*", 
+           RowBox[{"y", "[", "t", "]"}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"z1", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"2", "*", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", 
+              RowBox[{"p1", "*", 
+               FractionBox["Kd1", 
+                RowBox[{"Kd1", "+", 
+                 RowBox[{"z1", "[", "t", "]"}]}]]}]}], ")"}], "*", "Vx", "*", 
+            
+            RowBox[{"x", "[", "t", "]"}]}], " ", "-", " ", 
+           RowBox[{"dz1", "*", 
+            RowBox[{"z1", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"z2", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"2", "*", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", 
+              RowBox[{"p2", "*", 
+               FractionBox["Kd2", 
+                RowBox[{"Kd2", "+", 
+                 RowBox[{"z2", "[", "t", "]"}]}]]}]}], ")"}], "*", "Vy", "*", 
+            
+            RowBox[{"y", "[", "t", "]"}]}], " ", "-", " ", 
+           RowBox[{"dz2", "*", 
+            RowBox[{"z1", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"x", "[", "0", "]"}], "==", " ", "x0"}], ",", " ", 
+         RowBox[{
+          RowBox[{"y", "[", "0", "]"}], "==", "x0"}], ",", 
+         RowBox[{
+          RowBox[{"z1", "[", "0", "]"}], "\[Equal]", "0"}], ",", 
+         RowBox[{
+          RowBox[{"z2", "[", "0", "]"}], "\[Equal]", "0"}]}], 
+        "\[IndentingNewLine]", "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y", ",", "z1", ",", "z2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", "tmax"}], "}"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"x", "[", "t", "]"}], "/.", "sol1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"y", "[", "t", "]"}], "/.", "sol1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"z1", "[", "t", "]"}], "/.", "sol1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"z2", "[", "t", "]"}], "/.", "sol1"}], "}"}]}], "}"}], ",", 
+      
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "tmax"}], "}"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "50"}], "}"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"AxesLabel", "\[Rule]", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<Time\>\"", " ", ",", "Black", ",", "Bold", ",", "12"}],
+           "]"}], " ", ",", 
+         RowBox[{"Style", "[", " ", 
+          RowBox[{
+          "\"\<Cell Number\>\"", " ", ",", "Black", ",", "Bold", ",", "12"}], 
+          "]"}]}], "}"}]}], ",", " ", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"Orange", ",", "Thick"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Green", ",", "Thick"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Blue", ",", "Thick"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Red", ",", "Thick"}], "}"}]}], "}"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"PlotLegends", "\[Rule]", 
+       RowBox[{"LineLegend", "[", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<X\>\"", ",", "\"\<Y\>\"", ",", "\"\<Z1\>\"", ",", 
+          "\"\<Z2\>\""}], "}"}], "]"}]}]}], "]"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Vx", ",", "0.5", ",", "\"\<\!\(\*SubscriptBox[\(v\), \(x\)]\)\>\""}], 
+      "}"}], ",", "0.0", ",", "5.0", ",", "0.2", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Vy", ",", "0.6", ",", "\"\<\!\(\*SubscriptBox[\(v\), \(y\)]\)\>\""}], 
+      "}"}], ",", "0.0", ",", "5.0", ",", "0.2", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"p1", ",", "0.5", ",", "\"\<p1\>\""}], "}"}], ",", "0.1", ",", 
+     "1.0", ",", "0.05", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"p2", ",", "0.5", ",", "\"\<p2\>\""}], "}"}], ",", "0.1", ",", 
+     "1.0", ",", "0.05", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "dz1", ",", "1", ",", "\"\<\!\(\*SubscriptBox[\(d\), \(z1\)]\)\>\""}], 
+      "}"}], ",", "1", ",", "10", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "dz2", ",", "1", ",", "\"\<\!\(\*SubscriptBox[\(d\), \(z2\)]\)\>\""}], 
+      "}"}], ",", "1", ",", "10", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Kd1", ",", "100", ",", "\"\<\!\(\*SubscriptBox[\(k\), \(d1\)]\)\>\""}],
+       "}"}], ",", "10", ",", "100", ",", "10", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Kd2", ",", "100", ",", "\"\<\!\(\*SubscriptBox[\(k\), \(d2\)]\)\>\""}],
+       "}"}], ",", "10", ",", "100", ",", "10", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x0", ",", "100", ",", "\"\<x0\>\""}], "}"}], ",", "1", ",", 
+     "100", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"tmax", ",", "400", ",", "\"\<tmax\>\""}], "}"}], ",", "100", 
+     ",", "2500", ",", "100", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.760927689012043*^9, 3.760927735181024*^9}, {
+  3.7609280271010303`*^9, 3.760928195223496*^9}, {3.760928388055574*^9, 
+  3.7609283894194193`*^9}, {3.760928445189156*^9, 3.7609286025932293`*^9}},
+ CellLabel->"In[61]:=",ExpressionUUID->"94f6d6f4-c4f2-4804-bcac-08af4ace61ca"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`dz1$$ = 1, $CellContext`dz2$$ = 
+    1, $CellContext`Kd1$$ = 100, $CellContext`Kd2$$ = 100, $CellContext`p1$$ =
+     0.5, $CellContext`p2$$ = 0.5, $CellContext`tmax$$ = 
+    400, $CellContext`Vx$$ = 0.5, $CellContext`Vy$$ = 0.6, $CellContext`x0$$ =
+     100, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"\:65e0\:6807\:9898\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`Vx$$], 0.5, "\!\(\*SubscriptBox[\(v\), \(x\)]\)"}, 
+      0., 5., 0.2}, {{
+       Hold[$CellContext`Vy$$], 0.6, "\!\(\*SubscriptBox[\(v\), \(y\)]\)"}, 
+      0., 5., 0.2}, {{
+       Hold[$CellContext`p1$$], 0.5, "p1"}, 0.1, 1., 0.05}, {{
+       Hold[$CellContext`p2$$], 0.5, "p2"}, 0.1, 1., 0.05}, {{
+       Hold[$CellContext`dz1$$], 1, "\!\(\*SubscriptBox[\(d\), \(z1\)]\)"}, 1,
+       10, 1}, {{
+       Hold[$CellContext`dz2$$], 1, "\!\(\*SubscriptBox[\(d\), \(z2\)]\)"}, 1,
+       10, 1}, {{
+       Hold[$CellContext`Kd1$$], 100, "\!\(\*SubscriptBox[\(k\), \(d1\)]\)"}, 
+      10, 100, 10}, {{
+       Hold[$CellContext`Kd2$$], 100, "\!\(\*SubscriptBox[\(k\), \(d2\)]\)"}, 
+      10, 100, 10}, {{
+       Hold[$CellContext`x0$$], 100, "x0"}, 1, 100, 1}, {{
+       Hold[$CellContext`tmax$$], 400, "tmax"}, 100, 2500, 100}}, 
+    Typeset`size$$ = {548., {138., 145.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`Vx$55798$$ = 0, $CellContext`Vy$55799$$ = 
+    0, $CellContext`p1$55800$$ = 0, $CellContext`p2$55801$$ = 
+    0, $CellContext`dz1$55802$$ = 0, $CellContext`dz2$55803$$ = 
+    0, $CellContext`Kd1$55804$$ = 0, $CellContext`Kd2$55805$$ = 
+    0, $CellContext`x0$55806$$ = 0, $CellContext`tmax$55807$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`dz1$$ = 1, $CellContext`dz2$$ = 
+        1, $CellContext`Kd1$$ = 100, $CellContext`Kd2$$ = 
+        100, $CellContext`p1$$ = 0.5, $CellContext`p2$$ = 
+        0.5, $CellContext`tmax$$ = 400, $CellContext`Vx$$ = 
+        0.5, $CellContext`Vy$$ = 0.6, $CellContext`x0$$ = 100}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`Vx$$, $CellContext`Vx$55798$$, 0], 
+        Hold[$CellContext`Vy$$, $CellContext`Vy$55799$$, 0], 
+        Hold[$CellContext`p1$$, $CellContext`p1$55800$$, 0], 
+        Hold[$CellContext`p2$$, $CellContext`p2$55801$$, 0], 
+        Hold[$CellContext`dz1$$, $CellContext`dz1$55802$$, 0], 
+        Hold[$CellContext`dz2$$, $CellContext`dz2$55803$$, 0], 
+        Hold[$CellContext`Kd1$$, $CellContext`Kd1$55804$$, 0], 
+        Hold[$CellContext`Kd2$$, $CellContext`Kd2$55805$$, 0], 
+        Hold[$CellContext`x0$$, $CellContext`x0$55806$$, 0], 
+        Hold[$CellContext`tmax$$, $CellContext`tmax$55807$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`sol1 = 
+        NDSolve[{
+          Derivative[
+            1][$CellContext`x][$CellContext`t] == (
+             2 $CellContext`p1$$ ($CellContext`Kd1$$/($CellContext`Kd1$$ + \
+$CellContext`z1[$CellContext`t])) ($CellContext`Kd2$$/($CellContext`Kd2$$ + \
+$CellContext`z2[$CellContext`t])) - 
+             1) $CellContext`Vx$$ $CellContext`x[$CellContext`t], 
+           Derivative[
+            1][$CellContext`y][$CellContext`t] == (
+             2 $CellContext`p2$$ ($CellContext`Kd1$$/($CellContext`Kd1$$ + \
+$CellContext`z1[$CellContext`t])) ($CellContext`Kd2$$/($CellContext`Kd2$$ + \
+$CellContext`z2[$CellContext`t])) - 
+             1) $CellContext`Vy$$ $CellContext`y[$CellContext`t], 
+           Derivative[1][$CellContext`z1][$CellContext`t] == 
+           2 (1 - $CellContext`p1$$ ($CellContext`Kd1$$/($CellContext`Kd1$$ + \
+$CellContext`z1[$CellContext`t]))) $CellContext`Vx$$ \
+$CellContext`x[$CellContext`t] - $CellContext`dz1$$ \
+$CellContext`z1[$CellContext`t], 
+           Derivative[1][$CellContext`z2][$CellContext`t] == 
+           2 (1 - $CellContext`p2$$ ($CellContext`Kd2$$/($CellContext`Kd2$$ + \
+$CellContext`z2[$CellContext`t]))) $CellContext`Vy$$ \
+$CellContext`y[$CellContext`t] - $CellContext`dz2$$ \
+$CellContext`z1[$CellContext`t], $CellContext`x[
+            0] == $CellContext`x0$$, $CellContext`y[
+            0] == $CellContext`x0$$, $CellContext`z1[0] == 
+           0, $CellContext`z2[0] == 
+           0}, {$CellContext`x, $CellContext`y, $CellContext`z1, \
+$CellContext`z2}, {$CellContext`t, 0, $CellContext`tmax$$}]; Plot[{{
+           ReplaceAll[
+            $CellContext`x[$CellContext`t], $CellContext`sol1]}, {
+           ReplaceAll[
+            $CellContext`y[$CellContext`t], $CellContext`sol1]}, {
+           ReplaceAll[
+            $CellContext`z1[$CellContext`t], $CellContext`sol1]}, {
+           ReplaceAll[
+            $CellContext`z2[$CellContext`t], $CellContext`sol1]}}, \
+{$CellContext`t, 0, $CellContext`tmax$$}, PlotRange -> {0, 50}, 
+         AxesLabel -> {
+           Style["Time", Black, Bold, 12], 
+           Style["Cell Number", Black, Bold, 12]}, 
+         PlotStyle -> {{Orange, Thick}, {Green, Thick}, {Blue, Thick}, {
+           Red, Thick}}, PlotLegends -> LineLegend[{"X", "Y", "Z1", "Z2"}]]), 
+      "Specifications" :> {{{$CellContext`Vx$$, 0.5, 
+          "\!\(\*SubscriptBox[\(v\), \(x\)]\)"}, 0., 5., 0.2, Appearance -> 
+         "Labeled"}, {{$CellContext`Vy$$, 0.6, 
+          "\!\(\*SubscriptBox[\(v\), \(y\)]\)"}, 0., 5., 0.2, Appearance -> 
+         "Labeled"}, {{$CellContext`p1$$, 0.5, "p1"}, 0.1, 1., 0.05, 
+         Appearance -> "Labeled"}, {{$CellContext`p2$$, 0.5, "p2"}, 0.1, 1., 
+         0.05, Appearance -> 
+         "Labeled"}, {{$CellContext`dz1$$, 1, 
+          "\!\(\*SubscriptBox[\(d\), \(z1\)]\)"}, 1, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`dz2$$, 1, 
+          "\!\(\*SubscriptBox[\(d\), \(z2\)]\)"}, 1, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`Kd1$$, 100, 
+          "\!\(\*SubscriptBox[\(k\), \(d1\)]\)"}, 10, 100, 10, Appearance -> 
+         "Labeled"}, {{$CellContext`Kd2$$, 100, 
+          "\!\(\*SubscriptBox[\(k\), \(d2\)]\)"}, 10, 100, 10, Appearance -> 
+         "Labeled"}, {{$CellContext`x0$$, 100, "x0"}, 1, 100, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`tmax$$, 400, "tmax"}, 100, 2500, 100, 
+         Appearance -> "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{968., {175., 183.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.760928117169857*^9, {3.76092836452452*^9, 3.7609284158323708`*^9}, {
+   3.760928453726636*^9, 3.7609286032119904`*^9}},
+ CellLabel->"Out[62]=",ExpressionUUID->"77351185-3978-44e3-985d-3cf21a7ca594"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1139, 942},
+WindowMargins->{{Automatic, -1544}, {Automatic, 0}},
+Magnification:>1.3 Inherited,
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (2018\:5e743\
+\:67085\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 448, 11, 75, "Input",ExpressionUUID->"40c1b10f-ef6f-41cb-8dbb-be85ef5f5676"],
+Cell[CellGroupData[{
+Cell[1031, 35, 7051, 178, 947, "Input",ExpressionUUID->"56cf72dd-bee0-47ab-9010-efce14718147"],
+Cell[8085, 215, 5898, 109, 593, "Output",ExpressionUUID->"d5ad2ceb-2732-4e57-a217-51354ac3fdc3"]
+}, Open  ]],
+Cell[13998, 327, 675, 17, 106, "Input",ExpressionUUID->"1f102572-1f9f-431e-b1dd-f36a7aebd007"],
+Cell[CellGroupData[{
+Cell[14698, 348, 8084, 206, 1075, "Input",ExpressionUUID->"437c96c5-70f4-416b-861a-6d08dbabc033"],
+Cell[22785, 556, 6201, 112, 613, "Output",ExpressionUUID->"69d168b5-ec17-4c5b-b59c-84defa401974"],
+Cell[28989, 670, 690, 12, 30, "Message",ExpressionUUID->"44587798-8651-4e31-b4e7-d8bc33b16fea"],
+Cell[29682, 684, 337, 7, 30, "Message",ExpressionUUID->"ca41774b-4f3d-45d5-8075-1c19e2ef144b"],
+Cell[30022, 693, 480, 9, 30, "Message",ExpressionUUID->"0c60b3ac-b0d0-423f-b277-cbb17f356b91"],
+Cell[30505, 704, 335, 7, 30, "Message",ExpressionUUID->"052985c7-6b9b-4566-86ce-3e23a7b14fc8"],
+Cell[30843, 713, 2696, 40, 97, "Message",ExpressionUUID->"1fe96576-38f8-48b0-ba05-d9dede8f987e"],
+Cell[33542, 755, 332, 7, 30, "Message",ExpressionUUID->"d1050309-7126-43db-9fb1-860da687ba7e"],
+Cell[33877, 764, 414, 8, 30, "Message",ExpressionUUID->"b5bb08ec-ba89-4b99-9e2c-57725abae98b"],
+Cell[34294, 774, 2990, 44, 97, "Message",ExpressionUUID->"e3178a52-aefd-4173-98ff-8798f70840b7"],
+Cell[37287, 820, 414, 8, 30, "Message",ExpressionUUID->"9663cda7-1fd0-4ea7-b605-f241a9dd5c4a"],
+Cell[37704, 830, 692, 12, 30, "Message",ExpressionUUID->"0d788c13-ac90-404a-b878-43d9a5470c84"],
+Cell[38399, 844, 335, 7, 30, "Message",ExpressionUUID->"8ed1b930-fb40-4a30-bff0-3bcf9787ef7a"],
+Cell[38737, 853, 480, 9, 30, "Message",ExpressionUUID->"a07d8b76-3f08-4a23-b6eb-480f5a56092d"],
+Cell[39220, 864, 334, 7, 30, "Message",ExpressionUUID->"ce23ae07-2915-47f6-8d77-12a809a3a93b"],
+Cell[39557, 873, 2696, 40, 97, "Message",ExpressionUUID->"b44d2a37-39de-470f-b700-33e2fda47b26"],
+Cell[42256, 915, 332, 7, 30, "Message",ExpressionUUID->"a71a2819-6194-43b1-a058-a49d06a25012"],
+Cell[42591, 924, 412, 8, 30, "Message",ExpressionUUID->"1a6f80bd-5fd6-46a6-b78e-047b190159c6"],
+Cell[43006, 934, 2990, 44, 97, "Message",ExpressionUUID->"3fccf350-bf8d-440e-b40d-107cfdecad6b"],
+Cell[45999, 980, 414, 8, 30, "Message",ExpressionUUID->"4338133d-86cc-4f3f-995b-ada3190468dd"],
+Cell[46416, 990, 692, 12, 30, "Message",ExpressionUUID->"c19a27e6-93d3-42aa-8990-177d3374bf2f"],
+Cell[47111, 1004, 337, 7, 30, "Message",ExpressionUUID->"d2780f9e-277f-4291-88c7-154ab2aca724"],
+Cell[47451, 1013, 482, 9, 30, "Message",ExpressionUUID->"e2e8cb41-32fb-4b4b-8ad2-e7113ccd44d1"],
+Cell[47936, 1024, 335, 7, 30, "Message",ExpressionUUID->"af7a0d5b-d570-4337-9440-b8518013ee8a"],
+Cell[48274, 1033, 2694, 40, 97, "Message",ExpressionUUID->"e1a38118-4f47-4026-9912-facac411eb43"],
+Cell[50971, 1075, 332, 7, 30, "Message",ExpressionUUID->"b922bfa9-8e2f-40ad-847a-ecb0b691767f"],
+Cell[51306, 1084, 412, 8, 30, "Message",ExpressionUUID->"b7da3e42-cb35-4a98-a537-0da8e2501d56"],
+Cell[51721, 1094, 2990, 44, 97, "Message",ExpressionUUID->"9c6243f3-6d8f-469b-a79a-a2c60214e0ac"],
+Cell[54714, 1140, 414, 8, 30, "Message",ExpressionUUID->"f006ed63-075a-4981-af52-a474f3b7f520"]
+}, Open  ]],
+Cell[55143, 1151, 446, 11, 75, "Input",ExpressionUUID->"b78cf6e4-ffbf-4617-b3d5-064a66d84007"],
+Cell[CellGroupData[{
+Cell[55614, 1166, 9347, 230, 1149, "Input",ExpressionUUID->"46d43aa4-f85c-4e7a-8583-3f7b8b97f73a"],
+Cell[64964, 1398, 7478, 134, 383, "Output",ExpressionUUID->"f0e9dbb9-4143-46d0-a2ff-1bf8821e50a0"]
+}, Open  ]],
+Cell[72457, 1535, 566, 14, 106, "Input",ExpressionUUID->"6ca0753c-cb08-42b1-9c2d-acad54d8b41c"],
+Cell[CellGroupData[{
+Cell[73048, 1553, 9392, 245, 1277, "Input",ExpressionUUID->"6aaaf151-cbe6-4830-bb20-30df3ab3e8de"],
+Cell[82443, 1800, 6870, 127, 383, "Output",ExpressionUUID->"8e8c6a97-2f6b-4e0a-81bd-c9d14c7b2c3b"],
+Cell[89316, 1929, 762, 13, 30, "Message",ExpressionUUID->"f38c62ab-8ae3-45f4-9c74-d29060a6867a"],
+Cell[90081, 1944, 335, 7, 30, "Message",ExpressionUUID->"5fab980d-1f2a-4362-86f4-d41659d6d5bf"],
+Cell[90419, 1953, 2171, 33, 97, "Message",ExpressionUUID->"9e6197b0-75b6-4d40-b6b1-abd156483cae"],
+Cell[92593, 1988, 337, 7, 30, "Message",ExpressionUUID->"fb2e1d3c-cad4-4d24-a57a-52cc5be0c28e"],
+Cell[92933, 1997, 2187, 33, 97, "Message",ExpressionUUID->"3a855212-a0f0-48a0-8440-5fd654168923"],
+Cell[95123, 2032, 334, 7, 30, "Message",ExpressionUUID->"610f7c53-cb1c-499a-b4ab-8ea5398fa53b"],
+Cell[95460, 2041, 412, 8, 30, "Message",ExpressionUUID->"6ffc3bab-e06d-4e10-bcb5-25d453a8fa06"],
+Cell[95875, 2051, 2156, 32, 97, "Message",ExpressionUUID->"9e707926-5370-49ee-ac4e-cbfbd42ffb09"],
+Cell[98034, 2085, 416, 8, 30, "Message",ExpressionUUID->"53274342-a108-4462-a0fd-3a734d9f9b4d"],
+Cell[98453, 2095, 762, 13, 30, "Message",ExpressionUUID->"cfbdfcfb-7781-4f1f-a9f9-cfa3f28f5fdc"],
+Cell[99218, 2110, 337, 7, 30, "Message",ExpressionUUID->"f65b2133-5e55-4f70-8887-a04e85572702"],
+Cell[99558, 2119, 2170, 33, 97, "Message",ExpressionUUID->"cd959341-c02a-4650-9fba-134241b1ecac"],
+Cell[101731, 2154, 335, 7, 30, "Message",ExpressionUUID->"d46b3376-72a9-4057-9917-e52c1826f4dd"],
+Cell[102069, 2163, 2187, 33, 97, "Message",ExpressionUUID->"61dcc64a-3be2-40ac-8e59-beaa327ba983"],
+Cell[104259, 2198, 332, 7, 30, "Message",ExpressionUUID->"62a8519d-592f-4f29-8c49-b3707790d58f"],
+Cell[104594, 2207, 414, 8, 30, "Message",ExpressionUUID->"d1064109-81a8-4345-958a-6bf5c30c0047"],
+Cell[105011, 2217, 2156, 32, 97, "Message",ExpressionUUID->"8a8ad155-d047-46ca-9d4a-22cf7ada9c45"],
+Cell[107170, 2251, 416, 8, 30, "Message",ExpressionUUID->"1d1ca993-9348-4039-8487-5bfb3263fc6c"],
+Cell[107589, 2261, 762, 13, 30, "Message",ExpressionUUID->"132078df-bc8e-4e7f-b13a-8eda9d68903e"],
+Cell[108354, 2276, 334, 7, 30, "Message",ExpressionUUID->"87114a58-8eb8-49b1-8bc0-1d7fab897df1"],
+Cell[108691, 2285, 2173, 33, 97, "Message",ExpressionUUID->"e6ef984a-3d57-4eac-b16e-5eada876bba4"],
+Cell[110867, 2320, 335, 7, 30, "Message",ExpressionUUID->"84a0f822-6724-450c-9678-9d1c939d1ddd"],
+Cell[111205, 2329, 2187, 33, 97, "Message",ExpressionUUID->"0046e883-9665-4d1f-85d8-035078321e59"],
+Cell[113395, 2364, 331, 7, 30, "Message",ExpressionUUID->"7c8c4801-4a82-4831-aa7d-bccd29fa37cc"],
+Cell[113729, 2373, 412, 8, 30, "Message",ExpressionUUID->"cf726e09-bd47-4609-81cb-8b2a0fe04082"],
+Cell[114144, 2383, 2154, 32, 97, "Message",ExpressionUUID->"3999a9f3-35b6-4068-9e38-d2a841d69440"],
+Cell[116301, 2417, 414, 8, 30, "Message",ExpressionUUID->"cf16422d-1056-49a4-acc2-d9a849c1dedf"]
+}, Open  ]],
+Cell[116730, 2428, 653, 17, 107, "Input",ExpressionUUID->"3a139cf1-c333-47fc-b61d-56e3431ce5c9"],
+Cell[CellGroupData[{
+Cell[117408, 2449, 7540, 186, 919, "Input",ExpressionUUID->"4921b9c3-a2ca-45b9-8605-d6a8888975c2"],
+Cell[124951, 2637, 6380, 114, 593, "Output",ExpressionUUID->"5c1ca82c-fc31-4906-9765-23df6f4525f0"]
+}, Open  ]],
+Cell[131346, 2754, 629, 16, 107, "Input",ExpressionUUID->"b65028c3-487d-4fad-8bbf-7add336f41d2"],
+Cell[CellGroupData[{
+Cell[132000, 2774, 8068, 208, 1021, "Input",ExpressionUUID->"77fb1f12-79c6-49d7-a2e5-12eabdd4594b"],
+Cell[140071, 2984, 6469, 118, 593, "Output",ExpressionUUID->"88272b57-5d23-436f-9860-02fd785a95c0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[146577, 3107, 176, 3, 70, "Subsection",ExpressionUUID->"d5cf3d37-2b1e-433f-9155-b6bebd2b27bb"],
+Cell[CellGroupData[{
+Cell[146778, 3114, 8121, 214, 1162, "Input",ExpressionUUID->"94f6d6f4-c4f2-4804-bcac-08af4ace61ca"],
+Cell[154902, 3330, 7257, 131, 383, "Output",ExpressionUUID->"77351185-3978-44e3-985d-3cf21a7ca594"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
